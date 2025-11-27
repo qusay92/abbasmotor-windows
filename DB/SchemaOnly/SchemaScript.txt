@@ -1,0 +1,380 @@
+USE [AbbasMotors]
+GO
+/****** Object:  Table [dbo].[__EFMigrationsHistory]    Script Date: 11/27/2025 3:45:50 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[__EFMigrationsHistory](
+	[MigrationId] [nvarchar](150) NOT NULL,
+	[ProductVersion] [nvarchar](32) NOT NULL,
+ CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY CLUSTERED 
+(
+	[MigrationId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[AutoImages]    Script Date: 11/27/2025 3:45:50 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[AutoImages](
+	[Id] [bigint] IDENTITY(1,1) NOT NULL,
+	[AutoId] [bigint] NOT NULL,
+	[Alt] [nvarchar](max) NULL,
+	[Extintion] [nvarchar](max) NULL,
+	[Path] [nvarchar](max) NULL,
+	[PreviewImageSrc] [nvarchar](max) NULL,
+	[ThumbnailImageSrc] [nvarchar](max) NULL,
+	[Title] [nvarchar](max) NULL,
+	[CreationUserId] [bigint] NULL,
+	[CreationDate] [datetime2](7) NULL,
+	[ModificationUserId] [bigint] NULL,
+	[ModificationDate] [datetime2](7) NULL,
+ CONSTRAINT [PK_AutoImages] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Autos]    Script Date: 11/27/2025 3:45:50 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Autos](
+	[Id] [bigint] IDENTITY(1,1) NOT NULL,
+	[Name] [nvarchar](max) NOT NULL,
+	[BrandId] [bigint] NOT NULL,
+	[Description] [nvarchar](max) NULL,
+	[Model] [nvarchar](max) NULL,
+	[VinNo] [nvarchar](max) NULL,
+	[Type] [int] NOT NULL,
+	[ColorId] [bigint] NULL,
+	[Engine] [nvarchar](max) NULL,
+	[Lot] [nvarchar](max) NULL,
+	[CarType] [int] NOT NULL,
+	[CarName] [nvarchar](max) NULL,
+	[BuyingAccountId] [bigint] NULL,
+	[RemainingPayment] [decimal](18, 2) NULL,
+	[BuyerId] [bigint] NULL,
+	[LoadPortId] [bigint] NOT NULL,
+	[AuctionId] [bigint] NOT NULL,
+	[CityId] [bigint] NOT NULL,
+	[DestinationId] [bigint] NOT NULL,
+	[ContainerId] [bigint] NULL,
+	[BuyDate] [datetime2](7) NOT NULL,
+	[ArrivalDate] [datetime2](7) NULL,
+	[CarStatus] [int] NOT NULL,
+	[PaperStatus] [int] NULL,
+	[DisplayStatus] [int] NOT NULL,
+	[IsArchive] [tinyint] NOT NULL,
+	[CreationUserId] [bigint] NULL,
+	[CreationDate] [datetime2](7) NULL,
+	[ModificationUserId] [bigint] NULL,
+	[ModificationDate] [datetime2](7) NULL,
+	[ClientBuyerName] [nvarchar](max) NULL,
+	[UpdatePaymentStatus] [nvarchar](max) NULL,
+ CONSTRAINT [PK_Autos] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[ContainerImages]    Script Date: 11/27/2025 3:45:50 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[ContainerImages](
+	[Id] [bigint] IDENTITY(1,1) NOT NULL,
+	[PreviewImageSrc] [nvarchar](max) NULL,
+	[ThumbnailImageSrc] [nvarchar](max) NULL,
+	[Alt] [nvarchar](max) NULL,
+	[Title] [nvarchar](max) NULL,
+	[Path] [nvarchar](max) NULL,
+	[Extintion] [nvarchar](max) NULL,
+	[ContainerId] [bigint] NOT NULL,
+	[CreationUserId] [bigint] NULL,
+	[CreationDate] [datetime2](7) NULL,
+	[ModificationUserId] [bigint] NULL,
+	[ModificationDate] [datetime2](7) NULL,
+ CONSTRAINT [PK_ContainerImages] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Containers]    Script Date: 11/27/2025 3:45:50 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Containers](
+	[Id] [bigint] IDENTITY(1,1) NOT NULL,
+	[Name] [nvarchar](max) NULL,
+	[BookNo] [nvarchar](max) NULL,
+	[SerialNumber] [nvarchar](max) NULL,
+	[ArrivalDate] [datetime2](7) NULL,
+	[DepartureDate] [datetime2](7) NULL,
+	[DeparturePortId] [bigint] NULL,
+	[DestinationId] [bigint] NULL,
+	[IsArchive] [tinyint] NULL,
+	[ShippingCompanyId] [bigint] NULL,
+	[Status] [int] NULL,
+	[CreationUserId] [bigint] NULL,
+	[CreationDate] [datetime2](7) NULL,
+	[ModificationUserId] [bigint] NULL,
+	[ModificationDate] [datetime2](7) NULL,
+ CONSTRAINT [PK_Containers] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Lookups]    Script Date: 11/27/2025 3:45:50 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Lookups](
+	[Id] [bigint] IDENTITY(1,1) NOT NULL,
+	[Name] [nvarchar](max) NOT NULL,
+	[Code] [nvarchar](max) NULL,
+ CONSTRAINT [PK_Lookups] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[LookupValues]    Script Date: 11/27/2025 3:45:50 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[LookupValues](
+	[Id] [bigint] IDENTITY(1,1) NOT NULL,
+	[Name] [nvarchar](max) NOT NULL,
+	[Code] [nvarchar](max) NULL,
+	[LookupId] [bigint] NOT NULL,
+ CONSTRAINT [PK_LookupValues] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[PaymentDetails]    Script Date: 11/27/2025 3:45:50 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[PaymentDetails](
+	[Id] [bigint] IDENTITY(1,1) NOT NULL,
+	[CashType] [int] NOT NULL,
+	[Notes] [nvarchar](max) NULL,
+	[PayDate] [datetime2](7) NOT NULL,
+	[PaymentId] [bigint] NOT NULL,
+	[Amount] [decimal](18, 2) NOT NULL,
+	[BuyType] [int] NOT NULL,
+ CONSTRAINT [PK_PaymentDetails] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Payments]    Script Date: 11/27/2025 3:45:50 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Payments](
+	[Id] [bigint] IDENTITY(1,1) NOT NULL,
+	[PaymentType] [int] NOT NULL,
+	[TotalAmount] [decimal](18, 2) NOT NULL,
+	[AutoId] [bigint] NOT NULL,
+	[CreationUserId] [bigint] NULL,
+	[CreationDate] [datetime2](7) NULL,
+	[ModificationUserId] [bigint] NULL,
+	[ModificationDate] [datetime2](7) NULL,
+ CONSTRAINT [PK_Payments] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Resources]    Script Date: 11/27/2025 3:45:50 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Resources](
+	[Id] [bigint] IDENTITY(1,1) NOT NULL,
+	[Url] [nvarchar](max) NULL,
+	[Key] [nvarchar](max) NULL,
+	[TextEn] [nvarchar](max) NULL,
+	[Culture] [nvarchar](max) NULL,
+	[TextAr] [nvarchar](max) NULL
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Users]    Script Date: 11/27/2025 3:45:50 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Users](
+	[Id] [bigint] IDENTITY(1,1) NOT NULL,
+	[Name] [nvarchar](max) NOT NULL,
+	[Password] [nvarchar](max) NOT NULL,
+	[Type] [int] NOT NULL,
+	[Address] [nvarchar](max) NULL,
+	[Mobile] [nvarchar](max) NULL,
+	[UserName] [nvarchar](max) NULL,
+	[Company] [nvarchar](max) NULL,
+	[CreationUserId] [bigint] NULL,
+	[CreationDate] [datetime2](7) NULL,
+	[ModificationUserId] [bigint] NULL,
+	[ModificationDate] [datetime2](7) NULL,
+	[ActualPass] [nvarchar](max) NULL,
+ CONSTRAINT [PK_Users] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[AutoImages]  WITH CHECK ADD  CONSTRAINT [FK_AutoImages_Autos_AutoId] FOREIGN KEY([AutoId])
+REFERENCES [dbo].[Autos] ([Id])
+GO
+ALTER TABLE [dbo].[AutoImages] CHECK CONSTRAINT [FK_AutoImages_Autos_AutoId]
+GO
+ALTER TABLE [dbo].[AutoImages]  WITH CHECK ADD  CONSTRAINT [FK_AutoImages_Users_CreationUserId] FOREIGN KEY([CreationUserId])
+REFERENCES [dbo].[Users] ([Id])
+GO
+ALTER TABLE [dbo].[AutoImages] CHECK CONSTRAINT [FK_AutoImages_Users_CreationUserId]
+GO
+ALTER TABLE [dbo].[AutoImages]  WITH CHECK ADD  CONSTRAINT [FK_AutoImages_Users_ModificationUserId] FOREIGN KEY([ModificationUserId])
+REFERENCES [dbo].[Users] ([Id])
+GO
+ALTER TABLE [dbo].[AutoImages] CHECK CONSTRAINT [FK_AutoImages_Users_ModificationUserId]
+GO
+ALTER TABLE [dbo].[Autos]  WITH CHECK ADD  CONSTRAINT [FK_Autos_Containers_ContainerId] FOREIGN KEY([ContainerId])
+REFERENCES [dbo].[Containers] ([Id])
+GO
+ALTER TABLE [dbo].[Autos] CHECK CONSTRAINT [FK_Autos_Containers_ContainerId]
+GO
+ALTER TABLE [dbo].[Autos]  WITH CHECK ADD  CONSTRAINT [FK_Autos_LookupValues_AuctionId] FOREIGN KEY([AuctionId])
+REFERENCES [dbo].[LookupValues] ([Id])
+GO
+ALTER TABLE [dbo].[Autos] CHECK CONSTRAINT [FK_Autos_LookupValues_AuctionId]
+GO
+ALTER TABLE [dbo].[Autos]  WITH CHECK ADD  CONSTRAINT [FK_Autos_LookupValues_BrandId] FOREIGN KEY([BrandId])
+REFERENCES [dbo].[LookupValues] ([Id])
+GO
+ALTER TABLE [dbo].[Autos] CHECK CONSTRAINT [FK_Autos_LookupValues_BrandId]
+GO
+ALTER TABLE [dbo].[Autos]  WITH CHECK ADD  CONSTRAINT [FK_Autos_LookupValues_BuyingAccountId] FOREIGN KEY([BuyingAccountId])
+REFERENCES [dbo].[LookupValues] ([Id])
+GO
+ALTER TABLE [dbo].[Autos] CHECK CONSTRAINT [FK_Autos_LookupValues_BuyingAccountId]
+GO
+ALTER TABLE [dbo].[Autos]  WITH CHECK ADD  CONSTRAINT [FK_Autos_LookupValues_CityId] FOREIGN KEY([CityId])
+REFERENCES [dbo].[LookupValues] ([Id])
+GO
+ALTER TABLE [dbo].[Autos] CHECK CONSTRAINT [FK_Autos_LookupValues_CityId]
+GO
+ALTER TABLE [dbo].[Autos]  WITH CHECK ADD  CONSTRAINT [FK_Autos_LookupValues_DestinationId] FOREIGN KEY([DestinationId])
+REFERENCES [dbo].[LookupValues] ([Id])
+GO
+ALTER TABLE [dbo].[Autos] CHECK CONSTRAINT [FK_Autos_LookupValues_DestinationId]
+GO
+ALTER TABLE [dbo].[Autos]  WITH CHECK ADD  CONSTRAINT [FK_Autos_LookupValues_LoadPortId] FOREIGN KEY([LoadPortId])
+REFERENCES [dbo].[LookupValues] ([Id])
+GO
+ALTER TABLE [dbo].[Autos] CHECK CONSTRAINT [FK_Autos_LookupValues_LoadPortId]
+GO
+ALTER TABLE [dbo].[Autos]  WITH CHECK ADD  CONSTRAINT [FK_Autos_Users_BuyerId] FOREIGN KEY([BuyerId])
+REFERENCES [dbo].[Users] ([Id])
+GO
+ALTER TABLE [dbo].[Autos] CHECK CONSTRAINT [FK_Autos_Users_BuyerId]
+GO
+ALTER TABLE [dbo].[Autos]  WITH CHECK ADD  CONSTRAINT [FK_Autos_Users_CreationUserId] FOREIGN KEY([CreationUserId])
+REFERENCES [dbo].[Users] ([Id])
+GO
+ALTER TABLE [dbo].[Autos] CHECK CONSTRAINT [FK_Autos_Users_CreationUserId]
+GO
+ALTER TABLE [dbo].[Autos]  WITH CHECK ADD  CONSTRAINT [FK_Autos_Users_ModificationUserId] FOREIGN KEY([ModificationUserId])
+REFERENCES [dbo].[Users] ([Id])
+GO
+ALTER TABLE [dbo].[Autos] CHECK CONSTRAINT [FK_Autos_Users_ModificationUserId]
+GO
+ALTER TABLE [dbo].[ContainerImages]  WITH CHECK ADD  CONSTRAINT [FK_ContainerImages_Containers_ContainerId] FOREIGN KEY([ContainerId])
+REFERENCES [dbo].[Containers] ([Id])
+GO
+ALTER TABLE [dbo].[ContainerImages] CHECK CONSTRAINT [FK_ContainerImages_Containers_ContainerId]
+GO
+ALTER TABLE [dbo].[ContainerImages]  WITH CHECK ADD  CONSTRAINT [FK_ContainerImages_Users_CreationUserId] FOREIGN KEY([CreationUserId])
+REFERENCES [dbo].[Users] ([Id])
+GO
+ALTER TABLE [dbo].[ContainerImages] CHECK CONSTRAINT [FK_ContainerImages_Users_CreationUserId]
+GO
+ALTER TABLE [dbo].[ContainerImages]  WITH CHECK ADD  CONSTRAINT [FK_ContainerImages_Users_ModificationUserId] FOREIGN KEY([ModificationUserId])
+REFERENCES [dbo].[Users] ([Id])
+GO
+ALTER TABLE [dbo].[ContainerImages] CHECK CONSTRAINT [FK_ContainerImages_Users_ModificationUserId]
+GO
+ALTER TABLE [dbo].[Containers]  WITH CHECK ADD  CONSTRAINT [FK_Containers_LookupValues_DeparturePortId] FOREIGN KEY([DeparturePortId])
+REFERENCES [dbo].[LookupValues] ([Id])
+GO
+ALTER TABLE [dbo].[Containers] CHECK CONSTRAINT [FK_Containers_LookupValues_DeparturePortId]
+GO
+ALTER TABLE [dbo].[Containers]  WITH CHECK ADD  CONSTRAINT [FK_Containers_LookupValues_DestinationId] FOREIGN KEY([DestinationId])
+REFERENCES [dbo].[LookupValues] ([Id])
+GO
+ALTER TABLE [dbo].[Containers] CHECK CONSTRAINT [FK_Containers_LookupValues_DestinationId]
+GO
+ALTER TABLE [dbo].[Containers]  WITH CHECK ADD  CONSTRAINT [FK_Containers_LookupValues_ShippingCompanyId] FOREIGN KEY([ShippingCompanyId])
+REFERENCES [dbo].[LookupValues] ([Id])
+GO
+ALTER TABLE [dbo].[Containers] CHECK CONSTRAINT [FK_Containers_LookupValues_ShippingCompanyId]
+GO
+ALTER TABLE [dbo].[Containers]  WITH CHECK ADD  CONSTRAINT [FK_Containers_Users_CreationUserId] FOREIGN KEY([CreationUserId])
+REFERENCES [dbo].[Users] ([Id])
+GO
+ALTER TABLE [dbo].[Containers] CHECK CONSTRAINT [FK_Containers_Users_CreationUserId]
+GO
+ALTER TABLE [dbo].[Containers]  WITH CHECK ADD  CONSTRAINT [FK_Containers_Users_ModificationUserId] FOREIGN KEY([ModificationUserId])
+REFERENCES [dbo].[Users] ([Id])
+GO
+ALTER TABLE [dbo].[Containers] CHECK CONSTRAINT [FK_Containers_Users_ModificationUserId]
+GO
+ALTER TABLE [dbo].[LookupValues]  WITH CHECK ADD  CONSTRAINT [FK_LookupValues_Lookups] FOREIGN KEY([LookupId])
+REFERENCES [dbo].[Lookups] ([Id])
+GO
+ALTER TABLE [dbo].[LookupValues] CHECK CONSTRAINT [FK_LookupValues_Lookups]
+GO
+ALTER TABLE [dbo].[Payments]  WITH CHECK ADD  CONSTRAINT [FK_Payments_Autos_AutoId] FOREIGN KEY([AutoId])
+REFERENCES [dbo].[Autos] ([Id])
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[Payments] CHECK CONSTRAINT [FK_Payments_Autos_AutoId]
+GO
+ALTER TABLE [dbo].[Payments]  WITH CHECK ADD  CONSTRAINT [FK_Payments_Users_CreationUserId] FOREIGN KEY([CreationUserId])
+REFERENCES [dbo].[Users] ([Id])
+GO
+ALTER TABLE [dbo].[Payments] CHECK CONSTRAINT [FK_Payments_Users_CreationUserId]
+GO
+ALTER TABLE [dbo].[Payments]  WITH CHECK ADD  CONSTRAINT [FK_Payments_Users_ModificationUserId] FOREIGN KEY([ModificationUserId])
+REFERENCES [dbo].[Users] ([Id])
+GO
+ALTER TABLE [dbo].[Payments] CHECK CONSTRAINT [FK_Payments_Users_ModificationUserId]
+GO
+ALTER TABLE [dbo].[Users]  WITH CHECK ADD  CONSTRAINT [FK_Users_Users_CreationUserId] FOREIGN KEY([CreationUserId])
+REFERENCES [dbo].[Users] ([Id])
+GO
+ALTER TABLE [dbo].[Users] CHECK CONSTRAINT [FK_Users_Users_CreationUserId]
+GO
+ALTER TABLE [dbo].[Users]  WITH CHECK ADD  CONSTRAINT [FK_Users_Users_ModificationUserId] FOREIGN KEY([ModificationUserId])
+REFERENCES [dbo].[Users] ([Id])
+GO
+ALTER TABLE [dbo].[Users] CHECK CONSTRAINT [FK_Users_Users_ModificationUserId]
+GO
