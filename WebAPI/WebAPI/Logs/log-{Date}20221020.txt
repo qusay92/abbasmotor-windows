@@ -1,0 +1,415 @@
+2022-10-20 13:46:50.092 +03:00 [ERR] Controller : Containers - ActionName : GetAllByUser - Parameter : {"IsSearch":true,"StatusId":null,"ContainerNo":null,"BookingNo":null,"LoadingFromDate":"2022-10-03T00:00:00","LoadingToDate":null,"LoadPortId":null,"DestinationId":null,"ShippingLineId":null,"ClientId":null,"ArrivalFromDate":null,"ArrivalToDate":null} - Error :  ## Exception.Message = Nullable object must have a value.
+2022-10-20 13:50:08.886 +03:00 [ERR] Failed executing DbCommand (65ms) [Parameters=[@__id_0='?' (DbType = Int64), @__id_1='?' (DbType = Int64), @__isArchive_2='?' (Size = 1) (DbType = Byte)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[ArrivalDate], [c].[BookNo], [c].[CreationDate], [c].[CreationUserId], [c].[DepartureDate], [c].[DeparturePortId], [c].[DestinationId], [c].[IsArchive], [c].[ModificationDate], [c].[ModificationUserId], [c].[Name], [c].[SearchDepartureDate], [c].[SerialNumber], [c].[ShippingCompanyId], [c].[Status], [a0].[Id], [a0].[ArrivalDate], [a0].[AuctionId], [a0].[BrandId], [a0].[BuyDate], [a0].[BuyerId], [a0].[BuyingAccountId], [a0].[CarName], [a0].[CarStatus], [a0].[CarType], [a0].[CityId], [a0].[ColorId], [a0].[ContainerId], [a0].[CreationDate], [a0].[CreationUserId], [a0].[Description], [a0].[DestinationId], [a0].[DisplayStatus], [a0].[Engine], [a0].[IsArchive], [a0].[LoadPortId], [a0].[Lot], [a0].[Model], [a0].[ModificationDate], [a0].[ModificationUserId], [a0].[Name], [a0].[PaperStatus], [a0].[RemainingPayment], [a0].[Type], [a0].[VinNo]
+FROM [Containers] AS [c]
+LEFT JOIN [Autos] AS [a0] ON [c].[Id] = [a0].[ContainerId]
+WHERE (([c].[CreationUserId] = @__id_0) OR EXISTS (
+    SELECT 1
+    FROM [Autos] AS [a]
+    WHERE ([c].[Id] = [a].[ContainerId]) AND ([a].[Id] = @__id_1))) AND ([c].[IsArchive] = @__isArchive_2)
+ORDER BY [c].[Id]
+2022-10-20 13:50:08.886 +03:00 [ERR] Failed executing DbCommand (347ms) [Parameters=[@__8__locals1_id_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ArrivalDate], [a].[AuctionId], [a].[BrandId], [a].[BuyDate], [a].[BuyerId], [a].[BuyingAccountId], [a].[CarName], [a].[CarStatus], [a].[CarType], [a].[CityId], [a].[ColorId], [a].[ContainerId], [a].[CreationDate], [a].[CreationUserId], [a].[Description], [a].[DestinationId], [a].[DisplayStatus], [a].[Engine], [a].[IsArchive], [a].[LoadPortId], [a].[Lot], [a].[Model], [a].[ModificationDate], [a].[ModificationUserId], [a].[Name], [a].[PaperStatus], [a].[RemainingPayment], [a].[Type], [a].[VinNo], [c].[Id], [c].[ArrivalDate], [c].[BookNo], [c].[CreationDate], [c].[CreationUserId], [c].[DepartureDate], [c].[DeparturePortId], [c].[DestinationId], [c].[IsArchive], [c].[ModificationDate], [c].[ModificationUserId], [c].[Name], [c].[SearchDepartureDate], [c].[SerialNumber], [c].[ShippingCompanyId], [c].[Status], [u].[Id], [u].[ActualPass], [u].[Address], [u].[Company], [u].[CreationDate], [u].[CreationUserId], [u].[Mobile], [u].[ModificationDate], [u].[ModificationUserId], [u].[Name], [u].[Password], [u].[Type], [u].[UserName], [l].[Id], [l].[Code], [l].[LookupId], [l].[Name], [l0].[Id], [l1].[Id], [l2].[Id], [l3].[Id], [l4].[Id], [a0].[Id], [a0].[Alt], [a0].[AutoId], [a0].[CreationDate], [a0].[CreationUserId], [a0].[Extintion], [a0].[ModificationDate], [a0].[ModificationUserId], [a0].[Path], [a0].[PreviewImageSrc], [a0].[ThumbnailImageSrc], [a0].[Title], [l0].[Code], [l0].[LookupId], [l0].[Name], [l1].[Code], [l1].[LookupId], [l1].[Name], [l2].[Code], [l2].[LookupId], [l2].[Name], [l3].[Code], [l3].[LookupId], [l3].[Name], [l4].[Code], [l4].[LookupId], [l4].[Name]
+FROM [Autos] AS [a]
+LEFT JOIN [Containers] AS [c] ON [a].[ContainerId] = [c].[Id]
+LEFT JOIN [Users] AS [u] ON [a].[BuyerId] = [u].[Id]
+INNER JOIN [LookupValues] AS [l] ON [a].[BrandId] = [l].[Id]
+INNER JOIN [LookupValues] AS [l0] ON [a].[AuctionId] = [l0].[Id]
+INNER JOIN [LookupValues] AS [l1] ON [a].[CityId] = [l1].[Id]
+INNER JOIN [LookupValues] AS [l2] ON [a].[DestinationId] = [l2].[Id]
+INNER JOIN [LookupValues] AS [l3] ON [a].[LoadPortId] = [l3].[Id]
+LEFT JOIN [LookupValues] AS [l4] ON [a].[BuyingAccountId] = [l4].[Id]
+LEFT JOIN [AutoImages] AS [a0] ON [a].[Id] = [a0].[AutoId]
+WHERE (([a].[CreationUserId] = @__8__locals1_id_0) OR ([a].[BuyerId] = @__8__locals1_id_0)) AND ([a].[IsArchive] = CAST(0 AS tinyint))
+ORDER BY [a].[Id], [c].[Id], [u].[Id], [l].[Id], [l0].[Id], [l1].[Id], [l2].[Id], [l3].[Id], [l4].[Id]
+2022-10-20 13:50:08.886 +03:00 [ERR] Failed executing DbCommand (357ms) [Parameters=[@__id_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[ArrivalDate], [c].[BookNo], [c].[CreationDate], [c].[CreationUserId], [c].[DepartureDate], [c].[DeparturePortId], [c].[DestinationId], [c].[IsArchive], [c].[ModificationDate], [c].[ModificationUserId], [c].[Name], [c].[SearchDepartureDate], [c].[SerialNumber], [c].[ShippingCompanyId], [c].[Status], [l].[Id], [l0].[Id], [l1].[Id], [a0].[Id], [a0].[ArrivalDate], [a0].[AuctionId], [a0].[BrandId], [a0].[BuyDate], [a0].[BuyerId], [a0].[BuyingAccountId], [a0].[CarName], [a0].[CarStatus], [a0].[CarType], [a0].[CityId], [a0].[ColorId], [a0].[ContainerId], [a0].[CreationDate], [a0].[CreationUserId], [a0].[Description], [a0].[DestinationId], [a0].[DisplayStatus], [a0].[Engine], [a0].[IsArchive], [a0].[LoadPortId], [a0].[Lot], [a0].[Model], [a0].[ModificationDate], [a0].[ModificationUserId], [a0].[Name], [a0].[PaperStatus], [a0].[RemainingPayment], [a0].[Type], [a0].[VinNo], [l].[Code], [l].[LookupId], [l].[Name], [l0].[Code], [l0].[LookupId], [l0].[Name], [l1].[Code], [l1].[LookupId], [l1].[Name], [c0].[Id], [c0].[Alt], [c0].[ContainerId], [c0].[CreationDate], [c0].[CreationUserId], [c0].[Extintion], [c0].[ModificationDate], [c0].[ModificationUserId], [c0].[Path], [c0].[PreviewImageSrc], [c0].[ThumbnailImageSrc], [c0].[Title]
+FROM [Containers] AS [c]
+LEFT JOIN [LookupValues] AS [l] ON [c].[DestinationId] = [l].[Id]
+LEFT JOIN [LookupValues] AS [l0] ON [c].[ShippingCompanyId] = [l0].[Id]
+LEFT JOIN [LookupValues] AS [l1] ON [c].[DeparturePortId] = [l1].[Id]
+LEFT JOIN [Autos] AS [a0] ON [c].[Id] = [a0].[ContainerId]
+LEFT JOIN [ContainerImages] AS [c0] ON [c].[Id] = [c0].[ContainerId]
+WHERE (([c].[CreationUserId] = @__id_0) OR EXISTS (
+    SELECT 1
+    FROM [Autos] AS [a]
+    WHERE ([c].[Id] = [a].[ContainerId]) AND ([a].[BuyerId] = @__id_0))) AND ([c].[IsArchive] = CAST(0 AS tinyint))
+ORDER BY [c].[Id], [l].[Id], [l0].[Id], [l1].[Id], [a0].[Id]
+2022-10-20 13:50:09.007 +03:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Entities.AmdDBContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'SearchDepartureDate'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+ClientConnectionId:20e6443e-6492-4b5d-a431-9d2f9879ea17
+Error Number:207,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'SearchDepartureDate'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+ClientConnectionId:20e6443e-6492-4b5d-a431-9d2f9879ea17
+Error Number:207,State:1,Class:16
+2022-10-20 13:50:09.007 +03:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Entities.AmdDBContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'SearchDepartureDate'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:efd06b50-f970-4240-aa4e-301da5653cca
+Error Number:207,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'SearchDepartureDate'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:efd06b50-f970-4240-aa4e-301da5653cca
+Error Number:207,State:1,Class:16
+2022-10-20 13:50:09.007 +03:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Entities.AmdDBContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'SearchDepartureDate'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:e9ed2bb6-4c67-4ad1-adb3-fb0e71b0cbf2
+Error Number:207,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'SearchDepartureDate'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:e9ed2bb6-4c67-4ad1-adb3-fb0e71b0cbf2
+Error Number:207,State:1,Class:16
+2022-10-20 13:50:09.312 +03:00 [ERR] Controller : Containers - ActionName : GetSideMenuByUser - Parameter : 0 - Error :  ## Exception.Message = Invalid column name 'SearchDepartureDate'.
+2022-10-20 13:50:09.342 +03:00 [ERR] Controller : Containers - ActionName : GetAllByUser - Parameter : {"IsSearch":false,"StatusId":0,"ContainerNo":"","BookingNo":"","LoadingFromDate":null,"LoadingToDate":null,"LoadPortId":0,"DestinationId":0,"ShippingLineId":0,"ClientId":0,"ArrivalFromDate":null,"ArrivalToDate":null} - Error :  ## Exception.Message = Invalid column name 'SearchDepartureDate'.
+2022-10-20 13:50:09.342 +03:00 [ERR] Controller : Autos - ActionName : GetAllByUser - Parameter : {"isSearch":false,"vinNumber":"","lotNumber":"","client":0,"auction":0,"buyAccount":0,"container":"","loadPort":0,"destination":0,"city":0,"carId":0,"deliveryFromDate":null,"deliveryToDate":null,"Status":0,"purchaseFromDate":null,"purchaseToDate":null} - Error :  ## Exception.Message = Invalid column name 'SearchDepartureDate'.
+2022-10-20 13:50:36.944 +03:00 [ERR] Failed executing DbCommand (24ms) [Parameters=[@__id_0='?' (DbType = Int64), @__id_1='?' (DbType = Int64), @__isArchive_2='?' (Size = 1) (DbType = Byte)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[ArrivalDate], [c].[BookNo], [c].[CreationDate], [c].[CreationUserId], [c].[DepartureDate], [c].[DeparturePortId], [c].[DestinationId], [c].[IsArchive], [c].[ModificationDate], [c].[ModificationUserId], [c].[Name], [c].[SearchDepartureDate], [c].[SerialNumber], [c].[ShippingCompanyId], [c].[Status], [a0].[Id], [a0].[ArrivalDate], [a0].[AuctionId], [a0].[BrandId], [a0].[BuyDate], [a0].[BuyerId], [a0].[BuyingAccountId], [a0].[CarName], [a0].[CarStatus], [a0].[CarType], [a0].[CityId], [a0].[ColorId], [a0].[ContainerId], [a0].[CreationDate], [a0].[CreationUserId], [a0].[Description], [a0].[DestinationId], [a0].[DisplayStatus], [a0].[Engine], [a0].[IsArchive], [a0].[LoadPortId], [a0].[Lot], [a0].[Model], [a0].[ModificationDate], [a0].[ModificationUserId], [a0].[Name], [a0].[PaperStatus], [a0].[RemainingPayment], [a0].[Type], [a0].[VinNo]
+FROM [Containers] AS [c]
+LEFT JOIN [Autos] AS [a0] ON [c].[Id] = [a0].[ContainerId]
+WHERE (([c].[CreationUserId] = @__id_0) OR EXISTS (
+    SELECT 1
+    FROM [Autos] AS [a]
+    WHERE ([c].[Id] = [a].[ContainerId]) AND ([a].[Id] = @__id_1))) AND ([c].[IsArchive] = @__isArchive_2)
+ORDER BY [c].[Id]
+2022-10-20 13:50:36.945 +03:00 [ERR] Failed executing DbCommand (27ms) [Parameters=[@__8__locals1_id_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ArrivalDate], [a].[AuctionId], [a].[BrandId], [a].[BuyDate], [a].[BuyerId], [a].[BuyingAccountId], [a].[CarName], [a].[CarStatus], [a].[CarType], [a].[CityId], [a].[ColorId], [a].[ContainerId], [a].[CreationDate], [a].[CreationUserId], [a].[Description], [a].[DestinationId], [a].[DisplayStatus], [a].[Engine], [a].[IsArchive], [a].[LoadPortId], [a].[Lot], [a].[Model], [a].[ModificationDate], [a].[ModificationUserId], [a].[Name], [a].[PaperStatus], [a].[RemainingPayment], [a].[Type], [a].[VinNo], [c].[Id], [c].[ArrivalDate], [c].[BookNo], [c].[CreationDate], [c].[CreationUserId], [c].[DepartureDate], [c].[DeparturePortId], [c].[DestinationId], [c].[IsArchive], [c].[ModificationDate], [c].[ModificationUserId], [c].[Name], [c].[SearchDepartureDate], [c].[SerialNumber], [c].[ShippingCompanyId], [c].[Status], [u].[Id], [u].[ActualPass], [u].[Address], [u].[Company], [u].[CreationDate], [u].[CreationUserId], [u].[Mobile], [u].[ModificationDate], [u].[ModificationUserId], [u].[Name], [u].[Password], [u].[Type], [u].[UserName], [l].[Id], [l].[Code], [l].[LookupId], [l].[Name], [l0].[Id], [l1].[Id], [l2].[Id], [l3].[Id], [l4].[Id], [a0].[Id], [a0].[Alt], [a0].[AutoId], [a0].[CreationDate], [a0].[CreationUserId], [a0].[Extintion], [a0].[ModificationDate], [a0].[ModificationUserId], [a0].[Path], [a0].[PreviewImageSrc], [a0].[ThumbnailImageSrc], [a0].[Title], [l0].[Code], [l0].[LookupId], [l0].[Name], [l1].[Code], [l1].[LookupId], [l1].[Name], [l2].[Code], [l2].[LookupId], [l2].[Name], [l3].[Code], [l3].[LookupId], [l3].[Name], [l4].[Code], [l4].[LookupId], [l4].[Name]
+FROM [Autos] AS [a]
+LEFT JOIN [Containers] AS [c] ON [a].[ContainerId] = [c].[Id]
+LEFT JOIN [Users] AS [u] ON [a].[BuyerId] = [u].[Id]
+INNER JOIN [LookupValues] AS [l] ON [a].[BrandId] = [l].[Id]
+INNER JOIN [LookupValues] AS [l0] ON [a].[AuctionId] = [l0].[Id]
+INNER JOIN [LookupValues] AS [l1] ON [a].[CityId] = [l1].[Id]
+INNER JOIN [LookupValues] AS [l2] ON [a].[DestinationId] = [l2].[Id]
+INNER JOIN [LookupValues] AS [l3] ON [a].[LoadPortId] = [l3].[Id]
+LEFT JOIN [LookupValues] AS [l4] ON [a].[BuyingAccountId] = [l4].[Id]
+LEFT JOIN [AutoImages] AS [a0] ON [a].[Id] = [a0].[AutoId]
+WHERE (([a].[CreationUserId] = @__8__locals1_id_0) OR ([a].[BuyerId] = @__8__locals1_id_0)) AND ([a].[IsArchive] = CAST(0 AS tinyint))
+ORDER BY [a].[Id], [c].[Id], [u].[Id], [l].[Id], [l0].[Id], [l1].[Id], [l2].[Id], [l3].[Id], [l4].[Id]
+2022-10-20 13:50:36.946 +03:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Entities.AmdDBContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'SearchDepartureDate'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+ClientConnectionId:efd06b50-f970-4240-aa4e-301da5653cca
+Error Number:207,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'SearchDepartureDate'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+ClientConnectionId:efd06b50-f970-4240-aa4e-301da5653cca
+Error Number:207,State:1,Class:16
+2022-10-20 13:50:36.996 +03:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Entities.AmdDBContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'SearchDepartureDate'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:9ed94c30-e9a9-4cd3-9c79-c18ed321bad8
+Error Number:207,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'SearchDepartureDate'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:9ed94c30-e9a9-4cd3-9c79-c18ed321bad8
+Error Number:207,State:1,Class:16
+2022-10-20 13:50:37.015 +03:00 [ERR] Controller : Containers - ActionName : GetSideMenuByUser - Parameter : 0 - Error :  ## Exception.Message = Invalid column name 'SearchDepartureDate'.
+2022-10-20 13:50:37.176 +03:00 [ERR] Controller : Autos - ActionName : GetAllByUser - Parameter : {"isSearch":false,"vinNumber":"","lotNumber":"","client":0,"auction":0,"buyAccount":0,"container":"","loadPort":0,"destination":0,"city":0,"carId":0,"deliveryFromDate":null,"deliveryToDate":null,"Status":0,"purchaseFromDate":null,"purchaseToDate":null} - Error :  ## Exception.Message = Invalid column name 'SearchDepartureDate'.
+2022-10-20 13:50:37.217 +03:00 [ERR] Failed executing DbCommand (26ms) [Parameters=[@__id_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[ArrivalDate], [c].[BookNo], [c].[CreationDate], [c].[CreationUserId], [c].[DepartureDate], [c].[DeparturePortId], [c].[DestinationId], [c].[IsArchive], [c].[ModificationDate], [c].[ModificationUserId], [c].[Name], [c].[SearchDepartureDate], [c].[SerialNumber], [c].[ShippingCompanyId], [c].[Status], [l].[Id], [l0].[Id], [l1].[Id], [a0].[Id], [a0].[ArrivalDate], [a0].[AuctionId], [a0].[BrandId], [a0].[BuyDate], [a0].[BuyerId], [a0].[BuyingAccountId], [a0].[CarName], [a0].[CarStatus], [a0].[CarType], [a0].[CityId], [a0].[ColorId], [a0].[ContainerId], [a0].[CreationDate], [a0].[CreationUserId], [a0].[Description], [a0].[DestinationId], [a0].[DisplayStatus], [a0].[Engine], [a0].[IsArchive], [a0].[LoadPortId], [a0].[Lot], [a0].[Model], [a0].[ModificationDate], [a0].[ModificationUserId], [a0].[Name], [a0].[PaperStatus], [a0].[RemainingPayment], [a0].[Type], [a0].[VinNo], [l].[Code], [l].[LookupId], [l].[Name], [l0].[Code], [l0].[LookupId], [l0].[Name], [l1].[Code], [l1].[LookupId], [l1].[Name], [c0].[Id], [c0].[Alt], [c0].[ContainerId], [c0].[CreationDate], [c0].[CreationUserId], [c0].[Extintion], [c0].[ModificationDate], [c0].[ModificationUserId], [c0].[Path], [c0].[PreviewImageSrc], [c0].[ThumbnailImageSrc], [c0].[Title]
+FROM [Containers] AS [c]
+LEFT JOIN [LookupValues] AS [l] ON [c].[DestinationId] = [l].[Id]
+LEFT JOIN [LookupValues] AS [l0] ON [c].[ShippingCompanyId] = [l0].[Id]
+LEFT JOIN [LookupValues] AS [l1] ON [c].[DeparturePortId] = [l1].[Id]
+LEFT JOIN [Autos] AS [a0] ON [c].[Id] = [a0].[ContainerId]
+LEFT JOIN [ContainerImages] AS [c0] ON [c].[Id] = [c0].[ContainerId]
+WHERE (([c].[CreationUserId] = @__id_0) OR EXISTS (
+    SELECT 1
+    FROM [Autos] AS [a]
+    WHERE ([c].[Id] = [a].[ContainerId]) AND ([a].[BuyerId] = @__id_0))) AND ([c].[IsArchive] = CAST(0 AS tinyint))
+ORDER BY [c].[Id], [l].[Id], [l0].[Id], [l1].[Id], [a0].[Id]
+2022-10-20 13:50:37.218 +03:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Entities.AmdDBContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'SearchDepartureDate'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:f628f9c6-23d3-41e7-a07e-e0468e7eacad
+Error Number:207,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'SearchDepartureDate'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:f628f9c6-23d3-41e7-a07e-e0468e7eacad
+Error Number:207,State:1,Class:16
+2022-10-20 13:50:37.351 +03:00 [ERR] Controller : Containers - ActionName : GetAllByUser - Parameter : {"IsSearch":false,"StatusId":0,"ContainerNo":"","BookingNo":"","LoadingFromDate":null,"LoadingToDate":null,"LoadPortId":0,"DestinationId":0,"ShippingLineId":0,"ClientId":0,"ArrivalFromDate":null,"ArrivalToDate":null} - Error :  ## Exception.Message = Invalid column name 'SearchDepartureDate'.
+2022-10-20 13:50:53.865 +03:00 [ERR] Failed executing DbCommand (1,137ms) [Parameters=[@__id_0='?' (DbType = Int64), @__id_1='?' (DbType = Int64), @__isArchive_2='?' (Size = 1) (DbType = Byte)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[ArrivalDate], [c].[BookNo], [c].[CreationDate], [c].[CreationUserId], [c].[DepartureDate], [c].[DeparturePortId], [c].[DestinationId], [c].[IsArchive], [c].[ModificationDate], [c].[ModificationUserId], [c].[Name], [c].[SearchDepartureDate], [c].[SerialNumber], [c].[ShippingCompanyId], [c].[Status], [a0].[Id], [a0].[ArrivalDate], [a0].[AuctionId], [a0].[BrandId], [a0].[BuyDate], [a0].[BuyerId], [a0].[BuyingAccountId], [a0].[CarName], [a0].[CarStatus], [a0].[CarType], [a0].[CityId], [a0].[ColorId], [a0].[ContainerId], [a0].[CreationDate], [a0].[CreationUserId], [a0].[Description], [a0].[DestinationId], [a0].[DisplayStatus], [a0].[Engine], [a0].[IsArchive], [a0].[LoadPortId], [a0].[Lot], [a0].[Model], [a0].[ModificationDate], [a0].[ModificationUserId], [a0].[Name], [a0].[PaperStatus], [a0].[RemainingPayment], [a0].[Type], [a0].[VinNo]
+FROM [Containers] AS [c]
+LEFT JOIN [Autos] AS [a0] ON [c].[Id] = [a0].[ContainerId]
+WHERE (([c].[CreationUserId] = @__id_0) OR EXISTS (
+    SELECT 1
+    FROM [Autos] AS [a]
+    WHERE ([c].[Id] = [a].[ContainerId]) AND ([a].[Id] = @__id_1))) AND ([c].[IsArchive] = @__isArchive_2)
+ORDER BY [c].[Id]
+2022-10-20 13:50:57.029 +03:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Entities.AmdDBContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'SearchDepartureDate'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+ClientConnectionId:f628f9c6-23d3-41e7-a07e-e0468e7eacad
+Error Number:207,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'SearchDepartureDate'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+ClientConnectionId:f628f9c6-23d3-41e7-a07e-e0468e7eacad
+Error Number:207,State:1,Class:16
+2022-10-20 13:50:57.072 +03:00 [ERR] Controller : Containers - ActionName : GetSideMenuByUser - Parameter : 0 - Error :  ## Exception.Message = Invalid column name 'SearchDepartureDate'.
+2022-10-20 13:50:57.075 +03:00 [ERR] Failed executing DbCommand (38ms) [Parameters=[@__8__locals1_id_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ArrivalDate], [a].[AuctionId], [a].[BrandId], [a].[BuyDate], [a].[BuyerId], [a].[BuyingAccountId], [a].[CarName], [a].[CarStatus], [a].[CarType], [a].[CityId], [a].[ColorId], [a].[ContainerId], [a].[CreationDate], [a].[CreationUserId], [a].[Description], [a].[DestinationId], [a].[DisplayStatus], [a].[Engine], [a].[IsArchive], [a].[LoadPortId], [a].[Lot], [a].[Model], [a].[ModificationDate], [a].[ModificationUserId], [a].[Name], [a].[PaperStatus], [a].[RemainingPayment], [a].[Type], [a].[VinNo], [c].[Id], [c].[ArrivalDate], [c].[BookNo], [c].[CreationDate], [c].[CreationUserId], [c].[DepartureDate], [c].[DeparturePortId], [c].[DestinationId], [c].[IsArchive], [c].[ModificationDate], [c].[ModificationUserId], [c].[Name], [c].[SearchDepartureDate], [c].[SerialNumber], [c].[ShippingCompanyId], [c].[Status], [u].[Id], [u].[ActualPass], [u].[Address], [u].[Company], [u].[CreationDate], [u].[CreationUserId], [u].[Mobile], [u].[ModificationDate], [u].[ModificationUserId], [u].[Name], [u].[Password], [u].[Type], [u].[UserName], [l].[Id], [l].[Code], [l].[LookupId], [l].[Name], [l0].[Id], [l1].[Id], [l2].[Id], [l3].[Id], [l4].[Id], [a0].[Id], [a0].[Alt], [a0].[AutoId], [a0].[CreationDate], [a0].[CreationUserId], [a0].[Extintion], [a0].[ModificationDate], [a0].[ModificationUserId], [a0].[Path], [a0].[PreviewImageSrc], [a0].[ThumbnailImageSrc], [a0].[Title], [l0].[Code], [l0].[LookupId], [l0].[Name], [l1].[Code], [l1].[LookupId], [l1].[Name], [l2].[Code], [l2].[LookupId], [l2].[Name], [l3].[Code], [l3].[LookupId], [l3].[Name], [l4].[Code], [l4].[LookupId], [l4].[Name]
+FROM [Autos] AS [a]
+LEFT JOIN [Containers] AS [c] ON [a].[ContainerId] = [c].[Id]
+LEFT JOIN [Users] AS [u] ON [a].[BuyerId] = [u].[Id]
+INNER JOIN [LookupValues] AS [l] ON [a].[BrandId] = [l].[Id]
+INNER JOIN [LookupValues] AS [l0] ON [a].[AuctionId] = [l0].[Id]
+INNER JOIN [LookupValues] AS [l1] ON [a].[CityId] = [l1].[Id]
+INNER JOIN [LookupValues] AS [l2] ON [a].[DestinationId] = [l2].[Id]
+INNER JOIN [LookupValues] AS [l3] ON [a].[LoadPortId] = [l3].[Id]
+LEFT JOIN [LookupValues] AS [l4] ON [a].[BuyingAccountId] = [l4].[Id]
+LEFT JOIN [AutoImages] AS [a0] ON [a].[Id] = [a0].[AutoId]
+WHERE (([a].[CreationUserId] = @__8__locals1_id_0) OR ([a].[BuyerId] = @__8__locals1_id_0)) AND ([a].[IsArchive] = CAST(0 AS tinyint))
+ORDER BY [a].[Id], [c].[Id], [u].[Id], [l].[Id], [l0].[Id], [l1].[Id], [l2].[Id], [l3].[Id], [l4].[Id]
+2022-10-20 13:50:57.079 +03:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Entities.AmdDBContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'SearchDepartureDate'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:f628f9c6-23d3-41e7-a07e-e0468e7eacad
+Error Number:207,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'SearchDepartureDate'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:f628f9c6-23d3-41e7-a07e-e0468e7eacad
+Error Number:207,State:1,Class:16
+2022-10-20 13:50:57.330 +03:00 [ERR] Controller : Autos - ActionName : GetAllByUser - Parameter : {"isSearch":false,"vinNumber":"","lotNumber":"","client":0,"auction":0,"buyAccount":0,"container":"","loadPort":0,"destination":0,"city":0,"carId":0,"deliveryFromDate":null,"deliveryToDate":null,"Status":0,"purchaseFromDate":null,"purchaseToDate":null} - Error :  ## Exception.Message = Invalid column name 'SearchDepartureDate'.
+2022-10-20 13:50:57.383 +03:00 [ERR] Failed executing DbCommand (24ms) [Parameters=[@__id_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[ArrivalDate], [c].[BookNo], [c].[CreationDate], [c].[CreationUserId], [c].[DepartureDate], [c].[DeparturePortId], [c].[DestinationId], [c].[IsArchive], [c].[ModificationDate], [c].[ModificationUserId], [c].[Name], [c].[SearchDepartureDate], [c].[SerialNumber], [c].[ShippingCompanyId], [c].[Status], [l].[Id], [l0].[Id], [l1].[Id], [a0].[Id], [a0].[ArrivalDate], [a0].[AuctionId], [a0].[BrandId], [a0].[BuyDate], [a0].[BuyerId], [a0].[BuyingAccountId], [a0].[CarName], [a0].[CarStatus], [a0].[CarType], [a0].[CityId], [a0].[ColorId], [a0].[ContainerId], [a0].[CreationDate], [a0].[CreationUserId], [a0].[Description], [a0].[DestinationId], [a0].[DisplayStatus], [a0].[Engine], [a0].[IsArchive], [a0].[LoadPortId], [a0].[Lot], [a0].[Model], [a0].[ModificationDate], [a0].[ModificationUserId], [a0].[Name], [a0].[PaperStatus], [a0].[RemainingPayment], [a0].[Type], [a0].[VinNo], [l].[Code], [l].[LookupId], [l].[Name], [l0].[Code], [l0].[LookupId], [l0].[Name], [l1].[Code], [l1].[LookupId], [l1].[Name], [c0].[Id], [c0].[Alt], [c0].[ContainerId], [c0].[CreationDate], [c0].[CreationUserId], [c0].[Extintion], [c0].[ModificationDate], [c0].[ModificationUserId], [c0].[Path], [c0].[PreviewImageSrc], [c0].[ThumbnailImageSrc], [c0].[Title]
+FROM [Containers] AS [c]
+LEFT JOIN [LookupValues] AS [l] ON [c].[DestinationId] = [l].[Id]
+LEFT JOIN [LookupValues] AS [l0] ON [c].[ShippingCompanyId] = [l0].[Id]
+LEFT JOIN [LookupValues] AS [l1] ON [c].[DeparturePortId] = [l1].[Id]
+LEFT JOIN [Autos] AS [a0] ON [c].[Id] = [a0].[ContainerId]
+LEFT JOIN [ContainerImages] AS [c0] ON [c].[Id] = [c0].[ContainerId]
+WHERE (([c].[CreationUserId] = @__id_0) OR EXISTS (
+    SELECT 1
+    FROM [Autos] AS [a]
+    WHERE ([c].[Id] = [a].[ContainerId]) AND ([a].[BuyerId] = @__id_0))) AND ([c].[IsArchive] = CAST(0 AS tinyint))
+ORDER BY [c].[Id], [l].[Id], [l0].[Id], [l1].[Id], [a0].[Id]
+2022-10-20 13:50:57.385 +03:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Entities.AmdDBContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'SearchDepartureDate'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:f628f9c6-23d3-41e7-a07e-e0468e7eacad
+Error Number:207,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'SearchDepartureDate'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:f628f9c6-23d3-41e7-a07e-e0468e7eacad
+Error Number:207,State:1,Class:16
+2022-10-20 13:50:57.514 +03:00 [ERR] Controller : Containers - ActionName : GetAllByUser - Parameter : {"IsSearch":false,"StatusId":0,"ContainerNo":"","BookingNo":"","LoadingFromDate":null,"LoadingToDate":null,"LoadPortId":0,"DestinationId":0,"ShippingLineId":0,"ClientId":0,"ArrivalFromDate":null,"ArrivalToDate":null} - Error :  ## Exception.Message = Invalid column name 'SearchDepartureDate'.

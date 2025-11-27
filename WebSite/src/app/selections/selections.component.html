@@ -1,0 +1,129 @@
+<section class="selection-pg">
+    <div class="container-fluid">
+      <div class="card">
+          <div class="card-body">
+            <div class="selection-filters">
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label>{{'SelectionComponent.SelectionType' | translate }}</label>
+                    <select class="js-example-basic-single"  style="width: 100%;" data-placeholder="Select" [(ngModel)]="lookupId" (change)="Changelookups($event)">
+                        <option value="0">{{'General.Select' | translate}}</option>
+                      <option *ngFor="let lookup of lookups" [value]="lookup.id">{{lookup.name}}</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <div class="auto-table-btns">     
+                    <button type="button" data-toggle="modal" data-target="#selectionModal" class="btn btn-inverse-add btn-icon" title="add new"  (click)="openDialog()" >
+                      {{ 'SelectionComponent.AddNewSelection' | translate }}  <i class="mdi mdi-plus"></i>
+                    </button>
+                    <div class="modal fade" id="selectionModal" tabindex="-1" role="dialog" aria-labelledby="selectionModalLabel" aria-hidden="true"  *ngIf="showDialog">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="selectionModalLabel">{{ 'SelectionComponent.SelectionDetails' | translate }}</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true"><i class="mdi mdi-close"></i></span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <form class="forms-sample payment-form" [formGroup]="ngForm" (keyup.enter)="saveLookupValue()">
+                                <input type="hidden" id="id" name="id" [(ngModel)] ='model.id' formControlName="id">
+                                <div class="form-group">
+                                <label>{{ 'SelectionComponent.Type' | translate }}<span class="required-star"> *</span></label>
+                                <select class="js-example-basic-single" style="width: 100%;" data-placeholder="Select" formControlName="lookupId" [(ngModel)] ='model.lookupId' (change)="onChangeType()">
+                                    <option *ngFor="let lookup of lookups" [value]="lookup.id">{{lookup.name}}</option>
+                                </select>
+                                <span style="color: red" *ngIf="typeValidation">{{'SelectionComponent.TypeIsRequired' | translate }}</span>
+                              </div>
+                              <div class="form-group">
+                                <label>{{ 'SelectionComponent.Value' | translate }}<span class="required-star"> *</span></label>
+                                <input type="text" class="form-control" formControlName="name" [(ngModel)] ='model.name'>
+                                <span style="color: red" [hidden]="ngForm.controls['name'].valid || !isSubmitted">{{ 'SelectionComponent.ValueIsRequired' | translate }}</span>
+                              </div>
+                            </form>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ 'SelectionComponent.Cancel' | translate }}</button>
+                            <button type="button" class="btn btn-primary" (click)="saveLookupValue()">{{ 'SelectionComponent.Save' | translate }}</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="input-group clients-search">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="search">
+                        <i class="mdi mdi-magnify"></i>
+                      </span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="{{ 'SelectionComponent.Search' | translate }}" aria-label="search" aria-describedby="search" [(ngModel)]="search" (input)="filterGlobal($event)">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="selection-table">
+              <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                        <!-- <th></th> -->
+                        <th>{{ 'SelectionComponent.Type' | translate }}</th>
+                        <th>{{ 'SelectionComponent.Value' | translate }}</th>
+                        <th>{{ 'SelectionComponent.Edit' | translate }}</th>
+                        <th>{{ 'SelectionComponent.Delete' | translate }}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let item of lookupvalues | paginate: { itemsPerPage: 25, currentPage: page };">
+                        <!-- <td>
+                        <input type="checkbox">
+                        </td> -->
+                        <td>
+                        {{item.lookupName}}
+                        </td>
+                        <td>
+                        {{item.name}}
+                        </td>
+                        <td>
+                          <a  data-toggle="modal" data-target="#selectionModal" (click)="editLookup(item)"> {{ 'SelectionComponent.Edit' | translate }}  <i class="mdi mdi-pencil-outline"></i></a>
+                        </td> 
+                        <td>
+                          <a class="delete" type="button" data-toggle="modal" data-target="#deleteModal" (click)="openDeleteDialog(item)">
+                            {{ 'SelectionComponent.Delete' | translate }}  <i class="mdi mdi-delete"></i>
+                          </a>
+                        </td>
+
+                        <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true" *ngIf="showDeleteDialog">
+                            <div class="modal-dialog" role="document">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="deleteModalLabel"></h5>
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true"><i class="mdi mdi-close"></i></span>
+                                  </button>
+                                </div>
+                                <div class="modal-body">
+                                  <p>{{'PobupButton.AreYouSureToDelete' | translate}}</p>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">{{'PobupButton.No' | translate}}</button>
+                                  <button type="button" class="btn btn-primary" (click)="deleteLookupValue()">{{'PobupButton.Yes' | translate}}</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="pagination text-center">
+                <pagination-controls (pageChange)="page = $event"></pagination-controls>
+              </div>      
+       </div>
+      </div>
+    </div>
+  </section>

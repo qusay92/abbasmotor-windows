@@ -1,0 +1,9 @@
+/* @media screen and (max-width: 100rem) {
+    ::ng-deep.navbar-nav {
+        display: -webkit-inline-box !important;
+    }
+} */
+
+::ng-deep.p-menu {
+    width: 6.5rem !important;
+}

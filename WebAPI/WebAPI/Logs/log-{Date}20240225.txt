@@ -1,0 +1,2 @@
+2024-02-25 20:53:55.380 +03:00 [ERR] Controller : Payments - ActionName : GetPayments - Parameter : {"IsSearch":false,"AutoId":0,"VinNo":"","PurchaseDate":null,"ClientId":0} - Error :  ## Exception.Message = Object reference not set to an instance of an object.
+2024-02-25 21:03:34.291 +03:00 [ERR] Controller : Payments - ActionName : GetPayments - Parameter : {"IsSearch":false,"AutoId":0,"VinNo":"","PurchaseDate":null,"ClientId":0} - Error :  ## Exception.Message = Object reference not set to an instance of an object.

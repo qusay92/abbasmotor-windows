@@ -1,0 +1,80 @@
+D:\Project\New Project\WebAPI\WebAPI\Utilities\bin\Debug\net6.0\Utilities.deps.json
+D:\Project\New Project\WebAPI\WebAPI\Utilities\bin\Debug\net6.0\Utilities.dll
+D:\Project\New Project\WebAPI\WebAPI\Utilities\bin\Debug\net6.0\Utilities.pdb
+D:\Project\New Project\WebAPI\WebAPI\Utilities\obj\Debug\net6.0\Utilities.csproj.AssemblyReference.cache
+D:\Project\New Project\WebAPI\WebAPI\Utilities\obj\Debug\net6.0\Utilities.GeneratedMSBuildEditorConfig.editorconfig
+D:\Project\New Project\WebAPI\WebAPI\Utilities\obj\Debug\net6.0\Utilities.AssemblyInfoInputs.cache
+D:\Project\New Project\WebAPI\WebAPI\Utilities\obj\Debug\net6.0\Utilities.AssemblyInfo.cs
+D:\Project\New Project\WebAPI\WebAPI\Utilities\obj\Debug\net6.0\Utilities.csproj.CoreCompileInputs.cache
+D:\Project\New Project\WebAPI\WebAPI\Utilities\obj\Debug\net6.0\Utilities.dll
+D:\Project\New Project\WebAPI\WebAPI\Utilities\obj\Debug\net6.0\refint\Utilities.dll
+D:\Project\New Project\WebAPI\WebAPI\Utilities\obj\Debug\net6.0\Utilities.pdb
+D:\Project\New Project\WebAPI\WebAPI\Utilities\obj\Debug\net6.0\ref\Utilities.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\Utilities\bin\Debug\net6.0\Utilities.deps.json
+D:\Qusay Project\New Project\WebAPI\WebAPI\Utilities\bin\Debug\net6.0\Utilities.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\Utilities\bin\Debug\net6.0\Utilities.pdb
+D:\Qusay Project\New Project\WebAPI\WebAPI\Utilities\obj\Debug\net6.0\Utilities.csproj.AssemblyReference.cache
+D:\Qusay Project\New Project\WebAPI\WebAPI\Utilities\obj\Debug\net6.0\Utilities.GeneratedMSBuildEditorConfig.editorconfig
+D:\Qusay Project\New Project\WebAPI\WebAPI\Utilities\obj\Debug\net6.0\Utilities.AssemblyInfoInputs.cache
+D:\Qusay Project\New Project\WebAPI\WebAPI\Utilities\obj\Debug\net6.0\Utilities.AssemblyInfo.cs
+D:\Qusay Project\New Project\WebAPI\WebAPI\Utilities\obj\Debug\net6.0\Utilities.csproj.CoreCompileInputs.cache
+D:\Qusay Project\New Project\WebAPI\WebAPI\Utilities\obj\Debug\net6.0\Utilities.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\Utilities\obj\Debug\net6.0\refint\Utilities.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\Utilities\obj\Debug\net6.0\Utilities.pdb
+D:\Qusay Project\New Project\WebAPI\WebAPI\Utilities\obj\Debug\net6.0\ref\Utilities.dll
+C:\Wael\WebAPI\WebAPI\Utilities\bin\Debug\net6.0\Utilities.deps.json
+C:\Wael\WebAPI\WebAPI\Utilities\bin\Debug\net6.0\Utilities.dll
+C:\Wael\WebAPI\WebAPI\Utilities\bin\Debug\net6.0\Utilities.pdb
+C:\Wael\WebAPI\WebAPI\Utilities\obj\Debug\net6.0\Utilities.csproj.AssemblyReference.cache
+C:\Wael\WebAPI\WebAPI\Utilities\obj\Debug\net6.0\Utilities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Wael\WebAPI\WebAPI\Utilities\obj\Debug\net6.0\Utilities.AssemblyInfoInputs.cache
+C:\Wael\WebAPI\WebAPI\Utilities\obj\Debug\net6.0\Utilities.AssemblyInfo.cs
+C:\Wael\WebAPI\WebAPI\Utilities\obj\Debug\net6.0\Utilities.csproj.CoreCompileInputs.cache
+C:\Wael\WebAPI\WebAPI\Utilities\obj\Debug\net6.0\Utilities.dll
+C:\Wael\WebAPI\WebAPI\Utilities\obj\Debug\net6.0\refint\Utilities.dll
+C:\Wael\WebAPI\WebAPI\Utilities\obj\Debug\net6.0\Utilities.pdb
+C:\Wael\WebAPI\WebAPI\Utilities\obj\Debug\net6.0\ref\Utilities.dll
+D:\AbbasMotor\WebAPI\WebAPI\Utilities\bin\Debug\net6.0\Utilities.deps.json
+D:\AbbasMotor\WebAPI\WebAPI\Utilities\bin\Debug\net6.0\Utilities.dll
+D:\AbbasMotor\WebAPI\WebAPI\Utilities\bin\Debug\net6.0\Utilities.pdb
+D:\AbbasMotor\WebAPI\WebAPI\Utilities\obj\Debug\net6.0\Utilities.GeneratedMSBuildEditorConfig.editorconfig
+D:\AbbasMotor\WebAPI\WebAPI\Utilities\obj\Debug\net6.0\Utilities.AssemblyInfoInputs.cache
+D:\AbbasMotor\WebAPI\WebAPI\Utilities\obj\Debug\net6.0\Utilities.AssemblyInfo.cs
+D:\AbbasMotor\WebAPI\WebAPI\Utilities\obj\Debug\net6.0\Utilities.csproj.CoreCompileInputs.cache
+D:\AbbasMotor\WebAPI\WebAPI\Utilities\obj\Debug\net6.0\Utilities.dll
+D:\AbbasMotor\WebAPI\WebAPI\Utilities\obj\Debug\net6.0\refint\Utilities.dll
+D:\AbbasMotor\WebAPI\WebAPI\Utilities\obj\Debug\net6.0\Utilities.pdb
+D:\AbbasMotor\WebAPI\WebAPI\Utilities\obj\Debug\net6.0\ref\Utilities.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\Utilities\bin\Debug\net6.0\Utilities.deps.json
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\Utilities\bin\Debug\net6.0\Utilities.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\Utilities\bin\Debug\net6.0\Utilities.pdb
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\Utilities\obj\Debug\net6.0\Utilities.GeneratedMSBuildEditorConfig.editorconfig
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\Utilities\obj\Debug\net6.0\Utilities.AssemblyInfoInputs.cache
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\Utilities\obj\Debug\net6.0\Utilities.AssemblyInfo.cs
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\Utilities\obj\Debug\net6.0\Utilities.csproj.CoreCompileInputs.cache
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\Utilities\obj\Debug\net6.0\Utilities.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\Utilities\obj\Debug\net6.0\refint\Utilities.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\Utilities\obj\Debug\net6.0\Utilities.pdb
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\Utilities\obj\Debug\net6.0\ref\Utilities.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\Utilities\bin\Debug\net6.0\Utilities.deps.json
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\Utilities\bin\Debug\net6.0\Utilities.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\Utilities\bin\Debug\net6.0\Utilities.pdb
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\Utilities\obj\Debug\net6.0\Utilities.GeneratedMSBuildEditorConfig.editorconfig
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\Utilities\obj\Debug\net6.0\Utilities.AssemblyInfoInputs.cache
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\Utilities\obj\Debug\net6.0\Utilities.AssemblyInfo.cs
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\Utilities\obj\Debug\net6.0\Utilities.csproj.CoreCompileInputs.cache
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\Utilities\obj\Debug\net6.0\Utilities.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\Utilities\obj\Debug\net6.0\refint\Utilities.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\Utilities\obj\Debug\net6.0\Utilities.pdb
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\Utilities\obj\Debug\net6.0\ref\Utilities.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\Utilities\bin\Debug\net6.0\Utilities.deps.json
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\Utilities\bin\Debug\net6.0\Utilities.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\Utilities\bin\Debug\net6.0\Utilities.pdb
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\Utilities\obj\Debug\net6.0\Utilities.GeneratedMSBuildEditorConfig.editorconfig
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\Utilities\obj\Debug\net6.0\Utilities.AssemblyInfoInputs.cache
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\Utilities\obj\Debug\net6.0\Utilities.AssemblyInfo.cs
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\Utilities\obj\Debug\net6.0\Utilities.csproj.CoreCompileInputs.cache
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\Utilities\obj\Debug\net6.0\Utilities.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\Utilities\obj\Debug\net6.0\refint\Utilities.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\Utilities\obj\Debug\net6.0\Utilities.pdb
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\Utilities\obj\Debug\net6.0\ref\Utilities.dll

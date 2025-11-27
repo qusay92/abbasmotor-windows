@@ -1,0 +1,20 @@
+2024-09-25 20:45:59.391 +03:00 [ERR] Controller : Payments - ActionName : GetPayments - Parameter : {"IsSearch":true,"AutoId":null,"VinNo":"JTEAAAAHXPJ148703","PurchaseDate":"2024-09-05T00:00:00Z","ClientId":null} - Error :  ## Exception.Message = The LINQ expression 'DbSet<PaymentDetails>()
+    .Join(
+        inner: DbSet<Payment>(), 
+        outerKeySelector: p => EF.Property<long?>(p, "PaymentId"), 
+        innerKeySelector: p0 => EF.Property<long?>(p0, "Id"), 
+        resultSelector: (o, i) => new TransparentIdentifier<PaymentDetails, Payment>(
+            Outer = o, 
+            Inner = i
+        ))
+    .Where(p => __autos_0.Contains(p.Inner.AutoId) && p.Outer.PayDate.ToShortDateString() == __ToShortDateString_1)' could not be translated. Additional information: Translation of method 'System.DateTime.ToShortDateString' failed. If this method can be mapped to your custom function, see https://go.microsoft.com/fwlink/?linkid=2132413 for more information. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+2024-09-25 20:55:20.616 +03:00 [ERR] Controller : Payments - ActionName : GetPayments - Parameter : {"IsSearch":true,"AutoId":null,"VinNo":null,"PurchaseDate":"2024-09-06T00:00:00Z","ClientId":null} - Error :  ## Exception.Message = The LINQ expression 'DbSet<PaymentDetails>()
+    .Join(
+        inner: DbSet<Payment>(), 
+        outerKeySelector: p => EF.Property<long?>(p, "PaymentId"), 
+        innerKeySelector: p0 => EF.Property<long?>(p0, "Id"), 
+        resultSelector: (o, i) => new TransparentIdentifier<PaymentDetails, Payment>(
+            Outer = o, 
+            Inner = i
+        ))
+    .Where(p => __autos_0.Contains(p.Inner.AutoId) && p.Outer.PayDate.ToShortDateString() == __ToShortDateString_1)' could not be translated. Additional information: Translation of method 'System.DateTime.ToShortDateString' failed. If this method can be mapped to your custom function, see https://go.microsoft.com/fwlink/?linkid=2132413 for more information. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.

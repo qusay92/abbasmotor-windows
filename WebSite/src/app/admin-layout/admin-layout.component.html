@@ -1,0 +1,168 @@
+<body class="abbas-dashboard">
+
+<!-- Edit profile Modal-->
+<div *ngIf="showDailog" class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editModalLabel"> {{'AdminLayoutComponent.EditProfile' | translate}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true"><i class="mdi mdi-close"></i></span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="edit-form"  [formGroup]="ngForm" (keyup.enter)="editProfile()">
+          <div class="form-group">
+            <label for="name"> {{'AdminLayoutComponent.Name' | translate}}<span>*</span></label>
+            <label id="Username" name="Username" placeholder="Username" type="text" formControlName="name" [(ngModel)] ='model.name'>{{model.name}} </label>
+           </div>
+          <div class="form-group password-form">
+            <label for="password"> {{'AdminLayoutComponent.Password' | translate}}<span>*</span></label>
+              <input id="password" name="password" placeholder=" {{'AdminLayoutComponent.Password' | translate}}" [type]=" showPassword ? 'text' : 'password' " formControlName="password" [(ngModel)] ='model.actualPass'>
+              <i class="mdi mdi-eye" id="toggleclientPassword" (click)='showHidePassword()'></i>
+              <span style="color: red" [hidden]="ngForm.controls['password'].valid || !isSubmitted"> {{'AdminLayoutComponent.PasswordIsRequired' | translate}}</span>
+          </div>
+          <div class="form-group password-form">
+            <label for="confirmpassword"> {{'AdminLayoutComponent.ConfirmPassword' | translate}}<span>*</span></label>
+            <input id="password" name="confirmpassword" placeholder="{{'AdminLayoutComponent.ConfirmPassword' | translate}}" [type]=" showConfirmedPassword ? 'text' : 'password' " formControlName="confirmPassword" (change)="onChangeConfirmPassword()">
+            <i class="mdi mdi-eye" id="toggleclientPassword" (click)='showHideConfirmedPassword()'></i>
+            <span style="color: red" [hidden]="ngForm.controls['confirmPassword'].valid || !isSubmitted">{{'AdminLayoutComponent.ConfirmPasswordIsRequired' | translate}}</span>
+            <span style="color: red" *ngIf="typeValidation">{{'AdminLayoutComponent.PasswordMatch' | translate}}</span>
+           
+        </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{'PobupButton.No' | translate}}</button>
+        <button type="button" class="btn btn-primary" (click)="editProfile()">{{'PobupButton.Yes' | translate}}</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End of edit profile modal-->
+
+<div class="horizontal-menu">
+  <nav class="navbar top-navbar col-lg-12 col-12 p-0">
+    <div class="container-fluid">
+      <div class="navbar-menu-wrapper d-flex align-items-center justify-content-between">
+
+        <!-- Logo-->
+          <ul class="navbar-nav navbar-nav-left justify-content-center">
+            <li class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+              <a class="navbar-brand brand-logo" href="/"><img src="assets/images/login-logo.png" alt="logo"></a>
+              <a class="navbar-brand brand-logo-mini" href="/"><img src="assets/images/login-logo.png" alt="logo"></a>
+            </li>
+          </ul>
+        
+          <!-- Edit profile-->
+          <ul class="navbar-nav navbar-nav-right">
+              <li class="nav-item nav-profile dropdown">
+                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="profileDropdown" aria-expanded="false">
+                  <span class="nav-profile-name">{{username}}</span>
+                  <span class="online-status"></span>
+                  <img src="assets/images/face28.png" alt="profile">
+                </a>
+                <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+                  <a class="dropdown-item" data-toggle="modal" data-target="#editModal" (click)="editProfileDailog()">
+                    <i class="mdi mdi-settings text-primary"></i>
+                    {{'AdminLayoutComponent.EditProfile' | translate}}
+                  </a>
+                    <a class="dropdown-item" (click)="logout()">
+                      <i class="mdi mdi-logout text-primary"></i>
+                      {{'AdminLayoutComponent.Logout' | translate}}
+                    </a>
+                </div>
+
+                <!-- Edit Profile Modal was here-->
+              </li>
+          </ul>
+          <!-- Menue-->
+          <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="horizontal-menu-toggle" (click)="toggleMenu()">
+            <span class="mdi mdi-menu"></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+    <nav class="bottom-navbar" [ngClass]="showMenu ? 'header-toggled' : ''">
+      <div class="container">
+          <ul class="nav page-navigation">
+            <li class="nav-item" routerLinkActive="active">
+              <a class="nav-link" routerLink="dashboard" (click)="disableMenu()">
+                <i class="mdi mdi-home menu-icon"></i>
+                <span class="menu-title">{{'AdminLayoutComponent.Dashboard' | translate}}</span>
+              </a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a  class="nav-link" routerLink="autos" (click)="disableMenu()">
+                  <i class="mdi mdi-car-multiple menu-icon"></i>
+                  <span class="menu-title">{{'AdminLayoutComponent.Autos' | translate}}</span>
+                  <i class="menu-arrow"></i>
+                </a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" routerLink="containers" (click)="disableMenu()">
+                  <i class="mdi mdi-package-variant-closed menu-icon"></i>
+                  <span class="menu-title">{{'AdminLayoutComponent.Containers' | translate}}</span>
+                  <i class="menu-arrow"></i>
+                </a>
+            </li>
+            <li class="nav-item" routerLinkActive="active" *ngIf="hasPermission">
+                <a class="nav-link" routerLink="clients" (click)="disableMenu()">
+                  <i class="mdi mdi-account-group menu-icon"></i>
+                  <span class="menu-title">{{'AdminLayoutComponent.Clients' | translate}}</span>
+                  <i class="menu-arrow"></i>
+                </a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+              <a class="nav-link" routerLink="archive" (click)="disableMenu()">
+                <i class="mdi mdi-backup-restore menu-icon"></i>
+                <span class="menu-title">{{'AdminLayoutComponent.Archive' | translate}}</span>
+                <i class="menu-arrow"></i>
+              </a>
+          </li>
+            <li class="nav-item" routerLinkActive="active" *ngIf="hasPermission">
+                <a class="nav-link" routerLink="selections" (click)="disableMenu()">
+                  <i class="mdi mdi-format-list-checkbox menu-icon"></i>
+                  <span class="menu-title">{{'AdminLayoutComponent.Selections' | translate}}</span>
+                  <i class="menu-arrow"></i>
+                </a>
+            </li>
+            <li class="nav-item" routerLinkActive="active" *ngIf="hasPermission && !superAdmin">
+                <a class="nav-link" routerLink="resources" (click)="disableMenu()">
+                  <i class="mdi mdi-video-input-component menu-icon"></i>
+                  <span class="menu-title">{{'AdminLayoutComponent.Resources' | translate}}</span>
+                  <i class="menu-arrow"></i>
+                </a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+              <a class="nav-link" routerLink="balance" (click)="disableMenu()">
+                <i class="mdi mdi-wallet menu-icon"></i>
+                <span class="menu-title">{{'AdminLayoutComponent.Balance' | translate}}</span>
+                <i class="menu-arrow"></i>
+              </a>
+          </li>
+            <li class="nav-item" routerLinkActive="active">
+              <a class="nav-link" routerLink="payment" (click)="disableMenu()">
+                <i class="mdi mdi-cash menu-icon"></i>
+                <span class="menu-title">{{'AdminLayoutComponent.Payment' | translate}}</span>
+                <i class="menu-arrow"></i>
+              </a>
+          </li>
+          </ul>
+      </div>
+    </nav>
+  </div>
+
+<router-outlet></router-outlet>
+
+<footer class="footer_area">
+  <div class="footer_copyright">
+    <p>{{'HomeComponent.ABBASMOTORInc' | translate}}</p>
+  </div>
+</footer>
+
+<a id="topbutton" class="wow fadeInUp"><svg class="svg-inline--fa fa-chevron-up fa-w-14" height="15" width="15" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z"></path></svg></a>
+     
+
+
+</body>

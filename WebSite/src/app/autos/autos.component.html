@@ -1,0 +1,812 @@
+<section class="autos-filter">
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">{{'AutosComponent.Autos' | translate}}</h4>
+              <hr>
+                <form action="#" class="filter" method="GET" autocomplete="off" [formGroup]="searchForm">
+                    <div class="grid-x grid-padding-x">
+                    <h4 class="card-title cell">{{'AutosComponent.Filter' | translate}}</h4>
+                    </div>
+                    <div class="grid-x grid-padding-x">
+                        <div class="form-group large-2 small-6 cell">
+                            <input class="form-control" type="text" name="vin" placeholder="{{'AutosComponent.VinNumber' | translate}}" id="vinNumber" formControlName="vinNumber">
+                        </div>
+                        <div class="form-group large-2 small-6 cell">
+                            <input class="form-control" type="text" name="lot" placeholder="{{'AutosComponent.LotNumber' | translate}}" id="lotNumber" formControlName="lotNumber">
+                        </div>
+                        
+                        <div class="form-group large-2 small-6 cell">
+                                <p-dropdown [options]="clients" formControlName="client" optionLabel="name" optionValue="id" [filter]="true" filterBy="name"
+                                [showClear]="true" placeholder="{{'General.SelectClients' | translate}}">
+                                 </p-dropdown>
+                        </div>
+                      
+                        <div class="form-group large-2 small-6 cell">
+                            <p-dropdown [options]="lookup_auctions" formControlName="auction" optionLabel="name" optionValue="id" [filter]="true" filterBy="name"
+                            [showClear]="true" placeholder="{{'General.SelectAuction' | translate}}">
+                             </p-dropdown>
+
+                        </div>
+                        <div class="form-group large-2 small-6 cell">
+                            <p-dropdown [options]="lookup_buyAccount" formControlName="buyAccount" optionLabel="name" optionValue="id" [filter]="true" filterBy="name"
+                               [showClear]="true" placeholder="{{'General.SelectBuyerNumber' | translate}}">
+                             </p-dropdown>
+                        </div>            
+                        <div class="form-group large-2 small-6 cell">
+                            <input class="form-control" type="text" placeholder="{{'AutosComponent.Container' | translate}}" name="container_number" formControlName="container">
+                        </div>
+                        
+                        <div class="form-group large-2 small-6 cell">
+                           <p-dropdown [options]="lookup_loadPort" formControlName="loadPort" optionLabel="name" optionValue="id" [filter]="true" filterBy="name"
+                            [showClear]="true" placeholder="{{'General.SelectLoadingPoint' | translate}}">
+                           </p-dropdown>
+                        </div>
+                        <div class="form-group large-2 small-6 cell">
+                           <p-dropdown [options]="lookup_destination" formControlName="destination" optionLabel="name" optionValue="id" [filter]="true" filterBy="name"
+                            [showClear]="true" placeholder="{{'General.SelectDestination' | translate}}">
+                           </p-dropdown>
+                        </div>
+                        <div class="form-group large-2 small-6 cell">
+                            <p-dropdown [options]="lookup_city" formControlName="city" optionLabel="name" optionValue="id" [filter]="true" filterBy="name"
+                            [showClear]="true" placeholder="{{'General.SelectCity' | translate}}">
+                           </p-dropdown>
+
+                        </div>
+                        <div class="form-group large-2 small-6 cell">
+                            <p-dropdown [options]="carNames" formControlName="carId" optionLabel="name" optionValue="id" [filter]="true" filterBy="name"
+                            [showClear]="true" placeholder="{{'General.SelectCarName' | translate}}">
+                           </p-dropdown>
+
+                        </div>
+                        <div class="form-group form-date form-delivery large-2 small-6 cell">
+                          <input type="date" name="date_from" placeholder="{{'AutosComponent.DeliveryFrom' | translate}}" class="form-control datepicker-here" formControlName="deliveryFromDate">
+                        </div>
+
+                        <div class="form-group form-date form-delivery large-2 small-6 cell">
+                          <input type="date" name="date_to" placeholder="{{'AutosComponent.DeliveryTo' | translate}}" class="form-control datepicker-here" formControlName="deliveryToDate">
+                        </div>
+                        <div class="form-group large-2 small-6 cell">
+                          <p-dropdown [options]="carStatusList" formControlName="Status" optionLabel="name" optionValue="id" [filter]="true" filterBy="name" 
+                          [showClear]="true" placeholder="{{'General.SelectStatus' | translate}}">
+                         </p-dropdown>
+                        </div>
+
+                        <div class="form-group form-date large-2 small-6 cell">
+                          <input type="date" name="p_date_from" placeholder="{{'AutosComponent.PurchaseDateFrom' | translate}}" class="form-control datepicker-here" formControlName="purchaseFromDate">
+                        </div>
+
+                        <div class="form-group form-date large-2 small-6 cell">
+                          <input type="date" name="p_date_to" placeholder="{{'AutosComponent.PurchaseDateTo' | translate}}" class="form-control datepicker-here" formControlName="purchaseToDate">
+                        </div>
+
+                        <div class="form-group large-2 small-6 cell">
+                            <button  class="btn btn-primary" (click)="searchAuto()">{{'AutosComponent.Search' | translate}}</button>
+                            <button class="btn btn-secondary" (click)="clearSearchForm()" *ngIf="showClear">{{'AutosComponent.Clear' | translate}}</button>
+                        </div>
+
+                    </div>
+                </form>
+                <hr>
+                <div class="pagination text-center">
+                  <pagination-controls (pageChange)="page = $event" id='first'></pagination-controls>                 
+                </div>
+                <hr>
+          </div>
+        </div>
+    </div>
+  </section>
+
+  <section class="autos-table">
+    <div class="container-fluid">
+      <div class="content-wrapper">
+        <div class="row">
+          <div class="col-lg-2 grid-margin">
+            <div class="card" *ngFor="let item of sideMenuList">
+              <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" [id]="'heading'+item.labeltext">
+                    <button class="accordion-button" type="button" data-toggle="collapse" [attr.data-target]="'#' + item.labeltext" aria-expanded="true" [attr.aria-controls]="'#' + item.label">
+                      {{item.label}}
+                    </button>
+                  </h2>
+                  <div [id]="item.labeltext" class="accordion-collapse collapse show" [attr.aria-labelledby]="'heading'+item.labeltext" data-parent="#accordionExample">
+                    <div class="accordion-body">
+                      <a (click)="onSideItemClick(item, 1)" >{{'AutosComponent.Boughtnew' | translate}}  <span class="float-right alert total">{{item.boughtNew}}</span></a>
+                      <a (click)="onSideItemClick(item, 2)" >{{'AutosComponent.Loaded' | translate}} <span class="float-right alert new">{{item.loaded}}</span></a>
+                      <a (click)="onSideItemClick(item, 3)" >{{'AutosComponent.Arrived' | translate}} <span class="float-right alert dispatched">{{item.arrived}}</span></a>                    
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-9 grid-margin stretch-card">
+            <div class="card">
+              <h4 class="card-title cell">{{'AutosComponent.CarManagement' | translate}}</h4>
+              <div class="autos-row">
+                <div class="total-autos">
+                  <p>{{'AutosComponent.Total' | translate}}: <span>{{autos.length}}</span></p>
+                </div>
+                <div class="auto-table-btns">
+                  <button type="button" type="button" data-toggle="modal" data-target="#archiveAllModal" class="btn btn-inverse-archive btn-icon" title="{{'AutosComponent.Archive' | translate}}" *ngIf="hasPermission && checkedAutos > 1">
+                    <i class="mdi mdi-package-down"></i>
+                  </button>
+                  <!-- <button type="button" class="btn btn-inverse-print btn-icon" title="print">
+                    <i class="mdi mdi-printer"></i>
+                  </button> -->
+                  <!-- <button type="button" class="btn btn-inverse-cut btn-icon" title="delete images">
+                    <i class="mdi mdi-content-cut"></i>
+                  </button> -->
+                  <button *ngIf="hasPermission" type="button" data-toggle="modal" data-target="#addAutoModal" class="btn btn-inverse-add btn-icon" title="{{'AutosComponent.AddNewAuto' | translate}}" (click)="openDialog()">
+                    <i class="mdi mdi-plus"></i>
+                  </button>
+
+                  <!-- Add Autos Modal -->
+                  <div class="modal fade" id="addAutoModal" tabindex="-1" role="dialog" aria-labelledby="addAutoModalLabel" aria-hidden="true" *ngIf="showDialog" >
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="addAutoModalLabel">{{'AutosComponent.AddNewAuto' | translate}}</h5>
+                          <button type="button" class="close btn-close btn btn-icon" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="mdi mdi-close"></i></span></button>
+                        </div>
+                        <div class="modal-body">
+                          <form action="#" class="addauto-form" method="GET" autocomplete="off" [formGroup]="ngForm" (keyup.enter)="saveAuto()">
+                            <input type="hidden" id="id" name="id" [(ngModel)] ='model.id' formControlName="id">
+                            <input type="hidden" id="creationUserId" name="creationUserId" [(ngModel)] ='model.creationUserId' formControlName="creationUserId">
+                            <input type="hidden" id="creationDate" name="creationDate" [(ngModel)] ='model.creationDate' formControlName="creationDate">
+
+                                <div class="form-group">
+                                    <input class="form-control" type="text" name="name" placeholder="{{'AutosComponent.CarName' | translate}}" formControlName="name" [(ngModel)] ='model.name' required>
+                                    <span style="color: red" [hidden]="ngForm.controls['name'].valid || !isSubmitted">{{'AutosComponent.CarNameIsRequired' | translate}}</span>
+                                </div>
+                                <div class="form-group">
+                                  <p-dropdown [options]="lookup_brands" formControlName="brandId" [(ngModel)] ='model.brandId'  (onChange)="onChangeBrand($event)" optionLabel="name" optionValue="id" [filter]="true" filterBy="name"
+                                    [showClear]="true" placeholder="{{'General.SelectType' | translate}}">
+                                  </p-dropdown>
+
+                                  <span style="color: red" *ngIf="brandIdValidation">{{'AutosComponent.BrandIsRequired' | translate}}</span>
+                               
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" type="text" name="lot" placeholder="{{'AutosComponent.VinNo' | translate}}" formControlName="vinNo" [(ngModel)] ='model.vinNo' required>
+                                    <span style="color: red" [hidden]="ngForm.controls['vinNo'].valid || !isSubmitted">{{'AutosComponent.VinNoIsRequired' | translate}}</span>
+                                </div>
+                                <div class="form-group">
+                                     <p-dropdown [options]="lookup_color" formControlName="color" [(ngModel)] ='model.colorId' (onChange)="onChangeColor($event)" optionLabel="name" optionValue="id" [filter]="true" filterBy="name"
+                                     [showClear]="true" placeholder="{{'General.SelectColor' | translate}}">
+                                   </p-dropdown>
+
+                                    <span style="color: red" *ngIf="colorIdValidation">{{'AutosComponent.ColorIsRequired' | translate}}</span>
+                                 </div>
+                                <div class="form-group">
+                                  <input class="form-control" type="text" name="engine" placeholder="{{'AutosComponent.Engine' | translate}}" formControlName="engine" [(ngModel)] ='model.engine' required>
+                                  <span style="color: red" [hidden]="ngForm.controls['engine'].valid || !isSubmitted">{{'AutosComponent.EngineIsRequired' | translate}}</span>
+                                </div>
+                                <div class="form-group">
+                                    <!-- <select class="js-example-basic-single" style="width: 100%" data-placeholder="papers status" formControlName="displayStatus" [(ngModel)] ='model.displayStatus' (change)="onChangeDisplayStatus($event)">
+                                      <option value="">{{'General.SelectDisplayStatus' | translate}}</option>
+                                      <option *ngFor="let displaystatus of displayStatusList" [value]="displaystatus.id">{{displaystatus.name}}</option>
+                                    </select> -->
+
+                                    <p-dropdown [options]="displayStatusList" formControlName="displayStatus" [(ngModel)] ='model.displayStatus' optionLabel="name" optionValue="id" [filter]="true" filterBy="name"
+                                    [showClear]="true" placeholder="{{'General.SelectDisplayStatus' | translate}}">
+                                  </p-dropdown>
+
+                                    <span style="color: red" *ngIf="displayStatusValidation">{{'AutosComponent.DisplayStatusIsRequired' | translate}}</span>
+                                </div>
+                                <div class="form-group">
+                                  <input type="date" name="purchase-date" placeholder="{{'AutosComponent.PurchaseDate' | translate}}" class="form-control datepicker-here" formControlName="buyDate"  [ngModel]="model.buyDate | date:'yyyy-MM-dd'" (change)="onChangeBuyDate($event)">
+                                   <span style="color: red" *ngIf="buyDateValidation">{{'AutosComponent.BuyDateIsRequired' | translate}}</span>
+                                </div>
+                                <div class="form-group">
+                                  <input class="form-control" type="text" name="lot" placeholder="{{'AutosComponent.Lot' | translate}}"  formControlName="lot" [(ngModel)] ='model.lot' required>
+                                  <span style="color: red" [hidden]="ngForm.controls['lot'].valid || !isSubmitted">{{'AutosComponent.LotIsRequired' | translate}}</span>
+                                </div>
+                                <div class="form-group">
+                                    <p-dropdown [options]="modelList" formControlName="model" [(ngModel)] ='model.model'  (onChange)="onChangeModel($event)" optionLabel="name" optionValue="id" [filter]="true" filterBy="name"
+                                       [showClear]="true" placeholder="{{'General.SelectModel' | translate}}">
+                                    </p-dropdown>
+
+                                    <span style="color: red" *ngIf="modelValidation">{{'AutosComponent.ModelIsRequired' | translate}}</span>
+                                </div>                                            
+                                <div class="form-group">
+                                    <p-dropdown [options]="clients" formControlName="buyerId" [(ngModel)] ='model.buyerId'  (onChange)="onChangeBuyer($event)" optionLabel="name" optionValue="id" [filter]="true" filterBy="name"
+                                       [showClear]="true" placeholder="{{'General.SelectBuyer' | translate}}">
+                                    </p-dropdown>
+
+                                    <span style="color: red" *ngIf="buyerIdValidation">{{'AutosComponent.BuyerIsRequired' | translate}}</span>
+                                </div>
+                                <div class="form-group">
+                                    <p-dropdown [options]="lookup_auctions" formControlName="auctionId" [(ngModel)] ='model.auctionId'  (onChange)="onChangeAuction($event)" optionLabel="name" optionValue="id" [filter]="true" filterBy="name"
+                                      [showClear]="true" placeholder="{{'General.SelectAuction' | translate}}">
+                                    </p-dropdown>
+                                    <span style="color: red" *ngIf="auctionIdValidation">{{'AutosComponent.AuctionIsRequired' | translate}}</span>
+                                </div>
+                                <div class="form-group">
+                                    <p-dropdown [options]="lookup_buyAccount" formControlName="buyingAccountId" [(ngModel)] ='model.buyingAccountId' optionLabel="name" optionValue="id" [filter]="true" filterBy="name"
+                                        [showClear]="true" placeholder="{{'General.SelectPurchaseAccount' | translate}}">
+                                    </p-dropdown>
+                                    <span style="color: red" [hidden]="!ngForm.controls['buyingAccountId'].errors?.required || !isSubmitted">{{'AutosComponent.PurchaseAccountIsRequired' | translate}}</span>
+                                </div>
+                                <div class="form-group">
+                                    <p-dropdown [options]="lookup_city" formControlName="cityId" [(ngModel)] ='model.cityId'  (onChange)="onChangeCityId($event)" optionLabel="name" optionValue="id" [filter]="true" filterBy="name"
+                                       [showClear]="true" placeholder="{{'General.SelectCity' | translate}}">
+                                    </p-dropdown>
+
+                                    <span style="color: red" *ngIf="cityIdValidation">{{'AutosComponent.CityIsRequired' | translate}}</span>
+                                </div>
+                                <div class="form-group">
+                                    <p-dropdown [options]="lookup_loadPort" formControlName="loadPortId" [(ngModel)] ='model.loadPortId'  (onChange)="onChangeloadPortId($event)" optionLabel="name" optionValue="id" [filter]="true" filterBy="name"
+                                      [showClear]="true" placeholder="{{'General.SelectLoadingPort' | translate}}">
+                                    </p-dropdown>
+                                    <span style="color: red" *ngIf="loadPortIdValidation">{{'AutosComponent.LoadingPortIsRequired' | translate}}</span>
+                                </div>
+                                <div class="form-group">
+                                    <!-- <select class="js-example-basic-single" style="width: 100%" data-placeholder="Destination" formControlName="destinationId" [(ngModel)] ='model.destinationId' (change)="onChangedestinationId($event)">
+                                      <option value="" >{{'General.SelectDestination' | translate}}</option>
+                                      <option  *ngFor="let dest of lookup_destination" [value]="dest.id">{{dest.name}}</option>
+                                     </select> -->
+
+                                     <p-dropdown [options]="lookup_destination" formControlName="destinationId" [(ngModel)] ='model.destinationId'  (onChange)="onChangedestinationId($event)" optionLabel="name" optionValue="id" [filter]="true" filterBy="name"
+                                     [showClear]="true" placeholder="{{'General.SelectDestination' | translate}}">
+                                   </p-dropdown>
+
+                                     <span style="color: red" *ngIf="destinationIdValidation">{{'AutosComponent.DestinationIsRequired' | translate}}</span>
+                                </div>
+    
+                                <div class="form-group">
+                                  <!-- <select class="js-example-basic-single" style="width: 100%" data-placeholder="Documents Status" formControlName="paperStatus" [(ngModel)] ='model.paperStatus' required>
+                                    <option  *ngFor="let paper of paperStatusList" [value]="paper.id">{{paper.name}}</option>
+                                  </select> -->
+
+                                  <p-dropdown [options]="paperStatusList" formControlName="paperStatus" [(ngModel)] ='model.paperStatus' optionLabel="name" optionValue="id" [filter]="true" filterBy="name"
+                                  [showClear]="true" placeholder="{{'General.SelectPaperStatus' | translate}}">
+                                </p-dropdown>
+
+                                  <span style="color: red" [hidden]="!ngForm.controls['paperStatus'].errors?.required || !isSubmitted">{{'AutosComponent.DocumentsStatusIsRequired' | translate}}</span>
+                                </div>
+                                <div class="form-group"></div>
+                                <div class="form-group"></div>
+                        </form>
+                        </div>
+                        <div class="upload-btns" style="text-align: left;">
+                          <p> {{'AutosComponent.UploadPictures' | translate}} :
+                            <p-fileUpload name="files[]" 
+                            [multiple]="true" 
+                            accept="image/*"
+                            [showUploadButton]="false" 
+                            [showCancelButton]="true"
+                            (onSelect)="onFileSelect($event)"
+                            (onClear)="onUploadCancel()"
+                            (onRemove)="onFileDelete($event)">
+                          </p-fileUpload>
+                          </p>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="hideDialog()">{{'AutosComponent.Cancel' | translate}}</button>
+                          <button type="button" class="btn btn-primary" (click)="saveAuto()">{{'AutosComponent.Save' | translate}}</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End Of Add Autos Modal -->
+
+                  <button type="button" data-toggle="modal" data-target="#deleteAllModal" class="btn btn-inverse-danger btn-icon" title="{{'AutosComponent.Delete' | translate}}" *ngIf="checkedAutos > 1">
+                    <i class="mdi mdi-delete"></i>
+                  </button>
+
+                </div>
+              </div>
+
+              <!--Pop Up For Autos Details-->
+              <div class="modal fade" id="autoModal" tabindex="-1" aria-labelledby="autoModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">{{'AutosComponent.CarDetails' | translate}}</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="mdi mdi-close"></i></button>
+                    </div>
+                    <div class="modal-body">
+                      
+                      <ul class="nav nav-tabs" id="tabContent">
+                        <li class="active"><a href="#details" data-toggle="tab">{{'AutosComponent.Details' | translate}}</a></li>
+                        <li><a href="#payment" data-toggle="tab">{{'AutosComponent.Payment' | translate}}</a></li>
+                     </ul>
+                  
+                      <div class="tab-content">
+                        <div class="tab-pane active" id="details">
+
+                          <div class="row">
+                            <div class="col-md-4">
+                              <div class="labels-car">
+                                <h6>{{'AutosComponent.CarName' | translate}}</h6>
+                                <p>{{selectAuto.name}}</p>
+                              </div>
+                              
+                            </div>
+                            <div class="col-md-4">
+                              <div class="labels-car">
+                                <h6>{{'AutosComponent.VinNo' | translate}}</h6>
+                                <p>{{selectAuto.vinNo}}</p>
+                              </div>
+                            </div>
+                         
+                            <div class="col-md-4">
+                              <div class="labels-car">
+                                <h6>{{'AutosComponent.Owner' | translate}}</h6>
+                                <p>{{selectAuto.buyerName}}</p>
+                              </div>
+                            </div>
+                      
+                          </div>
+                          
+                          <div class="main">
+                            <div class="auto-table-btns">
+                              <button type="button" class="btn btn-inverse-archive btn-icon" title="{{'AutosComponent.DownloadAll' | translate}}" (click)="DownlaodAll()">
+                                <i class="mdi mdi-package-down"></i>
+                              </button>
+                              <!-- <button type="button" class="btn btn-inverse-danger btn-icon js-remove-slide" title="Remove Image">
+                                <i class="mdi mdi-delete"></i>
+                              </button> -->
+                              <!-- <button type="button" data-toggle="modal" data-target="#deleteImagesModal" class="btn btn-inverse-cut btn-icon" title="Remove All Image">
+                                <i class="mdi mdi-content-cut"></i>
+                              </button> -->
+                            </div>
+                            <!--<ng-image-slider [hidden]="images.length==0" [images]="images" [animationSpeed]="0.1" [showDescription]="false" [infinite]="true"  #nav></ng-image-slider>                            
+                            <p [hidden]="images.length>0" > No Images available </p>-->
+                            <!-- Old Slider gallery -->
+                              <div class="slider slider-info">
+                              <p-galleria #galleria [value]="images" [(activeIndex)]="activeIndex"
+                              [responsiveOptions]="responsiveOptions" [containerStyle]="{'max-width': '640px', 'margin': '0 auto'}" [numVisible]="5"
+                              [circular]="true" [showItemNavigators]="true" [showItemNavigatorsOnHover]="true"
+                              [transitionInterval]="3000" [showThumbnails]="showThumbnails" [containerClass]="galleriaClass()">
+                              <ng-template pTemplate="item" let-item>
+                                <img [src]="item.previewImageSrc"
+                                  [ngStyle]="{'width': !fullscreen ? '100%' : '', 'display': !fullscreen ? 'block' : ''}" />
+                              </ng-template>
+                              <ng-template pTemplate="thumbnail" let-item>
+                                <div class="p-grid p-nogutter p-justify-center">
+                                  <img [src]="item.thumbnailImageSrc" />
+                                </div>
+                              </ng-template>
+                              <ng-template pTemplate="footer" let-item>
+                                <div class="custom-galleria-footer">
+                                  <button class="list-button" type="button" pButton icon="pi pi-list" (click)="onThumbnailButtonClick()"></button>
+                                  <span *ngIf="images" class="title-container">
+                                    <span>{{activeIndex + 1}}/{{images.length}}</span>
+                                  </span>
+                                  <button type="button" pButton [icon]="fullScreenIcon()" (click)="toggleFullScreen()"
+                                    class="fullscreen-button"></button>
+                                  <button class="trash-button" *ngIf="hasPermission"  type="button" pButton icon="pi pi-trash" (click)="deleteImage(images[activeIndex],selectAuto.id)"
+                                    class=""></button>
+                                </div>
+                              </ng-template>
+                            </p-galleria>
+                            </div>
+                          </div>
+                         <br>
+                       
+                         <!-- <div class="modal fade" id="deleteImagesModal" tabindex="-1" role="dialog" aria-labelledby="deleteImagesModalLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="deleteImagesModalLabel"></h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true"><i class="mdi mdi-close"></i></span>
+                                </button>
+                              </div>
+                              <div class="modal-body">
+                                <p>Are you sure you want to Delete All Images ?</p>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                                <button type="button" class="btn btn-primary" (click)="deleteImages(selectAuto.id)">Yes</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div> -->
+
+                          <div class="row">
+                            <div class="col-md-6">
+                              <h4>{{'AutosComponent.CarDetails' | translate}}</h4>
+                              <ul class="auto-list-group">
+                                <li class="list-group-item">{{'AutosComponent.Lot' | translate}} <span class="badge-span">{{selectAuto.lot}}</span></li>
+                                <li class="list-group-item">{{'AutosComponent.Engine' | translate}}  <span class="badge-span">{{selectAuto.engine}}</span></li>
+                                <li class="list-group-item">{{'AutosComponent.BuyDate' | translate}} <span class="badge-span">{{selectAuto.buyDateStr}}</span></li>
+                                <li class="list-group-item">{{'AutosComponent.Color' | translate}}<span class="badge-span">{{selectAuto.color}}</span></li>
+                                <li class="list-group-item">{{'AutosComponent.Auction' | translate}}  <span class="badge-span">{{selectAuto.auctionName}}</span></li>
+                                <li class="list-group-item">{{'AutosComponent.BuyingAccount' | translate}} <span class="badge-span">{{selectAuto.buyAccountName}}</span></li>
+                                <li class="list-group-item">{{'AutosComponent.City' | translate}}  <span class="badge-span">{{selectAuto.cityName}}</span></li>
+                                <li class="list-group-item">{{'AutosComponent.LoadPort' | translate}} <span class="badge-span">{{selectAuto.loadPortName}}</span></li>
+                                <li class="list-group-item">{{'AutosComponent.Status' | translate}} <span class="badge-span">{{selectAuto.carStatusStr}}</span></li>
+                              </ul>
+                            </div>
+                            <div class="col-md-6">
+                              <h4>{{'AutosComponent.ContainerInformation' | translate}}</h4>
+                              <ul class="auto-list-group">
+                                <li class="list-group-item">{{'AutosComponent.ContainerNo' | translate}} <span class="badge-span">{{selectAuto.containerSerial}}</span></li>
+                                <li class="list-group-item">{{'AutosComponent.BookNo' | translate}} <span class="badge-span">{{selectAuto.bookNo}}</span></li>
+                                <li class="list-group-item">{{'AutosComponent.Destination' | translate}} <span class="badge-span">{{selectAuto.destinationName}}</span></li>
+                                <li class="list-group-item">{{'AutosComponent.DepartureDate' | translate}} <span class="badge-span">{{selectAuto.departureDateStr}}</span></li>
+                                <li class="list-group-item">{{'AutosComponent.ArrivalDate' | translate}} <span class="badge-span">{{selectAuto.containerArrivalDateStr}}</span></li>
+                                <li class="list-group-item">{{'AutosComponent.ShippingCompany' | translate}}<span class="badge-span">{{selectAuto.shippingCompany}}</span></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <div class="tab-pane" id="payment">
+                          <div class="row">
+                            <div class="form-group col-md-4">	
+                              <div class="labels-car">									  
+                               <h6>{{'AutosComponent.CarName' | translate}}</h6>
+                                <input type="text" disabled="" class="form-control" value="{{selectAuto.name}}">											  
+                              </div>
+                            </div>
+                            <div class="form-group col-md-4">											
+                              <div class="labels-car">                                       
+                                 <h6>{{'AutosComponent.VinNo' | translate}}</h6>
+                                 <input type="text" disabled="" class="form-control" value="{{selectAuto.vinNo}}">
+                               </div>
+                             </div>
+                            <div class="form-group col-md-4">																
+                               <div class="labels-car">                                       
+                                <h6>{{'AutosComponent.Buyer' | translate}}</h6>
+                                <input type="text" disabled="" class="form-control" value="{{selectAuto.buyerName}}">
+                              </div>
+                             </div>
+                            </div>
+                          <div class="auto-table-btns">
+                        
+                            <button type="button" class="btn btn-inverse-print btn-icon" title="print" (click)="print()" *ngIf="hasPermission">
+                              <i class="mdi mdi-printer"></i>
+                            </button>
+                            <a *ngIf="hasPermission" class="btn btn-primary" routerLink="../payment">{{'AutosComponent.EditPayment' | translate}}</a>
+                            <!-- <button type="button" class="btn btn-inverse-add btn-icon">
+                              <i class="mdi mdi-plus"></i>
+                            </button>
+                            <button type="button" class="btn btn-inverse-danger btn-icon">
+                              <i class="mdi mdi-delete"></i>
+                            </button> -->
+                          </div>
+                          <div class="debit-table">
+                            <table class="table table-bordered">
+                              <thead>
+                                <tr>
+                                  <th>{{'AutosComponent.Category' | translate}}</th>
+                                  <th>{{'AutosComponent.PaymentMethod' | translate}}</th>
+                                  <th>{{'AutosComponent.Notes' | translate}}</th>
+                                  <th>{{'AutosComponent.Date' | translate}}</th>
+                                  <th>{{'AutosComponent.Amount' | translate}}</th>
+                                  <th>{{'AutosComponent.Paid' | translate}}</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr *ngFor="let payDetails of paymentDetails | paginate: { itemsPerPage: 25, currentPage: pagepayment, id:'second' }; let i=index;">
+                                  <td>
+                                   {{payDetails.buyTypeStr}}
+                                  </td>
+                                  <td>
+                                    {{payDetails.cashTypeStr}}
+                                  </td>
+                                  <td>
+                                    {{payDetails.notes}}
+                                  </td>
+                                  <td>
+                                    {{payDetails.payDateStr}}
+                                  </td>
+                                  <td>
+                                    {{payDetails.payment.paymentType == 2 ? payDetails.amount : ''}}
+                                  </td>
+                                  <td>
+                                    {{payDetails.payment.paymentType == 1 ? payDetails.amount : ''}}
+                                  </td> 
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          <div class="pagination text-center">
+                            <pagination-controls (pageChange)="pagepayment = $event" id="second"></pagination-controls>
+                          </div>
+                          <div class="details-total">
+                            <ul class="list-group">
+                              <li class="list-group-item">{{'AutosComponent.TotalAmount' | translate}}<span class="badge-span">{{totaldebit}}</span></li>
+                              <li class="list-group-item">{{'AutosComponent.TotalPaid' | translate}}<span class="badge-span">{{totalcredit}}</span></li>
+                              <li class="list-group-item required-row">{{'AutosComponent.Required' | translate}} <span class="badge-span">{{required}}</span></li>
+                            </ul>
+                          </div>
+                        </div> 
+                     </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--End Pop Up For Autos Details-->
+
+              <!--Pop Up For Add Payment-->
+              <div *ngIf="showInvoiceDialog" class="modal fade" id="addPaymentModal" tabindex="-1" role="dialog" aria-labelledby="addPaymentModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="addPaymentModalLabel">{{'AutosComponent.PaymentDetails' | translate}}</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="mdi mdi-close"></i></span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form class="forms-sample payment-form" [formGroup]="paymentForm" (keyup.enter)="saveInvoice(invoiceAutoId)">
+                        <input type="hidden" id="id" name="id" formControlName="id">
+                        <div class="form-group">
+                          <label>{{'AutosComponent.ClientName' | translate}}</label>
+                          <input type="text" class="form-control" value="{{paymentmodel.clientName}}" disabled>
+                        </div>
+                        <div class="form-group">
+                          <label>{{'AutosComponent.Category' | translate}}<span class="required-star"> *</span></label>
+                          <select class="js-example-basic-single" style="width: 100%;" data-placeholder="Select" formControlName="categoryId">
+                            <option *ngFor="let payType of paymentTypes" [value]="payType.id">{{payType.name}}</option>
+                          </select>
+                          <span style="color: red" [hidden]="paymentForm.controls['categoryId'].valid || !isSubmitted">{{'AutosComponent.CategoryIsRequired' | translate}}</span>
+                        </div>
+                        <div class="form-group">
+                          <label>{{'AutosComponent.Type' | translate}}<span class="required-star"> *</span></label>
+                          <select class="js-example-basic-single" style="width: 100%;" data-placeholder="Select" formControlName="paymentType">
+                            <option value="1">Cerdit</option>
+                            <option value="2">Debit</option>
+                          </select>
+                          <span style="color: red" [hidden]="paymentForm.controls['paymentType'].valid || !isSubmitted">{{'AutosComponent.PaymentTypeIsRequired' | translate}}</span>
+                        </div>
+                        <div class="form-group">
+                          <label>{{'AutosComponent.Amount' | translate}}</label>
+                          <input type="number" class="form-control" formControlName="amount" required>
+                          <span style="color: red" [hidden]="paymentForm.controls['amount'].valid || !isSubmitted">{{'AutosComponent.AmountIsRequired' | translate}}</span>                                  
+                        </div>
+                        <div class="form-group">
+                          <label>{{'AutosComponent.PayDate' | translate}}<span class="required-star"> *</span></label>
+                          <input type="date" class="form-control" formControlName="payDate">
+                          <span style="color: red" [hidden]="paymentForm.controls['payDate'].valid || !isSubmitted">{{'AutosComponent.PayDateIsRequired' | translate}}</span> 
+                        </div>
+                        <div class="form-group">
+                          <label>{{'AutosComponent.PaymentMethod' | translate}}<span class="required-star"> *</span></label>
+                          <select class="js-example-basic-single" style="width: 100%;" data-placeholder="Select" formControlName="paymentMethod">
+                            <option  *ngFor="let pmethod of lookup_paymentMethod" [value]="pmethod.id">{{pmethod.name}}</option>
+                          </select>
+                          <span style="color: red" [hidden]="paymentForm.controls['paymentMethod'].valid || !isSubmitted">{{'AutosComponent.PaymentMethodIsRequired' | translate}}</span> 
+                        </div>
+                        <div class="form-group">
+                          <label>{{'AutosComponent.Notes' | translate}}</label>
+                          <textarea type="text" class="form-control" formControlName="notes"></textarea>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="cancelInvoice()">{{'AutosComponent.Cancel' | translate}}</button>
+                      <button type="button" class="btn btn-primary" (click)="saveInvoice(invoiceAutoId)">{{'AutosComponent.Save' | translate}}</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--End of Pop Up For Add Payment-->
+
+              <!-- Delete Auto Modal-->
+              <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true" *ngIf="showDeleteDialog">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="deleteModalLabel"></h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="mdi mdi-close"></i></span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <p>{{'PobupButton.AreYouSureToDelete' | translate}}</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">{{'PobupButton.No' | translate}}</button>
+                      <button type="button" class="btn btn-primary" (click)="deleteAuto()">{{'PobupButton.Yes' | translate}}</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--End Delete Auto Modal-->
+
+              <!-- Delete All Autos Modal-->
+              <div class="modal fade" id="deleteAllModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="deleteModalLabel"></h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="mdi mdi-close"></i></span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <p>{{'PobupButton.AreYouSureToDelete' | translate}}</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">{{'PobupButton.No' | translate}}</button>
+                      <button type="button" class="btn btn-primary" (click)="DeleteAllAutos()">{{'PobupButton.Yes' | translate}}</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End Of Delete All Autos Modal-->
+
+              <!-- Delete Images Modal-->
+              <div class="modal fade" id="deleteImgModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true" *ngIf="showImagesDialog">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="deleteModalLabel"></h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="mdi mdi-close"></i></span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <p>{{'PobupButton.AreYouSureToDeleteImages' | translate}}</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">{{'PobupButton.No' | translate}}</button>
+                      <button type="button" class="btn btn-primary" (click)="deleteImages()">{{'PobupButton.Yes' | translate}}</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--End Of Delete Images Modal-->
+
+              <!-- Archive Autos Modal-->
+              <div class="modal fade" id="archiveModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true" *ngIf="showArchiveDialog">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="deleteModalLabel"></h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="mdi mdi-close"></i></span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <p>{{'PobupButton.AreYouSureToArchive' | translate}}</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">{{'PobupButton.No' | translate}}</button>
+                      <button type="button" class="btn btn-primary" (click)="archiveAuto()">{{'PobupButton.Yes' | translate}}</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--End of Archive Autos Modal-->
+
+              <!-- Archive All Autos Modal-->
+              <div class="modal fade" id="archiveAllModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="deleteModalLabel"></h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="mdi mdi-close"></i></span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <p>{{'PobupButton.AreYouSureToArchive' | translate}}</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">{{'PobupButton.No' | translate}}</button>
+                      <button type="button" class="btn btn-primary" (click)="archiveAllAutos()">{{'PobupButton.Yes' | translate}}</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--End of Archive All Autos Modal-->
+
+
+              <div class="table-responsive">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th *ngIf="hasPermission"></th>
+                      <th>{{'AutosComponent.Img' | translate}}</th>
+                      <th style="width:200px">{{'AutosComponent.AutoInfo' | translate}}</th>
+                      <th>{{'AutosComponent.SaleInfo' | translate}}</th>
+                      <th style="width:140px">{{'AutosComponent.Dates' | translate}}</th>
+                      <th style="width:110px">{{'AutosComponent.Shipping' | translate}}</th>
+                      <th style="width:130px">{{'AutosComponent.Ports' | translate}}</th>
+                      <th *ngIf="hasPermission">{{'AutosComponent.Invoices' | translate}}</th>
+                      <th *ngIf="hasPermission">{{'AutosComponent.Actions' | translate}}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let item of autos | paginate: { itemsPerPage: 25, currentPage: page, id:'first' }; let i=index;" [ngStyle]="{'background': item.rowColor}">
+                      <td *ngIf="hasPermission">
+                        <input type="checkbox" value="{{item.id}}" [(ngModel)]="autos[i].checked" (change)="onCheckboxChange($event)" >
+                      </td>
+                      
+                      <td>
+                        <a type="button" data-bs-toggle="modal" data-bs-target="#autoModal" (click)="openImagePopup(item.id)">
+                          <img src="{{item.image !='' ? 'assets/uploaded/' + item.image :'assets/images/no-img.png'}}" alt="Car Thumbnail" class="auto-info">
+                        </a>
+                        <!-- pop up auto was here-->
+                      </td>
+                      <td>
+                        <ul>
+                          <li><strong>{{'AutosComponent.CarName' | translate}}: </strong>{{item.name}}</li>
+                          <!-- <li><strong>Auto: </strong> {{item.brandName}} </li> -->
+                          <li><strong>{{'AutosComponent.VinNo' | translate}}: </strong>{{item.vinNo}}</li>
+                          <li><strong>{{'AutosComponent.Lot' | translate}}: </strong> {{item.lot}}</li>
+                          <li><strong>{{'AutosComponent.Client' | translate}}: </strong><span class="red-text">{{item.buyerName}} </span></li>
+                        </ul>
+                      </td>
+                      <td>
+                        <ul>
+                          <li><strong>{{'AutosComponent.Auction' | translate}}: </strong> {{item.auctionName}} </li>
+                          <li><strong>{{'AutosComponent.BuyerAccount' | translate}}: </strong>{{item.buyAccountName}} </li>
+                          <li><strong>{{'AutosComponent.City' | translate}}: </strong> {{item.cityName}} </li>
+                        </ul>
+                      </td>
+                      <td>
+                        <ul>
+                          <li><strong>{{'AutosComponent.SaleDate' | translate}}: </strong>{{item.buyDateStr}}</li>
+                          <li><strong>{{'AutosComponent.Delivered' | translate}}: </strong>{{item.deliveredDateStr}}</li>
+                        </ul>
+                      </td>
+                      <td>
+                        <ul>
+                          <li><strong>{{'AutosComponent.Container' | translate}}: </strong> {{item.containerSerial}} </li>
+                          <li><strong>{{'AutosComponent.Booking' | translate}}: </strong> {{item.bookNo}} </li>
+                          <li><strong>{{'AutosComponent.Status' | translate}}: </strong> {{item.carStatusStr}}
+                          </li>
+                        </ul>
+                      </td>
+                      <td class="full">
+                        <ul>
+                          <li><strong>{{'AutosComponent.LoadingPoint' | translate}}: </strong>{{item.loadPortName}}</li>
+                          <li class="h"><strong>{{'AutosComponent.Destination' | translate}}: </strong><span class="destination">{{item.destinationName}}</span> </li>
+                        </ul>         
+                      </td>
+                      <td *ngIf="hasPermission">
+                        <a data-toggle="modal" data-target="#addPaymentModal">
+                           <img src="assets/images/add-icon.png" class="add_icon create_invoice" (click)="openInvoice(item.id,item.buyerName)"> 
+                        </a>
+
+                        <!-- Add Payment fade was here -->
+                      </td>
+                      <td *ngIf="hasPermission">
+                        <ul>
+                          <li> 
+                            <div class="dropdown">
+                              <button class="dropbtn">{{'AutosComponent.Actions' | translate}}</button>
+                              <div class="dropdown-content" style="min-width: 130px;">
+                                <a data-bs-toggle="modal" type="button" data-bs-target="#addAutoModal" (click)="editAuto(item)">{{'AutosComponent.Update' | translate}}</a>
+                                <a href="#" type="button" data-toggle="modal" data-target="#deleteModal" (click)="openDeleteDialog(item)">{{'AutosComponent.Delete' | translate}}</a>
+                                <a href="#" target="_blank" data-toggle="modal" data-target="#archiveModal" (click)="openArchiveDialog(item)">{{'AutosComponent.Archive' | translate}}</a>
+                                <a href="#"type="button" data-toggle="modal" data-target="#deleteImgModal" (click)="openDeleteImagesDialog(item)">{{'AutosComponent.DeleteImg' | translate}}</a>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </td> 
+
+                      <!-- Delete modal fade was here-->
+                      <!-- Delete images modal fade was here-->
+                      <!-- Archive Auto modal fade was here-->
+
+                      
+
+
+                      
+
+
+                      <!-- Delete All Modal fade was here-->
+                      <!-- Archive All autos fade was here-->
+
+                      
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

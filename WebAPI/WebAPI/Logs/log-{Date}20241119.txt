@@ -1,0 +1,86 @@
+2024-11-19 22:18:18.267 +03:00 [ERR] Controller : Payments - ActionName : GetPayments - Parameter : {"IsSearch":true,"AutoId":1,"VinNo":null,"PurchaseDate":null,"ClientId":10002} - Error :  ## Exception.Message = The LINQ expression 'DbSet<PaymentDetails>()
+    .Join(
+        inner: DbSet<Payment>(), 
+        outerKeySelector: p => EF.Property<long?>(p, "PaymentId"), 
+        innerKeySelector: p0 => EF.Property<long?>(p0, "Id"), 
+        resultSelector: (o, i) => new TransparentIdentifier<PaymentDetails, Payment>(
+            Outer = o, 
+            Inner = i
+        ))
+    .Where(p => __autos_0.Contains(p.Inner.AutoId))
+    .Join(
+        inner: DbSet<Payment>(), 
+        outerKeySelector: p => p.Outer.PaymentId, 
+        innerKeySelector: p1 => p1.Id, 
+        resultSelector: (p, p1) => new TransparentIdentifier<TransparentIdentifier<PaymentDetails, Payment>, Payment>(
+            Outer = p, 
+            Inner = p1
+        ))
+    .Join(
+        inner: DbSet<Auto>(), 
+        outerKeySelector: ti => ti.Inner.AutoId, 
+        innerKeySelector: a => a.Id, 
+        resultSelector: (ti, a) => new TransparentIdentifier<TransparentIdentifier<TransparentIdentifier<PaymentDetails, Payment>, Payment>, Auto>(
+            Outer = ti, 
+            Inner = a
+        ))
+    .Join(
+        inner: DbSet<User>(), 
+        outerKeySelector: ti0 => ti0.Inner.BuyerId, 
+        innerKeySelector: u => (long?)u.Id, 
+        resultSelector: (ti0, u) => new TransparentIdentifier<TransparentIdentifier<TransparentIdentifier<TransparentIdentifier<PaymentDetails, Payment>, Payment>, Auto>, User>(
+            Outer = ti0, 
+            Inner = u
+        ))
+    .Join(
+        inner: DbSet<LookupValue>(), 
+        outerKeySelector: ti1 => (long)ti1.Outer.Outer.Outer.Outer.CashType, 
+        innerKeySelector: l => l.Id, 
+        resultSelector: (ti1, l) => new TransparentIdentifier<TransparentIdentifier<TransparentIdentifier<TransparentIdentifier<TransparentIdentifier<PaymentDetails, Payment>, Payment>, Auto>, User>, LookupValue>(
+            Outer = ti1, 
+            Inner = l
+        ))
+    .Where(ti2 => (long?)ti2.Outer.Outer.Outer.Outer.Outer.AutoId == __p_1)' could not be translated. Additional information: Translation of member 'AutoId' on entity type 'PaymentDetails' failed. This commonly occurs when the specified member is unmapped. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+2024-11-19 22:18:27.863 +03:00 [ERR] Controller : Payments - ActionName : GetPayments - Parameter : {"IsSearch":true,"AutoId":2,"VinNo":null,"PurchaseDate":null,"ClientId":null} - Error :  ## Exception.Message = The LINQ expression 'DbSet<PaymentDetails>()
+    .Join(
+        inner: DbSet<Payment>(), 
+        outerKeySelector: p => EF.Property<long?>(p, "PaymentId"), 
+        innerKeySelector: p0 => EF.Property<long?>(p0, "Id"), 
+        resultSelector: (o, i) => new TransparentIdentifier<PaymentDetails, Payment>(
+            Outer = o, 
+            Inner = i
+        ))
+    .Where(p => __autos_0.Contains(p.Inner.AutoId))
+    .Join(
+        inner: DbSet<Payment>(), 
+        outerKeySelector: p => p.Outer.PaymentId, 
+        innerKeySelector: p1 => p1.Id, 
+        resultSelector: (p, p1) => new TransparentIdentifier<TransparentIdentifier<PaymentDetails, Payment>, Payment>(
+            Outer = p, 
+            Inner = p1
+        ))
+    .Join(
+        inner: DbSet<Auto>(), 
+        outerKeySelector: ti => ti.Inner.AutoId, 
+        innerKeySelector: a => a.Id, 
+        resultSelector: (ti, a) => new TransparentIdentifier<TransparentIdentifier<TransparentIdentifier<PaymentDetails, Payment>, Payment>, Auto>(
+            Outer = ti, 
+            Inner = a
+        ))
+    .Join(
+        inner: DbSet<User>(), 
+        outerKeySelector: ti0 => ti0.Inner.BuyerId, 
+        innerKeySelector: u => (long?)u.Id, 
+        resultSelector: (ti0, u) => new TransparentIdentifier<TransparentIdentifier<TransparentIdentifier<TransparentIdentifier<PaymentDetails, Payment>, Payment>, Auto>, User>(
+            Outer = ti0, 
+            Inner = u
+        ))
+    .Join(
+        inner: DbSet<LookupValue>(), 
+        outerKeySelector: ti1 => (long)ti1.Outer.Outer.Outer.Outer.CashType, 
+        innerKeySelector: l => l.Id, 
+        resultSelector: (ti1, l) => new TransparentIdentifier<TransparentIdentifier<TransparentIdentifier<TransparentIdentifier<TransparentIdentifier<PaymentDetails, Payment>, Payment>, Auto>, User>, LookupValue>(
+            Outer = ti1, 
+            Inner = l
+        ))
+    .Where(ti2 => (long?)ti2.Outer.Outer.Outer.Outer.Outer.AutoId == __p_1)' could not be translated. Additional information: Translation of member 'AutoId' on entity type 'PaymentDetails' failed. This commonly occurs when the specified member is unmapped. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.

@@ -1,0 +1,3 @@
+2022-10-29 00:04:14.689 +02:00 [ERR] Controller : Login - ActionName : Login - Parameter : {"UserName":"admin1","Password":"admin"} - Error :  ## Exception.Message = UserName Does Not Exist
+2022-10-29 00:04:34.406 +02:00 [ERR] Controller : Login - ActionName : Login - Parameter : {"UserName":"admin1","Password":"admin"} - Error :  ## Exception.Message = اسم المستخدم غير موجود
+2022-10-29 00:04:39.846 +02:00 [ERR] Controller : Login - ActionName : Login - Parameter : {"UserName":"admin1","Password":"admin"} - Error :  ## Exception.Message = اسم المستخدم غير موجود

@@ -1,0 +1,11 @@
+2024-06-28 15:25:13.361 +03:00 [ERR] Controller : Login - ActionName : Login - Parameter : {"UserName":"admin","Password":"admin"} - Error :  ## Exception.Message = كلمة سر خاطئة
+2024-06-28 15:25:13.361 +03:00 [ERR] Controller : Login - ActionName : Login - Parameter : {"UserName":"admin","Password":"admin"} - Error :  ## Exception.Message = كلمة سر خاطئة
+2024-06-28 15:25:23.225 +03:00 [ERR] Controller : Login - ActionName : Login - Parameter : {"UserName":"admin","Password":"admin"} - Error :  ## Exception.Message = كلمة سر خاطئة
+2024-06-28 15:25:23.228 +03:00 [ERR] Controller : Login - ActionName : Login - Parameter : {"UserName":"admin","Password":"admin"} - Error :  ## Exception.Message = كلمة سر خاطئة
+2024-06-28 15:25:33.290 +03:00 [ERR] Controller : Login - ActionName : Login - Parameter : {"UserName":"admin","Password":"admin"} - Error :  ## Exception.Message = كلمة سر خاطئة
+2024-06-28 15:25:33.479 +03:00 [ERR] Controller : Login - ActionName : Login - Parameter : {"UserName":"admin","Password":"admin"} - Error :  ## Exception.Message = كلمة سر خاطئة
+2024-06-28 15:26:24.355 +03:00 [ERR] Controller : Login - ActionName : Login - Parameter : {"UserName":"admin","Password":"admin"} - Error :  ## Exception.Message = كلمة سر خاطئة
+2024-06-28 15:26:24.498 +03:00 [ERR] Controller : Login - ActionName : Login - Parameter : {"UserName":"admin","Password":"admin"} - Error :  ## Exception.Message = كلمة سر خاطئة
+2024-06-28 15:29:14.421 +03:00 [ERR] Controller : Payments - ActionName : GetPayments - Parameter : {"IsSearch":false,"AutoId":0,"VinNo":"","PurchaseDate":null,"ClientId":0} - Error :  ## Exception.Message = Object reference not set to an instance of an object.
+2024-06-28 15:35:44.902 +03:00 [ERR] Controller : Login - ActionName : Login - Parameter : {"UserName":"admin","Password":"admin"} - Error :  ## Exception.Message = كلمة سر خاطئة
+2024-06-28 15:35:44.902 +03:00 [ERR] Controller : Login - ActionName : Login - Parameter : {"UserName":"admin","Password":"admin"} - Error :  ## Exception.Message = كلمة سر خاطئة

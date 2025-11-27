@@ -1,0 +1,674 @@
+<section class="payment-details">
+    <div class="container-fluid">
+      <div class="card">
+        <div class="card-body">
+              <ul class="nav nav-tabs" id="tabContent">
+                  <li><a  class="active" href="#open" data-toggle="tab">{{'BalanceComponent.Open' | translate}}</a></li>
+                  <li><a href="#paid" data-toggle="tab">{{'BalanceComponent.Paid' | translate}}</a></li>
+                  <li><a href="#all-invoices" data-toggle="tab">{{'BalanceComponent.AllInvoices' | translate}}</a></li>
+                  <li><a href="#total-balance" data-toggle="tab">{{'BalanceComponent.TotalBalance' | translate}}</a></li>
+              </ul>
+
+              <div class="tab-content">
+                <div class="tab-pane balance-pane active" id="open">
+                  <div class="autos-filter">
+                 
+                    <form action="#" class="filter" method="GET" autocomplete="off" [formGroup]="searchForm">
+                      <div class="grid-x grid-padding-x">
+                      <h4 class="card-title cell">{{'BalanceComponent.Filter' | translate}}</h4>
+                      </div>
+                      <div class="grid-x grid-padding-x">
+                        <div class="form-group large-2 small-6 cell">
+                          <p-dropdown [options]="carNames" formControlName="autoId" optionLabel="name" optionValue="id" [filter]="true" filterBy="name"
+                            [showClear]="true" placeholder="{{'General.SelectAuto' | translate}}">
+                          </p-dropdown>
+
+                        </div>
+                          <div class="form-group large-2 small-6 cell">
+                              <input class="form-control" type="text" name="vin" placeholder="{{'BalanceComponent.VinNo' | translate}}" value="" formControlName="vinNo">
+                          </div>
+                          <div class="form-group form-date large-2 small-6 cell">
+                            <input type="date" name="p_date_from" placeholder="{{'BalanceComponent.PurchaseDate' | translate}}" class="form-control datepicker-here" formControlName="purchaseDate">
+                          </div>
+                          <div class="form-group large-2 small-6 cell">
+                              <p-dropdown [options]="clientNames" formControlName="clientId" optionLabel="name" optionValue="id" [filter]="true" filterBy="name"
+                                [showClear]="true" placeholder="{{'General.SelectClient' | translate}}">
+                              </p-dropdown>
+
+                          </div>
+                          <div class="form-group large-2 small-6 cell">
+                            <button class="btn btn-primary" (click)="searchbalance()">{{'BalanceComponent.Search' | translate}}</button>
+                            <button class="btn btn-secondary" (click)="clearSearchForm()" *ngIf="showClear">{{'BalanceComponent.Clear' | translate}}</button>
+                        </div>
+                        </div>
+                    </form>
+                  </div>
+
+                  <!-- <div class="balance-btns">
+                    <button type="button" class="btn btn-inverse-print btn-icon" title="print">
+                      <i class="mdi mdi-printer"></i>
+                    </button>
+                  </div> -->
+                  <div class="row">
+                    <div class="details-total col-md-4">
+                        <ul class="list-group">
+                         <li class="list-group-item">{{'BalanceComponent.Total' | translate}}<span class="badge-span">{{openSummation.total}}</span></li>
+                        </ul>
+                    </div>
+                    <div class="details-total col-md-4">
+                        <ul class="list-group">
+                          <li class="list-group-item">{{'BalanceComponent.Paid' | translate}}<span class="badge-span">{{openSummation.paid}}</span></li>
+                        </ul>
+                    </div>
+                    <div class="details-total col-md-4">
+                        <ul class="list-group">
+                          <li class="list-group-item">{{'BalanceComponent.Required' | translate}}<span class="badge-span">{{openSummation.required}}</span></li>
+                        </ul>
+                    </div>
+                  </div>
+
+                  <!-- <div class="row balance-total"> -->
+                    
+                    <!-- <div class="col-md-3">
+                      <div class="details-total">
+                        <ul class="list-group">
+                            <li class="list-group-item">Customs clearance<span class="badge-span">{{openSummation.customsClearance}}</span></li>
+                            <li class="list-group-item">Sea Freight<span class="badge-span">{{openSummation.seaFreight}}</span></li>
+                           <li class="list-group-item last-item">Purchase Order<span class="badge-span">{{openSummation.purchaseOrder}}</span></li>
+                          
+                          </ul>
+                        </div>
+                    </div> 
+                    <div class="col-md-3">
+                      <div class="details-total">
+                        <ul class="list-group">
+                            <li class="list-group-item">Purchasing price<span class="badge-span">{{openSummation.purchasePrice}}</span></li>
+                            <li class="list-group-item">Inner Freight<span class="badge-span">{{openSummation.innerFreight}}</span></li>
+                            <li class="list-group-item">Fees<span class="badge-span">{{openSummation.fees}}</span></li>
+                        </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="details-total">
+                        <ul class="list-group">
+                           <li class="list-group-item">Storage fee	<span class="badge-span">{{openSummation.storageFees}}</span></li>
+                            <li class="list-group-item last-item">Other<span class="badge-span">{{openSummation.other}}</span></li>                            
+                        </ul>
+                        </div>
+                    </div>-->
+                  <!-- </div> -->
+                 
+                 <br>
+
+                  <div class="balance-table">
+                    <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th>{{'BalanceComponent.CarsInfo' | translate}}</th>
+                          <th>{{'BalanceComponent.BalanceInfo' | translate}}</th>
+                          <th>{{'BalanceComponent.CustomsClearance' | translate}}</th>
+                          <th>{{'BalanceComponent.PurchaseOrder' | translate}}</th>
+                          <!-- <th>Commissions</th> -->
+                          <th>{{'BalanceComponent.Shipping' | translate}}</th>
+                          <th>{{'BalanceComponent.PurchasingPrice' | translate}}</th>
+                          <th>{{'BalanceComponent.Fees' | translate}}</th>
+                          <th>{{'BalanceComponent.StorageFee' | translate}}</th>
+                          <th>{{'BalanceComponent.Other' | translate}}</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let auto of openAutos | paginate: { itemsPerPage: 25, currentPage: openpage,id:'first' };">
+                          <td>
+                            <ul>
+                              <li><strong>{{'BalanceComponent.Car' | translate}}: </strong> {{auto.name}} </li>
+                              <li><strong>{{'BalanceComponent.VinNo' | translate}}: </strong><a href="#" data-bs-toggle="modal" data-bs-target="#autoModal" (click)="openImagePopup(auto.id)">{{auto.vinNo}}</a></li>
+                              <li><strong>{{'BalanceComponent.PurchaseDate' | translate}}: </strong>{{auto.buyDateStr}}</li>
+                              <li><strong>{{'BalanceComponent.Client' | translate}}: </strong><span class="red-text"> {{auto.buyerName}} </span></li>
+                            </ul>	
+                          </td>
+                          <td>
+                            <ul>
+                            <li><strong>{{'BalanceComponent.Total' | translate}}: </strong> {{auto.total != null ? auto.total : 0}} </li>
+                            <li><strong>{{'BalanceComponent.Paid' | translate}}: </strong>{{auto.paid != null ?  auto.paid : 0}}</li>
+                            <li><strong>{{'BalanceComponent.Required' | translate}}: </strong>{{auto.required != null ? auto.required : 0 }}</li>
+                          </ul>
+                        </td>
+                          <td>{{auto.customsClearance != null ? auto.customsClearance : 0}}</td>
+                          <td>{{auto.purchaseOrder != null ? auto.purchaseOrder : 0 }}</td>
+                          <!-- <td>{{auto.commission != null ? auto.commission : 0}}</td> -->
+                          <td><ul>
+                            <li><strong>{{'BalanceComponent.InternalShipping' | translate}}: </strong>{{auto.innerFreight != null ? auto.innerFreight : 0 }} </li>
+                            <li><strong>{{'BalanceComponent.SeaShipping' | translate}}: </strong>{{auto.seaFreight != null ? auto.seaFreight : 0}}</li>
+                          </ul></td>
+                          <td>{{auto.purchasePrice != null ? auto.purchasePrice : 0}}</td>
+                          <td>{{auto.fees != null ?  auto.fees : 0}}</td>
+                          <td>{{auto.storageFees != null ? auto.storageFees : 0}}</td>
+                          <td>{{auto.other != null ? auto.other : 0}}</td>
+                        </tr>
+
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="pagination text-center">
+                    <pagination-controls (pageChange)="openpage = $event" id='first'></pagination-controls>
+                  </div>
+                </div>
+
+                <div class="tab-pane balance-pane" id="paid">
+                  <div class="autos-filter">
+                 
+                    <form action="#" class="filter" method="GET" autocomplete="off" [formGroup]="searchPaidForm">
+                      <div class="grid-x grid-padding-x">
+                      <h4 class="card-title cell">{{'BalanceComponent.Filter' | translate}}</h4>
+                      </div>
+                      <div class="grid-x grid-padding-x">
+                        <div class="form-group large-2 small-6 cell">
+                          <p-dropdown [options]="carNames" formControlName="autoId" optionLabel="name" optionValue="id" [filter]="true" filterBy="name"
+                          [showClear]="true" placeholder="{{'General.SelectAuto' | translate}}">
+                        </p-dropdown>
+
+                        </div>
+                          <div class="form-group large-2 small-6 cell">
+                              <input class="form-control" type="text" name="vin" placeholder="{{'BalanceComponent.VinNo' | translate}}" value="" formControlName="vinNo">
+                          </div>
+                          <div class="form-group form-date large-2 small-6 cell">
+                            <input type="date" name="p_date_from" placeholder="{{'BalanceComponent.PurchaseDate' | translate}}" class="form-control datepicker-here" formControlName="purchaseDate">
+                          </div>
+                          <div class="form-group large-2 small-6 cell">
+                              <p-dropdown [options]="clientNames" formControlName="clientId" optionLabel="name" optionValue="id" [filter]="true" filterBy="name"
+                                [showClear]="true" placeholder="{{'General.SelectClient' | translate}}">
+                              </p-dropdown>
+
+                          </div>
+                          <div class="form-group large-2 small-6 cell">
+                            <button class="btn btn-primary" (click)="searchPaidbalance()">{{'BalanceComponent.Search' | translate}}</button>
+                            <button class="btn btn-secondary" (click)="clearSearchPaidForm()" *ngIf="showPaidClear">{{'BalanceComponent.Clear' | translate}}</button>
+                        </div>
+                        </div>
+                    </form>
+                  </div>
+
+                  <div class="row">
+                    <div class="details-total col-md-4">
+                        <ul class="list-group">
+                         <li class="list-group-item">{{'BalanceComponent.Total' | translate}}<span class="badge-span">{{paidSummation.total}}</span></li>
+                        </ul>
+                    </div>
+                    <div class="details-total col-md-4">
+                        <ul class="list-group">
+                          <li class="list-group-item">{{'BalanceComponent.Paid' | translate}}<span class="badge-span">{{paidSummation.paid}}</span></li>
+                        </ul>
+                    </div>
+                    <div class="details-total col-md-4">
+                        <ul class="list-group">
+                          <li class="list-group-item">{{'BalanceComponent.Required' | translate}}<span class="badge-span">{{paidSummation.required}}</span></li>
+                        </ul>
+                    </div>
+                  </div>
+
+                  <!-- <div class="balance-btns">
+                    <button type="button" class="btn btn-inverse-print btn-icon" title="print">
+                      <i class="mdi mdi-printer"></i>
+                    </button>
+                  </div> -->
+                  <!-- <div class="row balance-total">
+                    <div class="col-md-3">
+                      <div class="details-total">
+                        <ul class="list-group">
+                            <li class="list-group-item">{{'BalanceComponent.Total' | translate}} <span class="badge-span">{{paidSummation.total}}</span></li>
+                            <li class="list-group-item">{{'BalanceComponent.Paid' | translate}}<span class="badge-span">{{paidSummation.paid}}</span></li>
+                            <li class="list-group-item">{{'BalanceComponent.Required' | translate}} <span class="badge-span">{{paidSummation.required}}</span></li>
+                        </ul>
+                        </div>
+                    </div> -->
+                    <!-- <div class="col-md-3">
+                      <div class="details-total">
+                        <ul class="list-group">
+                            <li class="list-group-item">Customs clearance<span class="badge-span">{{paidSummation.customsClearance}}</span></li>
+                            <li class="list-group-item">Sea Freight<span class="badge-span">{{paidSummation.seaFreight}}</span></li>
+                            <li class="list-group-item last-item">Purchase Order<span class="badge-span">{{paidSummation.purchaseOrder}}</span></li>
+                        </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="details-total">
+                        <ul class="list-group">
+                            <li class="list-group-item">Purchasing price<span class="badge-span">{{paidSummation.purchasePrice}}</span></li>
+                            <li class="list-group-item">Inner Freight<span class="badge-span">{{paidSummation.innerFreight}}</span></li>
+                            <li class="list-group-item">Fees<span class="badge-span">{{paidSummation.fees}}</span></li>
+                        </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="details-total">
+                        <ul class="list-group">
+                          
+                            <li class="list-group-item">Storage fee	<span class="badge-span">{{paidSummation.storageFees}}</span></li>
+                            <li class="list-group-item last-item">Other<span class="badge-span">{{paidSummation.other}}</span></li>     
+                        </ul>
+                        </div>
+                    </div> -->
+                  <!-- </div> -->
+                 
+                  <br>
+                  <div class="balance-table">
+                    <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                            <th>{{'BalanceComponent.CarsInfo' | translate}}</th>
+                            <th>{{'BalanceComponent.BalanceInfo' | translate}}</th>
+                            <th>{{'BalanceComponent.CustomsClearance' | translate}}</th>
+                            <th>{{'BalanceComponent.PurchaseOrder' | translate}}</th>
+                            <!-- <th>Commissions</th> -->
+                            <th>{{'BalanceComponent.Shipping' | translate}}</th>
+                            <th>{{'BalanceComponent.PurchasingPrice' | translate}}</th>
+                            <th>{{'BalanceComponent.Fees' | translate}}</th>
+                            <th>{{'BalanceComponent.StorageFee' | translate}}</th>
+                            <th>{{'BalanceComponent.Other' | translate}}</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let auto of paidAutos | paginate: { itemsPerPage: 25, currentPage: paidpage,id:'second' }; let i=index;">
+                          <td>
+                            <ul>
+                                <li><strong>{{'BalanceComponent.Car' | translate}}: </strong> {{auto.name}} </li>
+                                <li><strong>{{'BalanceComponent.VinNo' | translate}}: </strong><a href="#" data-bs-toggle="modal" data-bs-target="#autoModal" (click)="openImagePopup(auto.id)">{{auto.vinNo}}</a></li>
+                                <li><strong>{{'BalanceComponent.PurchaseDate' | translate}}: </strong>{{auto.buyDateStr}}</li>
+                                <li><strong>{{'BalanceComponent.Client' | translate}}: </strong><span class="red-text"> {{auto.buyerName}} </span></li>
+                            </ul>	
+                          </td>
+                          <td><ul>
+                            <li><strong>{{'BalanceComponent.Total' | translate}}: </strong> {{auto.total != null ? auto.total : 0}} </li>
+                            <li><strong>{{'BalanceComponent.Paid' | translate}}: </strong>{{auto.paid != null ?  auto.paid : 0}}</li>
+                            <li><strong>{{'BalanceComponent.Required' | translate}}: </strong>{{auto.required != null ? auto.required:0 }}</li>
+                          </ul>	</td>
+                          <td>{{auto.customsClearance != null ? auto.customsClearance : 0}}</td>
+                          <td>{{auto.purchaseOrder != null ? auto.purchaseOrder : 0 }}</td>
+                          <!-- <td>{{auto.commission != null ? auto.commission : 0}}</td> -->
+                          <td><ul>
+                            <li><strong>{{'BalanceComponent.InternalShipping' | translate}}: </strong>{{auto.innerFreight != null ? auto.innerFreight : 0 }} </li>
+                            <li><strong>{{'BalanceComponent.SeaShipping' | translate}}: </strong>{{auto.seaFreight != null ? auto.seaFreight : 0}}</li>
+                          </ul></td>
+                          <td>{{auto.purchasePrice != null ? auto.purchasePrice : 0}}</td>
+                          <td>{{auto.fees != null ?  auto.fees : 0}}</td>
+                          <td>{{auto.storageFees != null ? auto.storageFees : 0}}</td>
+                          <td>{{auto.other != null ? auto.other : 0}}</td>
+                        </tr>
+
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="pagination text-center">
+                    <pagination-controls (pageChange)="paidpage = $event" id='second'></pagination-controls>
+                  </div>
+                </div>
+
+                <div class="tab-pane balance-pane" id="all-invoices">
+                  <div class="autos-filter">
+                 
+                    <form action="#" class="filter" method="GET" autocomplete="off" [formGroup]="searchAllForm">
+                      <div class="grid-x grid-padding-x">
+                      <h4 class="card-title cell">{{'BalanceComponent.Filter' | translate}}</h4>
+                      </div>
+                      <div class="grid-x grid-padding-x">
+                        <div class="form-group large-2 small-6 cell">
+                          <p-dropdown [options]="carNames" formControlName="autoId" optionLabel="name" optionValue="id" [filter]="true" filterBy="name"
+                          [showClear]="true" placeholder="{{'General.SelectAuto' | translate}}">
+                        </p-dropdown>
+                        </div>
+                          <div class="form-group large-2 small-6 cell">
+                              <input class="form-control" type="text" name="vin" placeholder="{{'BalanceComponent.VinNo' | translate}}" value="" formControlName="vinNo">
+                          </div>
+                          <div class="form-group form-date large-2 small-6 cell">
+                            <input type="date" name="p_date_from" placeholder="{{'BalanceComponent.PurchaseDate' | translate}}" class="form-control datepicker-here" formControlName="purchaseDate">
+                          </div>
+                          <div class="form-group large-2 small-6 cell">
+                                <p-dropdown [options]="clientNames" formControlName="clientId" optionLabel="name" optionValue="id" [filter]="true" filterBy="name"
+                                [showClear]="true" placeholder="{{'General.SelectClient' | translate}}">
+                              </p-dropdown>
+                          </div>
+                          <div class="form-group large-2 small-6 cell">
+                            <button class="btn btn-primary" (click)="searchAllbalance()">{{'BalanceComponent.Search' | translate}}</button>
+                            <button class="btn btn-secondary" (click)="clearSearchAllForm()" *ngIf="showAllClear">{{'BalanceComponent.Clear' | translate}}</button>
+                        </div>
+                        </div>
+                    </form>
+                  </div>
+
+                  <div class="row">
+                    <div class="details-total col-md-4">
+                        <ul class="list-group">
+                         <li class="list-group-item">{{'BalanceComponent.Total' | translate}}<span class="badge-span">{{summation.total}}</span></li>
+                        </ul>
+                    </div>
+                    <div class="details-total col-md-4">
+                        <ul class="list-group">
+                          <li class="list-group-item">{{'BalanceComponent.Paid' | translate}}<span class="badge-span">{{summation.paid}}</span></li>
+                        </ul>
+                    </div>
+                    <div class="details-total col-md-4">
+                        <ul class="list-group">
+                          <li class="list-group-item">{{'BalanceComponent.Required' | translate}}<span class="badge-span">{{summation.required}}</span></li>
+                        </ul>
+                    </div>
+                  </div>
+
+                  <!-- <div class="balance-btns">
+                    <button type="button" class="btn btn-inverse-print btn-icon" title="print">
+                      <i class="mdi mdi-printer"></i>
+                    </button>
+                  </div> -->
+                  <!-- <div class="row balance-total">
+                    <div class="col-md-3">
+                      <div class="details-total">
+                        <ul class="list-group">
+                            <li class="list-group-item">{{'BalanceComponent.Total' | translate}} <span class="badge-span">{{summation.total}}</span></li>
+                            <li class="list-group-item">{{'BalanceComponent.Paid' | translate}}<span class="badge-span">{{summation.paid}}</span></li>
+                            <li class="list-group-item">{{'BalanceComponent.Required' | translate}} <span class="badge-span">{{summation.required}}</span></li>
+                        </ul>
+                        </div>
+                    </div> -->
+                    <!-- <div class="col-md-3">
+                      <div class="details-total">
+                        <ul class="list-group">
+                            <li class="list-group-item">Customs clearance<span class="badge-span">{{summation.customsClearance}}</span></li>
+                            <li class="list-group-item">Sea Freight<span class="badge-span">{{summation.seaFreight}}</span></li>
+                            <li class="list-group-item last-item">Purchase Order<span class="badge-span">{{summation.purchaseOrder}}</span></li>
+                        </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="details-total">
+                        <ul class="list-group">
+                            <li class="list-group-item">Purchasing price<span class="badge-span">{{summation.purchasePrice}}</span></li>
+                            <li class="list-group-item">Inner Freight<span class="badge-span">{{summation.innerFreight}}</span></li>
+                            <li class="list-group-item">Fees<span class="badge-span">{{summation.fees}}</span></li>
+                        </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="details-total">
+                        <ul class="list-group">
+                          
+                            <li class="list-group-item">Storage fee	<span class="badge-span">{{summation.storageFees}}</span></li>
+                            <li class="list-group-item last-item">Other<span class="badge-span">{{summation.other}}</span></li>     
+                        </ul>
+                        </div>
+                    </div> -->
+                  <!-- </div> -->
+                 
+                  <br>
+                  <div class="balance-table">
+                    <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th>{{'BalanceComponent.CarsInfo' | translate}}</th>
+                          <th>{{'BalanceComponent.BalanceInfo' | translate}}</th>
+                          <th>{{'BalanceComponent.CustomsClearance' | translate}}</th>
+                          <th>{{'BalanceComponent.PurchaseOrder' | translate}}</th>
+                          <!-- <th>Commissions</th> -->
+                          <th>{{'BalanceComponent.Shipping' | translate}}</th>
+                          <th>{{'BalanceComponent.PurchasingPrice' | translate}}</th>
+                          <th>{{'BalanceComponent.Fees' | translate}}</th>
+                          <th>{{'BalanceComponent.StorageFee' | translate}}</th>
+                          <th>{{'BalanceComponent.Other' | translate}}</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let auto of autos | paginate: { itemsPerPage: 25, currentPage: page,id:'three' }; let i=index;">
+                          <td>
+                            <ul>
+                                <li><strong>{{'BalanceComponent.Car' | translate}}: </strong> {{auto.name}} </li>
+                                <li><strong>{{'BalanceComponent.VinNo' | translate}}: </strong><a href="#" data-bs-toggle="modal" data-bs-target="#autoModal" (click)="openImagePopup(auto.id)">{{auto.vinNo}}</a></li>
+                                <li><strong>{{'BalanceComponent.PurchaseDate' | translate}}: </strong>{{auto.buyDateStr}}</li>
+                                <li><strong>{{'BalanceComponent.Client' | translate}}: </strong><span class="red-text"> {{auto.buyerName}} </span></li>
+                            </ul>	
+                          </td>
+                          <td><ul>
+                            <li><strong>{{'BalanceComponent.Total' | translate}}: </strong> {{auto.total != null ? auto.total : 0}} </li>
+                            <li><strong>{{'BalanceComponent.Paid' | translate}}: </strong>{{auto.paid != null ?  auto.paid : 0}}</li>
+                            <li><strong>{{'BalanceComponent.Required' | translate}}: </strong>{{auto.required != null ? auto.required:0 }}</li>
+                          </ul>	</td>
+                          <td>{{auto.customsClearance != null ? auto.customsClearance : 0}}</td>
+                          <td>{{auto.purchaseOrder != null ? auto.purchaseOrder : 0 }}</td>
+                          <!-- <td>{{auto.commission != null ? auto.commission : 0}}</td> -->
+                          <td><ul>
+                            <li><strong>{{'BalanceComponent.InternalShipping' | translate}}: </strong>{{auto.innerFreight != null ? auto.innerFreight : 0 }} </li>
+                            <li><strong>{{'BalanceComponent.SeaShipping' | translate}}: </strong>{{auto.seaFreight != null ? auto.seaFreight : 0}}</li>
+                          </ul></td>
+                          <td>{{auto.purchasePrice != null ? auto.purchasePrice : 0}}</td>
+                          <td>{{auto.fees != null ?  auto.fees : 0}}</td>
+                          <td>{{auto.storageFees != null ? auto.storageFees : 0}}</td>
+                          <td>{{auto.other != null ? auto.other : 0}}</td>
+                        </tr>
+
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="pagination text-center">
+                    <pagination-controls (pageChange)="page = $event" id='three'></pagination-controls>
+                  </div>
+                </div>
+
+                <div class="tab-pane balance-pane" id="total-balance">
+                  <div class="balance-tit-search">
+                    <div class="balnce-title">  <h4 class="card-title cell">{{'BalanceComponent.ManageClients' | translate}}</h4></div>
+                    <div class="input-group clients-search">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="search">
+                          <i class="mdi mdi-magnify"></i>
+                        </span>
+                      </div>
+                      <input type="text" class="form-control" placeholder="{{'BalanceComponent.Search' | translate}}" aria-label="search" aria-describedby="search" [(ngModel)]="search" (input)="filterGlobal($event)">
+                  </div>
+                  </div>
+                  <hr>
+
+                  <div class="row">
+                    <div class="details-total col-md-4">
+                        <ul class="list-group">
+                         <li class="list-group-item">{{'BalanceComponent.Total' | translate}}<span class="badge-span">{{clientBalance.total}}</span></li>
+                        </ul>
+                    </div>
+                    <div class="details-total col-md-4">
+                        <ul class="list-group">
+                          <li class="list-group-item">{{'BalanceComponent.Paid' | translate}}<span class="badge-span">{{clientBalance.paid}}</span></li>
+                        </ul>
+                    </div>
+                    <div class="details-total col-md-4">
+                        <ul class="list-group">
+                          <li class="list-group-item">{{'BalanceComponent.Required' | translate}}<span class="badge-span">{{clientBalance.required}}</span></li>
+                        </ul>
+                    </div>
+                  </div>
+
+                  <!-- <div class="row balance-total">
+                    <div class="col-md-3">
+                      <div class="details-total">
+                        <ul class="list-group">
+                            <li class="list-group-item">{{'BalanceComponent.Total' | translate}} <span class="badge-span">{{clientBalance.total}}</span></li>
+                            <li class="list-group-item">{{'BalanceComponent.Paid' | translate}}<span class="badge-span">{{clientBalance.paid}}</span></li>
+                            <li class="list-group-item">{{'BalanceComponent.Required' | translate}} <span class="badge-span">{{clientBalance.required}}</span></li>
+                        </ul>
+                        </div>
+                    </div> -->
+                    <!-- <div class="col-md-3">
+                      <div class="details-total">
+                        <ul class="list-group">
+                            <li class="list-group-item">Customs clearance<span class="badge-span">{{clientBalance.customsClearance}}</span></li>
+                            <li class="list-group-item">Sea Freight<span class="badge-span">{{clientBalance.seaFreight}}</span></li>
+                            <li class="list-group-item last-item">Purchase Order<span class="badge-span">{{clientBalance.purchaseOrder}}</span></li>
+                        </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="details-total">
+                        <ul class="list-group">
+                            <li class="list-group-item">Purchasing price<span class="badge-span">{{clientBalance.purchasePrice}}</span></li>
+                            <li class="list-group-item">Inner Freight<span class="badge-span">{{clientBalance.innerFreight}}</span></li>
+                            <li class="list-group-item">Fees<span class="badge-span">{{clientBalance.fees}}</span></li>
+                        </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="details-total">
+                        <ul class="list-group">
+                          
+                            <li class="list-group-item">Storage fee	<span class="badge-span">{{clientBalance.storageFees}}</span></li>
+                            <li class="list-group-item last-item">Other<span class="badge-span">{{clientBalance.other}}</span></li>   
+                        </ul>
+                        </div>
+                    </div> -->
+                  <!-- </div> -->
+                  <br>
+                  <div class="balance-ttable">
+                    <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th>{{'BalanceComponent.Name' | translate}}</th>
+                          <th>{{'BalanceComponent.NumOfAutos' | translate}}</th>
+                          <th>{{'BalanceComponent.Total' | translate}}</th>
+                          <th>{{'BalanceComponent.Paid' | translate}}</th>
+                          <th>{{'BalanceComponent.Required' | translate}}</th>
+                          <th>{{'BalanceComponent.CustomsClearance' | translate}}</th>
+                          <th>{{'BalanceComponent.PurchaseTransfer' | translate}}</th>
+                          <th>{{'BalanceComponent.Fees' | translate}}</th>
+                          <th>{{'BalanceComponent.InternalShipping' | translate}}</th>
+                          <th>{{'BalanceComponent.PurchasingPrice' | translate}}</th>
+                          <th>{{'BalanceComponent.SeaFreight' | translate}}</th>
+                          <th>{{'BalanceComponent.StorageFee' | translate}}</th>
+                          <th>{{'BalanceComponent.Other' | translate}}</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let client of clients | paginate: { itemsPerPage: 25, currentPage: clientpage, id:'four'  }; let i=index;">
+                          <td><span class="red-text">{{client.name}}</span></td>
+                          <td>{{client.carCount}}</td>
+                          <td>{{client.total}}</td>
+                          <td>{{client.paid}}</td>
+                          <td>{{client.required}}</td>
+                          <td>{{client.customsClearance}}</td>
+                          <td>{{client.purchaseOrder}}</td>
+                          <td>{{client.fees}}</td>
+                          <td>{{client.innerFreight}}</td>
+                          <td>{{client.purchasePrice}}</td>
+                          <td>{{client.seaFreight}}</td>
+                          <td>{{client.storageFees}}</td>
+                          <td>{{client.other}}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="pagination text-center">
+                    <pagination-controls (pageChange)="clientpage = $event" id='four'></pagination-controls>
+                  </div>
+          
+                </div>
+            </div> 
+
+            <div class="modal fade" id="autoModal" tabindex="-1" aria-labelledby="autoModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">{{'BalanceComponent.CarDetails' | translate}}</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="mdi mdi-close"></i></button>
+                  </div>
+                  <div class="modal-body">
+                    
+                    <ul class="nav nav-tabs" id="tabContent">
+                      <li><a href="#details" class="active" data-toggle="tab">{{'BalanceComponent.Details' | translate}}</a></li>
+                      <!-- <li><a href="#payment" data-toggle="tab">Payment</a></li> -->
+                    </ul>
+                
+                    <div class="tab-content">
+
+                      <div class="tab-pane active" id="details">
+                        <div class="row">
+                          <div class="col-md-4">
+                            <div class="labels-car">
+                              <h6>{{'BalanceComponent.Name' | translate}} </h6>
+                              <p>{{selectAuto.name}}</p>
+                            </div>
+                          </div>
+                          <div class="col-md-4">
+                            <div class="labels-car">
+                              <h6>{{'BalanceComponent.VinNo' | translate}}</h6>
+                              <p>{{selectAuto.vinNo}}</p>
+                            </div>
+                          </div>
+                          <div class="col-md-4">
+                            <div class="labels-car">
+                              <h6>{{'BalanceComponent.Owner' | translate}}</h6>
+                              <p>{{selectAuto.buyerName}}</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="main">
+                          <div class="slider slider-info">
+                            <p-galleria #galleria [value]="images" [(activeIndex)]="activeIndex"
+                            [responsiveOptions]="responsiveOptions" [containerStyle]="{'max-width': '640px', 'margin': '0 auto'}" [numVisible]="5"
+                            [circular]="true" [showItemNavigators]="true" [showItemNavigatorsOnHover]="true"
+                            [transitionInterval]="3000" [showThumbnails]="showThumbnails" [containerClass]="galleriaClass()">
+                            <ng-template pTemplate="item" let-item>
+                              <img [src]="item.previewImageSrc"
+                                [ngStyle]="{'width': !fullscreen ? '100%' : '', 'display': !fullscreen ? 'block' : ''}" />
+                            </ng-template>
+                            <ng-template pTemplate="thumbnail" let-item>
+                              <div class="p-grid p-nogutter p-justify-center">
+                                <img [src]="item.thumbnailImageSrc" />
+                              </div>
+                            </ng-template>
+                            <ng-template pTemplate="footer" let-item>
+                              <div class="custom-galleria-footer">
+                                <button class="list-button" type="button" pButton icon="pi pi-list" (click)="onThumbnailButtonClick()"></button>
+                                <span *ngIf="images" class="title-container">
+                                  <span>{{activeIndex + 1}}/{{images.length}}</span>
+                                </span>
+                                <button type="button" pButton [icon]="fullScreenIcon()" (click)="toggleFullScreen()"
+                                  class="fullscreen-button"></button>
+                              </div>
+                            </ng-template>
+                          </p-galleria>
+                          </div>
+                        </div>
+                       <br>
+                       
+                        <div class="row">
+                          <div class="col-md-6">
+                            <h4>{{'BalanceComponent.CarDetails' | translate}}</h4>
+                            <ul class="auto-list-group">
+                              <li class="list-group-item">{{'BalanceComponent.Lot' | translate}} <span class="badge-span">{{selectAuto.lot}}</span></li>
+                              <li class="list-group-item">{{'BalanceComponent.Engine' | translate}}  <span class="badge-span">{{selectAuto.engine}}</span></li>
+                              <li class="list-group-item">{{'BalanceComponent.BuyDate' | translate}} <span class="badge-span">{{selectAuto.buyDateStr}}</span></li>
+                              <li class="list-group-item">{{'BalanceComponent.Color' | translate}}<span class="badge-span">{{selectAuto.color}}</span></li>
+                              <li class="list-group-item">{{'BalanceComponent.Auction' | translate}}  <span class="badge-span">{{selectAuto.auctionName}}</span></li>
+                              <li class="list-group-item">{{'BalanceComponent.BuyingAccount' | translate}} <span class="badge-span">{{selectAuto.buyAccountName}}</span></li>
+                              <li class="list-group-item">{{'BalanceComponent.City' | translate}}  <span class="badge-span">{{selectAuto.cityName}}</span></li>
+                              <li class="list-group-item">{{'BalanceComponent.LoadPort' | translate}} <span class="badge-span">{{selectAuto.loadPortName}}</span></li>
+                              <li class="list-group-item">{{'BalanceComponent.Status' | translate}} <span class="badge-span">{{selectAuto.carStatusStr}}</span></li>
+                
+                            </ul>
+                          </div>
+                          <div class="col-md-6">
+                            <h4>{{'BalanceComponent.ContainerInformation' | translate}}</h4>
+                            <ul class="auto-list-group">
+                              <li class="list-group-item">{{'BalanceComponent.ContainerNo' | translate}} <span class="badge-span">{{selectAuto.containerSerial}}</span></li>
+                              <li class="list-group-item">{{'BalanceComponent.BookNo' | translate}} <span class="badge-span">{{selectAuto.bookNo}}</span></li>
+                              <li class="list-group-item">{{'BalanceComponent.Destination' | translate}} <span class="badge-span">{{selectAuto.destinationName}}</span></li>
+                              <li class="list-group-item">{{'BalanceComponent.DepartureDate' | translate}} <span class="badge-span">{{selectAuto.departureDateStr}}</span></li>
+                              <li class="list-group-item">{{'BalanceComponent.ArrivalDate' | translate}} <span class="badge-span">{{selectAuto.containerArrivalDateStr}}</span></li>
+                              <li class="list-group-item">{{'BalanceComponent.ShippingCompany' | translate}} <span class="badge-span">{{selectAuto.shippingCompany}}</span></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>                          
+                     
+                   </div>  
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+</section>

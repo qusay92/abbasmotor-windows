@@ -1,0 +1,85 @@
+D:\Project\New Project\WebAPI\WebAPI\Entities\bin\Release\net6.0\Entities.deps.json
+D:\Project\New Project\WebAPI\WebAPI\Entities\bin\Release\net6.0\Entities.runtimeconfig.json
+D:\Project\New Project\WebAPI\WebAPI\Entities\bin\Release\net6.0\Entities.dll
+D:\Project\New Project\WebAPI\WebAPI\Entities\bin\Release\net6.0\Entities.pdb
+D:\Project\New Project\WebAPI\WebAPI\Entities\bin\Release\net6.0\Utilities.dll
+D:\Project\New Project\WebAPI\WebAPI\Entities\bin\Release\net6.0\Utilities.pdb
+D:\Project\New Project\WebAPI\WebAPI\Entities\obj\Release\net6.0\Entities.csproj.AssemblyReference.cache
+D:\Project\New Project\WebAPI\WebAPI\Entities\obj\Release\net6.0\Entities.GeneratedMSBuildEditorConfig.editorconfig
+D:\Project\New Project\WebAPI\WebAPI\Entities\obj\Release\net6.0\Entities.AssemblyInfoInputs.cache
+D:\Project\New Project\WebAPI\WebAPI\Entities\obj\Release\net6.0\Entities.AssemblyInfo.cs
+D:\Project\New Project\WebAPI\WebAPI\Entities\obj\Release\net6.0\Entities.csproj.CoreCompileInputs.cache
+D:\Project\New Project\WebAPI\WebAPI\Entities\obj\Release\net6.0\Entities.csproj.CopyComplete
+D:\Project\New Project\WebAPI\WebAPI\Entities\obj\Release\net6.0\Entities.dll
+D:\Project\New Project\WebAPI\WebAPI\Entities\obj\Release\net6.0\refint\Entities.dll
+D:\Project\New Project\WebAPI\WebAPI\Entities\obj\Release\net6.0\Entities.pdb
+D:\Project\New Project\WebAPI\WebAPI\Entities\obj\Release\net6.0\Entities.genruntimeconfig.cache
+D:\Project\New Project\WebAPI\WebAPI\Entities\obj\Release\net6.0\ref\Entities.dll
+C:\Wael\WebAPI\WebAPI\Entities\bin\Release\net6.0\Entities.deps.json
+C:\Wael\WebAPI\WebAPI\Entities\bin\Release\net6.0\Entities.runtimeconfig.json
+C:\Wael\WebAPI\WebAPI\Entities\bin\Release\net6.0\Entities.dll
+C:\Wael\WebAPI\WebAPI\Entities\bin\Release\net6.0\Entities.pdb
+C:\Wael\WebAPI\WebAPI\Entities\bin\Release\net6.0\Utilities.dll
+C:\Wael\WebAPI\WebAPI\Entities\bin\Release\net6.0\Utilities.pdb
+C:\Wael\WebAPI\WebAPI\Entities\obj\Release\net6.0\Entities.csproj.AssemblyReference.cache
+C:\Wael\WebAPI\WebAPI\Entities\obj\Release\net6.0\Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Wael\WebAPI\WebAPI\Entities\obj\Release\net6.0\Entities.AssemblyInfoInputs.cache
+C:\Wael\WebAPI\WebAPI\Entities\obj\Release\net6.0\Entities.AssemblyInfo.cs
+C:\Wael\WebAPI\WebAPI\Entities\obj\Release\net6.0\Entities.csproj.CoreCompileInputs.cache
+C:\Wael\WebAPI\WebAPI\Entities\obj\Release\net6.0\Entities.csproj.CopyComplete
+C:\Wael\WebAPI\WebAPI\Entities\obj\Release\net6.0\Entities.dll
+C:\Wael\WebAPI\WebAPI\Entities\obj\Release\net6.0\refint\Entities.dll
+C:\Wael\WebAPI\WebAPI\Entities\obj\Release\net6.0\Entities.pdb
+C:\Wael\WebAPI\WebAPI\Entities\obj\Release\net6.0\Entities.genruntimeconfig.cache
+C:\Wael\WebAPI\WebAPI\Entities\obj\Release\net6.0\ref\Entities.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\Entities\bin\Release\net6.0\Entities.deps.json
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\Entities\bin\Release\net6.0\Entities.runtimeconfig.json
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\Entities\bin\Release\net6.0\Entities.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\Entities\bin\Release\net6.0\Entities.pdb
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\Entities\bin\Release\net6.0\Utilities.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\Entities\bin\Release\net6.0\Utilities.pdb
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\Entities\obj\Release\net6.0\Entities.csproj.AssemblyReference.cache
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\Entities\obj\Release\net6.0\Entities.GeneratedMSBuildEditorConfig.editorconfig
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\Entities\obj\Release\net6.0\Entities.AssemblyInfoInputs.cache
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\Entities\obj\Release\net6.0\Entities.AssemblyInfo.cs
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\Entities\obj\Release\net6.0\Entities.csproj.CoreCompileInputs.cache
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\Entities\obj\Release\net6.0\Entities.csproj.CopyComplete
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\Entities\obj\Release\net6.0\Entities.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\Entities\obj\Release\net6.0\refint\Entities.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\Entities\obj\Release\net6.0\Entities.pdb
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\Entities\obj\Release\net6.0\Entities.genruntimeconfig.cache
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\Entities\obj\Release\net6.0\ref\Entities.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\Entities\bin\Release\net6.0\Entities.deps.json
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\Entities\bin\Release\net6.0\Entities.runtimeconfig.json
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\Entities\bin\Release\net6.0\Entities.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\Entities\bin\Release\net6.0\Entities.pdb
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\Entities\bin\Release\net6.0\Utilities.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\Entities\bin\Release\net6.0\Utilities.pdb
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\Entities\obj\Release\net6.0\Entities.csproj.AssemblyReference.cache
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\Entities\obj\Release\net6.0\Entities.GeneratedMSBuildEditorConfig.editorconfig
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\Entities\obj\Release\net6.0\Entities.AssemblyInfoInputs.cache
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\Entities\obj\Release\net6.0\Entities.AssemblyInfo.cs
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\Entities\obj\Release\net6.0\Entities.csproj.CoreCompileInputs.cache
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\Entities\obj\Release\net6.0\Entities.csproj.CopyComplete
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\Entities\obj\Release\net6.0\Entities.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\Entities\obj\Release\net6.0\refint\Entities.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\Entities\obj\Release\net6.0\Entities.pdb
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\Entities\obj\Release\net6.0\Entities.genruntimeconfig.cache
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\Entities\obj\Release\net6.0\ref\Entities.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\Entities\bin\Release\net6.0\Entities.deps.json
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\Entities\bin\Release\net6.0\Entities.runtimeconfig.json
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\Entities\bin\Release\net6.0\Entities.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\Entities\bin\Release\net6.0\Entities.pdb
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\Entities\bin\Release\net6.0\Utilities.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\Entities\bin\Release\net6.0\Utilities.pdb
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\Entities\obj\Release\net6.0\Entities.csproj.AssemblyReference.cache
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\Entities\obj\Release\net6.0\Entities.GeneratedMSBuildEditorConfig.editorconfig
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\Entities\obj\Release\net6.0\Entities.AssemblyInfoInputs.cache
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\Entities\obj\Release\net6.0\Entities.AssemblyInfo.cs
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\Entities\obj\Release\net6.0\Entities.csproj.CoreCompileInputs.cache
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\Entities\obj\Release\net6.0\Entities.csproj.CopyComplete
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\Entities\obj\Release\net6.0\Entities.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\Entities\obj\Release\net6.0\refint\Entities.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\Entities\obj\Release\net6.0\Entities.pdb
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\Entities\obj\Release\net6.0\Entities.genruntimeconfig.cache
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\Entities\obj\Release\net6.0\ref\Entities.dll

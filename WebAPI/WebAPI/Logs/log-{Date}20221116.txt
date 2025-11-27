@@ -1,0 +1,1 @@
+2022-11-16 21:46:13.226 +03:00 [ERR] Controller : Attachments - ActionName : UploadImages - Parameter : 1 - Error :  ## Exception.Message = Could not find a part of the path 'D:\Project\New Project\WebAPI\WebSite\AbbasMotor\src\assets\uploaded\221116-63752869502385746136A79.jpg'.

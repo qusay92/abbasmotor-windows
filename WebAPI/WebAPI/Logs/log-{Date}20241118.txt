@@ -1,0 +1,2 @@
+2024-11-18 23:30:25.765 +03:00 [ERR] Controller : Login - ActionName : Login - Parameter : {"UserName":"admin","Password":"admin"} - Error :  ## Exception.Message = كلمة سر خاطئة
+2024-11-18 23:30:25.765 +03:00 [ERR] Controller : Login - ActionName : Login - Parameter : {"UserName":"admin","Password":"admin"} - Error :  ## Exception.Message = كلمة سر خاطئة

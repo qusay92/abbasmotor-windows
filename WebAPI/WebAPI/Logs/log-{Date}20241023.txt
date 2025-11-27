@@ -1,0 +1,16 @@
+2024-10-23 21:03:03.384 +03:00 [ERR] Controller : Login - ActionName : Login - Parameter : {"UserName":"admin","Password":"admin"} - Error :  ## Exception.Message = اسم المستخدم غير موجود
+2024-10-23 21:03:03.384 +03:00 [ERR] Controller : Login - ActionName : Login - Parameter : {"UserName":"admin","Password":"admin"} - Error :  ## Exception.Message = اسم المستخدم غير موجود
+2024-10-23 21:03:07.643 +03:00 [ERR] Controller : Login - ActionName : Login - Parameter : {"UserName":"admin","Password":"admin"} - Error :  ## Exception.Message = اسم المستخدم غير موجود
+2024-10-23 21:03:07.774 +03:00 [ERR] Controller : Login - ActionName : Login - Parameter : {"UserName":"admin","Password":"admin"} - Error :  ## Exception.Message = اسم المستخدم غير موجود
+2024-10-23 21:03:58.824 +03:00 [ERR] Controller : Login - ActionName : Login - Parameter : {"UserName":"Admin","Password":"admin"} - Error :  ## Exception.Message = اسم المستخدم غير موجود
+2024-10-23 21:03:58.960 +03:00 [ERR] Controller : Login - ActionName : Login - Parameter : {"UserName":"Admin","Password":"admin"} - Error :  ## Exception.Message = اسم المستخدم غير موجود
+2024-10-23 21:04:01.295 +03:00 [ERR] Controller : Login - ActionName : Login - Parameter : {"UserName":"Admin","Password":"admin"} - Error :  ## Exception.Message = اسم المستخدم غير موجود
+2024-10-23 21:04:01.415 +03:00 [ERR] Controller : Login - ActionName : Login - Parameter : {"UserName":"Admin","Password":"admin"} - Error :  ## Exception.Message = اسم المستخدم غير موجود
+2024-10-23 21:05:37.562 +03:00 [ERR] Controller : Login - ActionName : Login - Parameter : {"UserName":"Admin","Password":"admin"} - Error :  ## Exception.Message = اسم المستخدم غير موجود
+2024-10-23 21:05:37.652 +03:00 [ERR] Controller : Login - ActionName : Login - Parameter : {"UserName":"Admin","Password":"admin"} - Error :  ## Exception.Message = اسم المستخدم غير موجود
+2024-10-23 21:05:42.421 +03:00 [ERR] Controller : Login - ActionName : Login - Parameter : {"UserName":"Admin","Password":"Admin"} - Error :  ## Exception.Message = اسم المستخدم غير موجود
+2024-10-23 21:05:42.562 +03:00 [ERR] Controller : Login - ActionName : Login - Parameter : {"UserName":"Admin","Password":"Admin"} - Error :  ## Exception.Message = اسم المستخدم غير موجود
+2024-10-23 21:05:57.859 +03:00 [ERR] Controller : Login - ActionName : Login - Parameter : {"UserName":"admin","Password":"admin"} - Error :  ## Exception.Message = كلمة سر خاطئة
+2024-10-23 21:05:57.920 +03:00 [ERR] Controller : Login - ActionName : Login - Parameter : {"UserName":"admin","Password":"admin"} - Error :  ## Exception.Message = كلمة سر خاطئة
+2024-10-23 21:06:01.716 +03:00 [ERR] Controller : Login - ActionName : Login - Parameter : {"UserName":"admin","Password":"admin"} - Error :  ## Exception.Message = كلمة سر خاطئة
+2024-10-23 21:06:01.842 +03:00 [ERR] Controller : Login - ActionName : Login - Parameter : {"UserName":"admin","Password":"admin"} - Error :  ## Exception.Message = كلمة سر خاطئة

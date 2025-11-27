@@ -1,0 +1,349 @@
+﻿using Entities;
+using System.Globalization;
+
+namespace WebAPI.Services
+{
+    public class PaymentService : EnumExtension, IPaymentService
+    {
+        public readonly AmdDBContext _dbContext;
+        public readonly IMapper _mapper;
+        private readonly IStringLocalizer<SharedResource> _sharedResourceLocalizer;
+        public PaymentService(AmdDBContext dbContext, IMapper mapper, IStringLocalizer<SharedResource> sharedResourceLocalizer)
+        {
+            _dbContext = dbContext;
+            _mapper = mapper;
+            _sharedResourceLocalizer = sharedResourceLocalizer;
+        }
+
+        public async Task<ResponseResult<object>> GetPayment(long autoId)
+        {
+            decimal debitAmount = 0;
+            decimal creditAmount = 0;
+            ResponseResult<object> result = new ResponseResult<object>();
+            List<PaymentDetails> paymentDetails = await _dbContext.PaymentDetails.Include(x => x.Payment).Where(c => c.Payment.AutoId == autoId).AsNoTracking().ToListAsync();
+            List<LookupValue> lookupValues = _dbContext.LookupValues.ToList();
+            if (paymentDetails.Count > 0)
+            {
+                debitAmount = paymentDetails.Where(c => c.Payment.PaymentType == PaymentType.Debit).Sum(x => x.Amount);
+                creditAmount = paymentDetails.Where(c => c.Payment.PaymentType == PaymentType.Credit).Sum(x => x.Amount);
+            }
+
+            paymentDetails = paymentDetails.Select(c => new PaymentDetails
+            {
+                Id = c.Id,
+                Amount = c.Amount,
+                BuyType = c.BuyType,
+                CashType = c.CashType,
+                Notes = c.Notes,
+                PayDate = c.PayDate,
+                PayDateStr = c.PayDate.ToString("dd/MM/yyyy", new CultureInfo("en-US")),
+                PaymentId = c.PaymentId,
+                Payment = c.Payment,
+                BuyTypeStr = SwitchBuyType((int)c.BuyType),
+                CashTypeStr = _dbContext.LookupValues.FirstOrDefault(x => x.Id == c.CashType).Name,
+                DebitAmount = debitAmount,
+                PaymentType = (int)c.Payment.PaymentType
+            }).OrderByDescending(c => c.PayDate).ToList();
+
+            result.Data = new { paymentDetails, debitAmount, creditAmount };
+            result.Errors = null;
+            result.Status = StatusType.Success;
+
+            return result;
+        }
+
+        public async Task<ResponseResult<object>> SavePaymentDetails(PaymentDetails model)
+        {
+            ResponseResult<object> result = new ResponseResult<object>();
+            result.Status = StatusType.Failed;
+            bool isSaved = false;
+
+            model.PayDate = model.PayDate.ToLocalTime();
+            if (model.Id < 1)
+            {
+                _dbContext.PaymentDetails.Add(model);
+            }
+            else
+            {
+                _dbContext.PaymentDetails.Update(model);
+            }
+
+            isSaved = await _dbContext.SaveChangesAsync() > 0;
+
+            if (isSaved)
+            {
+                result.Data = null;
+                result.Errors = null;
+                result.Status = StatusType.Success;
+            }
+
+            return result;
+        }
+
+        public async Task<ResponseResult<object>> Delete(List<PaymentDetails> models)
+        {
+            ResponseResult<object> result = new ResponseResult<object>();
+            result.Status = StatusType.Failed;
+            bool isSaved = false;
+
+            try
+            {
+                List<PaymentDetails> paymentDetails = new List<PaymentDetails>();
+                foreach (PaymentDetails model in models)
+                {
+                    var paymentDet = await _dbContext.PaymentDetails.FindAsync(model.Id);
+                    paymentDetails.Add(paymentDet);
+                }
+                _dbContext.PaymentDetails.RemoveRange(paymentDetails);
+                isSaved = await _dbContext.SaveChangesAsync() > 0;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
+            if (isSaved)
+            {
+                result.Data = null;
+                result.Errors = null;
+                result.Status = StatusType.Success;
+            }
+
+            return result;
+        }
+
+        public async Task<ResponseResult<object>> SavePayment(PaymentInput model, long UserId)
+        {
+            ResponseResult<object> result = new ResponseResult<object>();
+            result.Status = StatusType.Failed;
+            bool isSaved = false;
+
+
+            decimal totalDebit = 0;
+            decimal totalAmount = 0;
+
+            var getTotal = await _dbContext.Payments.Include(c => c.PaymentDetails)
+                             .Where(x => x.AutoId == model.autoId).ToListAsync();
+
+
+            if (model.id < 1)
+            {
+                if (getTotal.Count > 0)
+                {
+                    foreach (var pay in getTotal)
+                    {
+                        if (pay.PaymentType == PaymentType.Debit)
+                        {
+                            foreach (var item in pay.PaymentDetails)
+                            {
+                                if (item.Id == model.id)
+                                {
+                                    item.Amount = model.amount;
+                                }
+                            }
+                            totalDebit = pay.PaymentDetails.Sum(x => x.Amount);
+                        }
+
+                        if (pay.PaymentType == PaymentType.Credit)
+                        {
+                            foreach (var item in pay.PaymentDetails)
+                            {
+                                if (item.Id == model.id)
+                                {
+                                    item.Amount = model.amount;
+                                }
+                            }
+                            totalAmount = pay.PaymentDetails.Sum(x => x.Amount);
+                        }
+                    }
+
+                    if (model.paymentType == (int)PaymentType.Credit)
+                    {
+                        if (model.amount + totalAmount > totalDebit)
+                        {
+                            result.Data = model;
+                            result.Errors = new List<string> { _sharedResourceLocalizer["Totalcreditmustnotexceedthetotaldebit"] };
+                            result.Status = StatusType.Failed;
+                            return result;
+                        }
+                    }
+                }
+                else
+                {
+                    if (model.paymentType == (int)PaymentType.Credit)
+                    {
+                        result.Data = model;
+                        result.Errors = new List<string> { _sharedResourceLocalizer["Totalcreditmustnotexceedthetotaldebit"] }; ;
+                        result.Status = StatusType.Failed;
+                        return result;
+                    }
+                }
+
+                var payment = await _dbContext.Payments.FirstOrDefaultAsync(x => x.AutoId == model.autoId
+                                     && x.PaymentType == (PaymentType)model.paymentType);
+                if (payment == null)
+                {
+                    try
+                    {
+                        var mapModel = _mapper.Map<PaymentInput, Payment>(model);
+
+                        if (model.id < 1)
+                        {
+                            mapModel.CreationDate = DateTime.Now;
+                            mapModel.CreationUserId = UserId;
+
+                            _dbContext.Payments.Add(mapModel);
+                            await _dbContext.SaveChangesAsync();
+
+                            var mapDetails = _mapper.Map<PaymentInput, PaymentDetails>(model);
+                            mapDetails.BuyType = (BuyType)model.categoryId;
+                            mapDetails.PayDate = mapDetails.PayDate.ToLocalTime();
+                            mapDetails.PaymentId = mapModel.Id;
+                            _dbContext.PaymentDetails.Add(mapDetails);
+
+                        }
+                        else
+                        {
+                            mapModel.ModificationDate = DateTime.Now;
+                            mapModel.ModificationUserId = UserId;
+                            _dbContext.Payments.Update(mapModel);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+
+                        throw;
+                    }
+
+                }
+                else
+                {
+                    var mapDetails = _mapper.Map<PaymentInput, PaymentDetails>(model);
+                    mapDetails.BuyType = (BuyType)model.categoryId;
+                    mapDetails.PayDate = mapDetails.PayDate.ToLocalTime();
+                    mapDetails.PaymentId = payment.Id;
+                    _dbContext.PaymentDetails.Add(mapDetails);
+                }
+            }
+            else
+            {
+                foreach (var pay in getTotal)
+                {
+                    if (pay.PaymentType == PaymentType.Debit)
+                    {
+                        foreach (var item in pay.PaymentDetails)
+                        {
+                            if (item.Id == model.id)
+                            {
+                                item.BuyType = (BuyType)model.categoryId;
+                                item.PayDate = model.payDate.ToLocalTime();
+                                item.Amount = model.amount;
+                                item.CashType = model.paymentMethod;
+                                item.Notes = model.notes;
+                            }
+                        }
+                        totalDebit = pay.PaymentDetails.Sum(x => x.Amount);
+                    }
+
+                    if (pay.PaymentType == PaymentType.Credit)
+                    {
+                        foreach (var item in pay.PaymentDetails)
+                        {
+                            if (item.Id == model.id)
+                            {
+                                item.BuyType = (BuyType)model.categoryId;
+                                item.PayDate = model.payDate.ToLocalTime();
+                                item.Amount = model.amount;
+                                item.CashType = model.paymentMethod;
+                                item.Notes = model.notes;
+                            }
+                        }
+                        totalAmount = pay.PaymentDetails.Sum(x => x.Amount);
+                    }
+                }
+
+                if (totalAmount > totalDebit)
+                {
+                    result.Data = model;
+                    result.Errors = new List<string> { _sharedResourceLocalizer["Totalcreditmustnotexceedthetotaldebit"] } ;
+                    result.Status = StatusType.Failed;
+                    return result;
+                }
+            }
+
+            isSaved = await _dbContext.SaveChangesAsync() > 0;
+
+            if (isSaved)
+            {
+                result.Data = model;
+                result.Errors = null;
+                result.Status = StatusType.Success;
+            }
+
+            return result;
+        }
+
+        public async Task<ResponseResult<object>> GetPayments(GetPaymentsInput input, long UserId)
+        {
+            decimal debitAmount = 0;
+            decimal creditAmount = 0;
+
+            List<long> autos = await _dbContext.Autos
+                .Include(c => c.Buyer)
+                .Where(c =>  (c.CreationUserId == UserId || c.BuyerId == UserId)) // c.IsArchive == 0 &&
+                .Select(c => c.Id)
+                .ToListAsync();
+
+            ResponseResult<object> result = new ResponseResult<object>();
+            List<PaymentDetails> paymentDetails = await _dbContext.PaymentDetails
+                .Include(x => x.Payment).ThenInclude(r => r.Auto).ThenInclude(b => b.Buyer)
+                .Where(c => autos.Contains(c.Payment.AutoId)).ToListAsync();
+
+            if (input.IsSearch)
+            {
+                if (!string.IsNullOrEmpty(input.VinNo)) paymentDetails = paymentDetails.Where(m => m.Payment.Auto.VinNo.Contains(input.VinNo)).ToList();
+                if (input.PurchaseDate.HasValue) paymentDetails = paymentDetails.Where(m => m.PayDate.ToShortDateString() == input.PurchaseDate.Value.ToShortDateString()).ToList();
+                if (input.AutoId.HasValue && input.AutoId != 0) paymentDetails = paymentDetails.Where(m => m.Payment.AutoId == input.AutoId).ToList();
+                if (input.ClientId.HasValue && input.ClientId != 0) paymentDetails = paymentDetails.Where(m => m.Payment.Auto.BuyerId == input.ClientId).ToList();
+            }
+
+            if (paymentDetails.Count > 0)
+            {
+                debitAmount = paymentDetails.Where(c => c.Payment.PaymentType == PaymentType.Debit).Sum(x => x.Amount);
+                creditAmount = paymentDetails.Where(c => c.Payment.PaymentType == PaymentType.Credit).Sum(x => x.Amount);
+            }
+
+            paymentDetails = paymentDetails.Select(c => new PaymentDetails
+            {
+                Id = c.Id,
+                Amount = c.Amount,
+                BuyType = c.BuyType,
+                CashType = c.CashType,
+                Notes = c.Notes,
+                PayDate = c.PayDate,
+                PayDateStr = c.PayDate.ToString("dd/MM/yyyy", new CultureInfo("en-US")),
+                PaymentId = c.PaymentId,
+                Payment = c.Payment,
+                BuyTypeStr = SwitchBuyType((int)c.BuyType),
+                CashTypeStr = _dbContext.LookupValues.FirstOrDefault(x => x.Id == c.CashType).Name,
+                DebitAmount = debitAmount,
+                AutoId = c.Payment.AutoId,
+                VinNo = c.Payment.Auto.VinNo,
+                Client = c.Payment.Auto.Buyer.Name,
+                CarName = c.Payment.Auto.Name,
+                PaymentType = (int)c.Payment.PaymentType
+            }).OrderByDescending(x => x.PayDate).ToList();
+
+
+
+
+            result.Data = new { paymentDetails, debitAmount, creditAmount };
+            result.Errors = null;
+            result.Status = StatusType.Success;
+
+            return result;
+        }
+    }
+}

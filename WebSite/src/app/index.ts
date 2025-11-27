@@ -1,0 +1,14 @@
+export { AppComponent } from './app.component';
+export { LoginComponent } from './login/login.component';
+export { HomeComponent } from './home/home.component';
+export { DashboardComponent } from './dashboard/dashboard.component';
+export { AdminLayoutComponent } from './admin-layout/admin-layout.component';
+export { AutosComponent } from './autos/autos.component';
+export { ClientsComponent } from './clients/clients.component';
+export { ContainersComponent } from './containers/containers.component';
+export { SelectionsComponent } from './selections/selections.component';
+export { ResourcesComponent } from './resources/resources.component';
+export { PaymentComponent } from './payment/payment.component';
+export { BalanceComponent } from './balance/balance.component';
+export { BaseComponent } from './base/base.component';
+export { ArchiveComponent } from './archive/archive.component';

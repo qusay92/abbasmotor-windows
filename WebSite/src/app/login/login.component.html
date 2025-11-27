@@ -1,0 +1,39 @@
+<section class="login-sec">
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-lg-7 col-xl-5">
+        <img src="assets/images/login-logo.png" />
+        <form class="login-form" [formGroup]="ngForm" (keyup.enter)="login()">
+          <h1 class="text-sm-center">{{'LoginComponent.ClientLogin' | translate}}</h1>
+          <hr>
+          <div class="loginform-inputs">
+          <div class="form-group">
+            <input
+              class="form-style big" id="Username" name="Username" placeholder="{{'LoginComponent.UserName' | translate}}" type="text" formControlName="username" />
+            <span style="color: red" [hidden]="ngForm.controls['username'].valid || !isSubmitted">{{'LoginComponent.UsernameIsRequired' | translate}}</span>
+            <img src="assets/images/user-icon.png" />
+          </div>
+          <div class="form-group">
+            <input class="form-style big" id="Password" name="Password" placeholder="{{'LoginComponent.Password' | translate}}" type="password" formControlName="password" />
+            <span style="color: red" [hidden]="ngForm.controls['password'].valid || !isSubmitted">
+              {{'LoginComponent.PasswordIsRequired' | translate}}
+            </span>
+            <img src="assets/images/password-icon.png" />
+          </div>
+        </div>
+          <br/>
+          <div class="row mt-2 mb-2">
+            <div class="col-12 text-left">
+              <button type="submit" class="custom-button" (click)="login()">
+                {{'LoginComponent.Login' | translate}}
+              </button>
+            </div>
+          </div>
+          
+          <hr>
+          <a routerLink="" class="link-home"> {{'LoginComponent.HomePage' | translate}}</a>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

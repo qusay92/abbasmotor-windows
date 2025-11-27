@@ -1,0 +1,110 @@
+<section class="selection-pg">
+    <div class="container-fluid">
+      <div class="card">
+          <div class="card-body">
+            <div class="selection-filters">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label>{{'ResourcesComponent.SelectionKey' | translate }}</label>
+                
+                  <p-dropdown [options]="searchKeys" [(ngModel)]="resourceId" (onChange)="ChangeKey($event)"  optionLabel="key" optionValue="id" [filter]="true" filterBy="key"
+                    [showClear]="true" placeholder="{{'General.SelectResources' | translate}}" (onClear)="ClearSearch()">
+                   </p-dropdown>
+
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div class="auto-table-btns">     
+                  <button type="button" data-toggle="modal" data-target="#selectionModal" class="btn btn-inverse-add btn-icon" title="add new"  (click)="openDialog()">
+                    {{'ResourcesComponent.AddNewKey' | translate }}<i class="mdi mdi-plus"></i>
+                  </button>
+
+                  <div class="modal fade" id="selectionModal" tabindex="-1" role="dialog" aria-labelledby="selectionModalLabel" aria-hidden="true" *ngIf="showDialog">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="selectionModalLabel">{{'ResourcesComponent.ResourceDetails' | translate }}</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true"><i class="mdi mdi-close"></i></span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <form class="forms-sample payment-form" [formGroup]="ngForm" (keyup.enter)="saveResource()">
+                            <input type="hidden" id="id" name="id" [(ngModel)] ='model.id' formControlName="id">
+                            <div class="form-group">
+                              <label>{{'ResourcesComponent.Key' | translate }}<span class="required-star"> *</span></label>
+                              <input type="text" name="key" class="form-control" formControlName="key" [(ngModel)] ='model.key'>
+                              <span style="color: red" [hidden]="ngForm.controls['key'].valid || !isSubmitted">{{'ResourcesComponent.KeyIsRequired' | translate }}</span>
+                            </div>
+                            <div class="form-group">
+                              <label>{{'ResourcesComponent.English' | translate }}<span class="required-star"> *</span></label>
+                              <textarea rows="5" type="text" name="english" class="form-control" formControlName="english" [(ngModel)] ='model.english'></textarea>
+                              <span style="color: red" [hidden]="ngForm.controls['english'].valid || !isSubmitted">{{'ResourcesComponent.EnglishIsRequired' | translate }}</span>
+                            </div>
+                            <div class="form-group">
+                              <label>{{'ResourcesComponent.Arabic' | translate }}<span class="required-star"> *</span></label>
+                              <textarea rows="5" type="text" name="arabic" class="form-control" formControlName="arabic" [(ngModel)] ='model.arabic'></textarea>
+                              <span style="color: red" [hidden]="ngForm.controls['arabic'].valid || !isSubmitted">{{'ResourcesComponent.ArabicIsRequired' | translate }}</span>
+                            </div>
+                          </form>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">{{'ResourcesComponent.Cancel' | translate }}</button>
+                          <button type="button" class="btn btn-primary" (click)="saveResource()">{{'ResourcesComponent.Save' | translate }}</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="input-group clients-search">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="search">
+                      <i class="mdi mdi-magnify"></i>
+                    </span>
+                  </div>
+                  <input type="text" class="form-control" placeholder="{{'ResourcesComponent.Search' | translate }}" aria-label="search" aria-describedby="search" [(ngModel)]="search" (input)="filterGlobal($event)">
+                </div>
+              </div>
+            </div>
+      </div>
+
+            <div class="resources-table">
+              <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                        <th style="width: 100px;">{{'ResourcesComponent.Key' | translate }}</th>
+                        <th>{{'ResourcesComponent.English' | translate }}</th>
+                        <th>{{'ResourcesComponent.Arabic' | translate }}</th>
+                        <th style="width: 100px;">{{'ResourcesComponent.Action' | translate }}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let item of resources | paginate: { itemsPerPage: 25, currentPage: page };">
+                        <td>
+                          {{item.key}}
+                        </td>
+                        <td>
+                          {{item.english}}                      
+                        </td>
+                        <td>
+                          {{item.arabic}}                       
+                         </td>
+                        <td>
+                          <a data-toggle="modal" data-target="#selectionModal" (click)="editResource(item)" >{{'ResourcesComponent.Edit' | translate }} <i class="mdi mdi-pencil-outline"></i></a>
+                        </td> 
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="pagination text-center">
+                <pagination-controls (pageChange)="page = $event"></pagination-controls>
+              </div>
+       </div>
+      </div>
+    </div>
+  </section>

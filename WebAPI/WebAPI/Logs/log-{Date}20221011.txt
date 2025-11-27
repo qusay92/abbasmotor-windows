@@ -1,0 +1,2 @@
+2022-10-11 00:05:47.197 +03:00 [ERR] Controller : Login - ActionName : Login - Parameter : {"UserName":"test1","Password":"admin"} - Error :  ## Exception.Message = Incorrect Password
+2022-10-11 00:06:29.679 +03:00 [ERR] Controller : Login - ActionName : Login - Parameter : {"UserName":"User","Password":"User"} - Error :  ## Exception.Message = Incorrect Password

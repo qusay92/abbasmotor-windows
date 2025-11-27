@@ -1,0 +1,703 @@
+<section class="autos-filter">
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">{{'ContainersComponent.Containers' | translate}}</h4>
+              <hr>
+                <form action="#" class="filter" method="GET" autocomplete="off" [formGroup]="searchForm">
+                    <div class="grid-x grid-padding-x">
+                    <h4 class="card-title cell">{{'ContainersComponent.Filter' | translate}}</h4>
+                    </div>
+                    <div class="grid-x grid-padding-x">
+                        <div class="form-group large-2 small-6 cell">
+                            <input class="form-control" type="text" name="Container" placeholder="{{'ContainersComponent.Container' | translate}}" value="" formControlName="containerNo">
+                        </div>
+                        <div class="form-group large-2 small-6 cell">
+                            <input class="form-control" type="text" name="Booking" placeholder="{{'ContainersComponent.Booking' | translate}}" value="" formControlName="bookingNo">
+                        </div>
+                        <div class="form-group form-date large-2 small-6 cell">
+                          <input type="date" name="date_from" placeholder="{{'ContainersComponent.LoadingDateFrom' | translate}}" class="form-control datepicker-here" formControlName="loadingFromDate">
+                        </div>
+
+                        <div class="form-group form-date large-2 small-6 cell">
+                          <input type="date" name="date_to" placeholder="{{'ContainersComponent.LoadingDateTo' | translate}}" class="form-control datepicker-here" formControlName="loadingToDate">
+                        </div>
+                        <div class="form-group large-2 small-6 cell">
+                           <p-dropdown [options]="lookup_loadPort" formControlName="loadPortId" optionLabel="name" optionValue="id" [filter]="true" filterBy="name"
+                              [showClear]="true" placeholder="{{'General.SelectLoadingPoint' | translate}}">
+                           </p-dropdown>
+                      </div>
+                      <div class="form-group large-2 small-6 cell">
+                       <p-dropdown [options]="lookup_destination" formControlName="destinationId" optionLabel="name" optionValue="id" [filter]="true" filterBy="name"
+                        [showClear]="true" placeholder="{{'General.SelectDestination' | translate}}">
+                     </p-dropdown>
+                    </div>
+                    <div class="form-group large-2 small-6 cell">
+                     <p-dropdown [options]="lookup_shippingCompany" formControlName="shippingLineId" optionLabel="name" optionValue="id" [filter]="true" filterBy="name"
+                        [showClear]="true" placeholder="{{'General.SelectShippingLine' | translate}}">
+                     </p-dropdown>
+                  </div>
+                  <!-- <div class="form-group large-2 small-6 cell">
+                    <select class="js-example-basic-single " data-placeholder="Clients" formControlName="clientId">
+                      <option value="0" >Select Clients</option>
+                      <option *ngFor="let client of clients" [value]="client.id">{{client.name}}</option>
+                    </select>
+                  </div> -->
+
+                        <div class="form-group form-date large-2 small-6 cell">
+                          <input type="date" name="p_date_from" placeholder="{{'ContainersComponent.ArrivalDateFrom' | translate}}" class="form-control datepicker-here" formControlName="arrivalFromDate">
+                        </div>
+
+                        <div class="form-group form-date large-2 small-6 cell">
+                          <input type="date" name="p_date_to" placeholder="{{'ContainersComponent.ArrivalDateTo' | translate}}" class="form-control datepicker-here" formControlName="arrivalToDate">
+                        </div>
+
+                        <div class="form-group large-2 small-6 cell">
+                            <button class="btn btn-primary" (click)="searchContainer()">{{'ContainersComponent.Search' | translate}}</button>
+                            <button class="btn btn-secondary"  (click)="clearSearchForm()" *ngIf="showClear">{{'ContainersComponent.Clear' | translate}}</button>
+                        </div>
+
+                    </div>
+                </form>
+                <hr>
+                <div class="pagination text-center">
+                  <ul class="btn-group">
+                    <pagination-controls (pageChange)="page = $event" id='first'></pagination-controls>
+                     </ul>
+                </div>
+                <hr>
+          </div>
+        </div>
+    </div>
+  </section>
+
+<!-- Add Container Modal -->
+<div class="modal fade" id="addAutoModal" tabindex="-1" role="dialog" aria-labelledby="addAutoModalLabel" aria-hidden="true" *ngIf="showDialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addAutoModalLabel">{{'ContainersComponent.AddNewContainer' | translate}}</h5>
+        <button type="button" class="close btn-close btn btn-icon" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="mdi mdi-close"></i></span></button>
+      </div>
+      <div class="modal-body">
+        <form action="#" class="addauto-form" method="GET" autocomplete="off" [formGroup]="ngAddUpdateForm" (keyup.enter)="saveContainer()">
+          <input type="hidden" id="id" name="id" [(ngModel)] ='model.id' formControlName="id">
+          <input type="hidden" id="creationUserId" name="creationUserId" [(ngModel)] ='model.creationUserId' formControlName="creationUserId">
+          <input type="hidden" id="creationDate" name="creationDate" [(ngModel)] ='model.creationDate' formControlName="creationDate">
+
+              <div class="form-group">
+                  <input class="form-control" type="text" name="container-no" placeholder="Container No" formControlName="serialNumber" [(ngModel)] ='model.serialNumber' required>
+                  <span style="color: red" [hidden]="ngAddUpdateForm.controls['serialNumber'].valid || !isSubmitted">{{'ContainersComponent.ContainerNoIsRequired' | translate}}</span>
+              </div>
+              <div class="form-group">
+                <input class="form-control" type="text" name="booking-no" placeholder="Book No" formControlName="bookNo" [(ngModel)] ='model.bookNo' required>
+                <span style="color: red" [hidden]="ngAddUpdateForm.controls['bookNo'].valid || !isSubmitted">{{'ContainersComponent.BookNoIsRequired' | translate}}</span>
+              </div>
+              <div class="form-group">
+                <p-dropdown [options]="lookup_loadPort" formControlName="departurePortId" [(ngModel)] ='model.departurePortId' (onChange)="onChangeDeparturePort($event)" optionLabel="name" optionValue="id" [filter]="true" filterBy="name"
+                  [showClear]="true" placeholder="{{'General.SelectDeparturePort' | translate}}">
+                </p-dropdown>
+
+                <span style="color: red" *ngIf="departurePortIdValidation">{{'ContainersComponent.DeparturePortIsRequired' | translate}}</span>
+              </div>
+              <div class="form-group">
+                  <p-dropdown [options]="lookup_destination" formControlName="destinationId" [(ngModel)] ='model.destinationId' (onChange)="onChangeDestination($event)" optionLabel="name" optionValue="id" [filter]="true" filterBy="name"
+                    [showClear]="true" placeholder="{{'General.SelectDestination' | translate}}">
+                  </p-dropdown>
+
+                  <span style="color: red" *ngIf="destinationIdValidation">{{'ContainersComponent.DestinationIsRequired' | translate}}</span>
+              </div>
+              <div class="form-group">
+                  <p-dropdown [options]="lookup_shippingCompany" formControlName="shippingCompanyId" [(ngModel)] ='model.shippingCompanyId' optionLabel="name" optionValue="id" [filter]="true" filterBy="name"
+                  [showClear]="true" placeholder="{{'General.SelectShippingCompany' | translate}}">
+                </p-dropdown>
+
+                  <span style="color: red" [hidden]="!ngAddUpdateForm.controls['shippingCompanyId'].errors?.required || !isSubmitted">{{'ContainersComponent.ShippingCompanyIsRequired' | translate}}</span>
+              </div>
+              <div class="form-group">
+                <p-multiSelect class="js-example-basic-single multi" [options]="autoList" [(ngModel)]="model.autoIds" formControlName="autoIds" placeholder="{{'select...' | translate}}" [maxSelectedLabels]="1" [selectedItemsLabel]="'{0} items selected'" ></p-multiSelect>
+                          
+                <span style="color: red" [hidden]="!ngAddUpdateForm.controls['autoIds'].errors?.required || !isSubmitted">{{'ContainersComponent.AutoIsRequired' | translate}}</span>
+            </div> 
+              <div class="form-group">
+                <input type="date" name="Departure-date" placeholder="{{'ContainersComponent.DepartureDate' | translate}}" class="form-control datepicker-here" formControlName="departureDate" [ngModel]="model.departureDate | date:'yyyy-MM-dd'"  required>
+                <span style="color: red" [hidden]="!ngAddUpdateForm.controls['departureDate'].errors?.required || !isSubmitted">{{'ContainersComponent.DepartureDateIsRequired' | translate}}</span>
+              </div>
+              <div class="form-group">
+                <input type="date" name="Arrival-date" placeholder="{{'ContainersComponent.ArrivalDate' | translate}}" class="form-control datepicker-here" formControlName="arrivalDate" [ngModel]="model.arrivalDate | date:'yyyy-MM-dd'" required>
+                <span style="color: red" [hidden]="!ngAddUpdateForm.controls['arrivalDate'].errors?.required || !isSubmitted">{{'ContainersComponent.ArrivalDateIsRequired' | translate}}</span>
+              </div>    
+              <div class="form-group"></div>
+      </form>
+      <div class="upload-btns" style="text-align: left;">
+        <p> {{'ContainersComponent.UploadPictures' | translate}} :
+          <p-fileUpload name="files[]" 
+          [multiple]="true" 
+          accept="image/*"
+          [showUploadButton]="false" 
+          [showCancelButton]="true"
+          (onSelect)="onFileSelect($event)"
+          (onClear)="onUploadCancel()"
+          (onRemove)="onFileDelete($event)"></p-fileUpload>
+        </p>
+      </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="hideDialog()">{{'ContainersComponent.Cancel' | translate}}</button>
+        <button type="button" class="btn btn-primary" (click)="saveContainer()">{{'ContainersComponent.Save' | translate}}</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Of Add Container Modal -->
+
+<!-- Delete Container-->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true" *ngIf="showDeleteDialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteModalLabel"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true"><i class="mdi mdi-close"></i></span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>{{'PobupButton.AreYouSureToDelete' | translate}}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{'PobupButton.No' | translate}}</button>
+        <button type="button" class="btn btn-primary" (click)="deleteContainer()">{{'PobupButton.Yes' | translate}}</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Of Delete Container-->
+
+<!-- Delete All Containers-->
+<div class="modal fade" id="deleteAllModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true" *ngIf="showDeleteAllDialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteModalLabel"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true"><i class="mdi mdi-close"></i></span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>{{'PobupButton.AreYouSureToDelete' | translate}}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{'PobupButton.No' | translate}}</button>
+        <button type="button" class="btn btn-primary" (click)="DeleteAllContainers()">{{'PobupButton.Yes' | translate}}</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Of Delete All Containers-->
+
+<!-- Delete Images Containers-->
+<div class="modal fade" id="deleteImgModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true" *ngIf="showDeleteImagesDialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteModalLabel"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true"><i class="mdi mdi-close"></i></span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>{{'PobupButton.AreYouSureToDeleteImages' | translate}}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{'PobupButton.No' | translate}}</button>
+        <button type="button" class="btn btn-primary" (click)="deleteImages()">{{'PobupButton.Yes' | translate}}</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Of Delete Images Containers-->
+
+
+<!-- Archive Container Modal-->
+<div class="modal fade" id="archiveModal" tabindex="-1" role="dialog" aria-labelledby="archiveModalLabel" aria-hidden="true" *ngIf="showArchiveDialog" >
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="archiveModalLabel"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true"><i class="mdi mdi-close"></i></span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>{{'PobupButton.AreYouSureToArchive' | translate}}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{'PobupButton.No' | translate}}</button>
+        <button type="button" class="btn btn-primary" (click)="archiveContainer()">{{'PobupButton.Yes' | translate}}</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Of Archive Container Modal-->
+
+<!-- Archive All Container Modal-->
+<div class="modal fade" id="archiveAllModal" tabindex="-1" role="dialog" aria-labelledby="archiveModalLabel" aria-hidden="true" *ngIf="showArchiveAllDialog" >
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="archiveModalLabel"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true"><i class="mdi mdi-close"></i></span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>{{'PobupButton.AreYouSureToArchive' | translate}}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{'PobupButton.No' | translate}}</button>
+        <button type="button" class="btn btn-primary" (click)="archiveAllContainers()">{{'PobupButton.Yes' | translate}}</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Of Archive All Container Modal-->
+
+<!-- Pop Up window for each Vin Number-->
+<div class="modal fade" id="autoModal" tabindex="-1" aria-labelledby="autoModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{'ContainersComponent.CarName' | translate}}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="mdi mdi-close"></i></button>
+      </div>
+      <div class="modal-body">
+        
+        <ul class="nav nav-tabs" id="tabContent">
+          <li><a href="#details" class="active" data-toggle="tab">{{'ContainersComponent.Details' | translate}}</a></li>
+          <li><a href="#payment" data-toggle="tab">{{'ContainersComponent.Payment' | translate}}</a></li>
+        </ul>
+    
+        <div class="tab-content">
+
+          <div class="tab-pane active" id="details">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="labels-car">
+                  <h6>{{'ContainersComponent.Name' | translate}} </h6>
+                  <p>{{selectAuto.name}}</p>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="labels-car">
+                  <h6>{{'ContainersComponent.VinNo' | translate}}</h6>
+                  <p>{{selectAuto.vinNo}}</p>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="labels-car">
+                  <h6>{{'ContainersComponent.Owner' | translate}}</h6>
+                  <p>{{selectAuto.buyerName}}</p>
+                </div>
+              </div>
+            </div>
+            
+              <div class="main">
+                <div class="auto-table-btns">
+                  <button *ngIf="hasPermission" type="button" class="btn btn-inverse-archive btn-icon" title="{{'ContainersComponent.DownloadAll' | translate}}" (click)="DownlaodAllAutoImages()">
+                    <i class="mdi mdi-package-down"></i>
+                  </button>
+                  <!-- <button type="button" class="btn btn-inverse-danger btn-icon js-remove-slide" title="Remove Image">
+                    <i class="mdi mdi-delete"></i>
+                  </button> -->
+                  <button *ngIf="hasPermission" type="button"  class="btn btn-inverse-cut btn-icon" title="{{'ContainersComponent.RemoveAllImage' | translate}}" (click)="deleteAutoImages(selectAuto.id)">
+                    <i class="mdi mdi-content-cut"></i>
+                  </button>
+                </div>
+                <div class="slider slider-info">
+                  <p-galleria #galleria [value]="autoImages" [(activeIndex)]="activeIndex_auto"
+                  [responsiveOptions]="responsiveOptions" [containerStyle]="{'max-width': '640px','margin': '0 auto'}" [numVisible]="5"
+                  [circular]="true" [showItemNavigators]="true" [showItemNavigatorsOnHover]="true"
+                  [transitionInterval]="3000" [showThumbnails]="showThumbnails" [containerClass]="galleriaClass()">
+                  <ng-template pTemplate="item" let-item>
+                    <img [src]="item.previewImageSrc"
+                      [ngStyle]="{'width': !fullscreen ? '100%' : '', 'display': !fullscreen ? 'block' : ''}" />
+                  </ng-template>
+                  <ng-template pTemplate="thumbnail" let-item>
+                    <div class="p-grid p-nogutter p-justify-center">
+                      <img [src]="item.thumbnailImageSrc" />
+                    </div>
+                  </ng-template>
+                  <ng-template pTemplate="footer" let-item>
+                    <div class="custom-galleria-footer">
+                      <button type="button" pButton icon="pi pi-list" (click)="onThumbnailButtonClick()"></button>
+                      <span *ngIf="autoImages" class="title-container">
+                        <span>{{activeIndex_auto + 1}}/{{autoImages.length}}</span>
+                      </span>
+                      <button type="button" pButton [icon]="fullScreenIcon()" (click)="toggleFullScreen()"
+                        class="fullscreen-button"></button>
+                      <button *ngIf="hasPermission"  type="button" pButton icon="pi pi-trash" (click)="deleteAutoImage(autoImages[activeIndex_auto],selectAuto.id)"
+                        class=""></button>
+                    </div>
+                  </ng-template>
+                </p-galleria>
+                </div>
+              </div>
+           <br>
+           
+            <div class="row">
+              <div class="col-md-6">
+                <h4>{{'ContainersComponent.CarDetails' | translate}}</h4>
+                <ul class="auto-list-group">
+                  <li class="list-group-item">{{'ContainersComponent.Lot' | translate}} <span class="badge-span">{{selectAuto.lot}}</span></li>
+                  <li class="list-group-item">{{'ContainersComponent.Engine' | translate}}  <span class="badge-span">{{selectAuto.engine}}</span></li>
+                  <li class="list-group-item">{{'ContainersComponent.BuyDate' | translate}} <span class="badge-span">{{selectAuto.buyDateStr}}</span></li>
+                  <li class="list-group-item">{{'ContainersComponent.Color' | translate}}<span class="badge-span">{{selectAuto.color}}</span></li>
+                  <li class="list-group-item">{{'ContainersComponent.Auction' | translate}}  <span class="badge-span">{{selectAuto.auctionName}}</span></li>
+                  <li class="list-group-item">{{'ContainersComponent.BuyingAccount' | translate}} <span class="badge-span">{{selectAuto.buyAccountName}}</span></li>
+                  <li class="list-group-item">{{'ContainersComponent.City' | translate}}  <span class="badge-span">{{selectAuto.cityName}}</span></li>
+                  <li class="list-group-item">{{'ContainersComponent.LoadPort' | translate}} <span class="badge-span">{{selectAuto.loadPortName}}</span></li>
+                  <li class="list-group-item">{{'ContainersComponent.Status' | translate}} <span class="badge-span">{{selectAuto.carStatusStr}}</span></li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <h4>{{'ContainersComponent.ContainerInformation' | translate}}</h4>
+                <ul class="auto-list-group">
+                  <li class="list-group-item">{{'ContainersComponent.ContainerNo' | translate}} <span class="badge-span">{{selectAuto.containerSerial}}</span></li>
+                  <li class="list-group-item">{{'ContainersComponent.BookNo' | translate}} <span class="badge-span">{{selectAuto.bookNo}}</span></li>
+                  <li class="list-group-item">{{'ContainersComponent.Destination' | translate}} <span class="badge-span">{{selectAuto.destinationName}}</span></li>
+                  <li class="list-group-item">{{'ContainersComponent.DepartureDate' | translate}} <span class="badge-span">{{selectAuto.departureDateStr}}</span></li>
+                  <li class="list-group-item">{{'ContainersComponent.ArrivalDate' | translate}} <span class="badge-span">{{selectAuto.containerArrivalDateStr}}</span></li>
+                  <li class="list-group-item">{{'ContainersComponent.ShippingCompany' | translate}} <span class="badge-span">{{selectAuto.shippingCompany}}</span></li>
+                </ul>
+              </div>
+            </div>
+           
+          </div>
+          
+          <div class="tab-pane" id="payment">
+            <div class="row">
+              <div class="form-group col-md-4">
+                <label>{{'ContainersComponent.Cars' | translate}}</label>
+                <input type="text" disabled="" class="form-control" value="{{selectAuto.name}}">
+              </div>
+              <div class="form-group col-md-4">
+                <label>{{'ContainersComponent.VinNo' | translate}}</label>
+                <input type="text" disabled="" class="form-control" value="{{selectAuto.vinNo}}">
+              </div>
+              <div class="form-group col-md-4">
+                <label>{{'ContainersComponent.Buyer' | translate}}</label>
+                <input type="text" disabled="" class="form-control" value="{{selectAuto.buyerName}}">
+              </div>
+            </div>
+            <div class="auto-table-btns">
+              <!-- <button type="button" class="btn btn-inverse-cut btn-icon" title="Print">
+                <i class="mdi mdi-printer"></i>
+              </button> -->
+              <a *ngIf="hasPermission" class="btn btn-primary"  routerLink="../payment">{{'ContainersComponent.EditPayment' | translate}}</a>
+             
+            </div>
+            <div class="debit-table">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>{{'ContainersComponent.Category' | translate}}</th>
+                    <th>{{'ContainersComponent.PaymentMethod' | translate}}</th>
+                    <th>{{'ContainersComponent.Notes' | translate}}</th>
+                    <th>{{'ContainersComponent.Date' | translate}}</th>
+                    <th>{{'ContainersComponent.Amount' | translate}}</th>
+                    <th>{{'ContainersComponent.Paid' | translate}}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let payDetails of paymentDetails | paginate: { itemsPerPage: 10, currentPage: pagepayment, id:'second' }; let i=index;">
+                    <td>
+                     {{payDetails.buyTypeStr}}
+                    </td>
+                    <td>
+                      {{payDetails.cashTypeStr}}
+                    </td>
+                    <td>
+                      {{payDetails.notes}}
+                    </td>
+                    <td>
+                      {{payDetails.payDateStr}}
+                    </td>
+                    <td>
+                      {{payDetails.payment.paymentType == 2 ? payDetails.amount : ''}}
+                    </td>
+                    <td>
+                      {{payDetails.payment.paymentType == 1 ? payDetails.amount : ''}}
+                    </td> 
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="pagination text-center">
+              <pagination-controls (pageChange)="pagepayment = $event" id='second'></pagination-controls>
+             
+            </div>
+            <div class="details-total">
+              <ul class="list-group">
+                <li class="list-group-item">{{'ContainersComponent.TotalAmount' | translate}}<span class="badge-span">{{totaldebit}}</span></li>
+                <li class="list-group-item">{{'ContainersComponent.TotalPaid' | translate}}<span class="badge-span">{{totalcredit}}</span></li>
+                <li class="list-group-item required-row">{{'ContainersComponent.Required' | translate}} <span class="badge-span">{{required}}</span></li>
+              </ul>
+            </div>
+          </div> 
+       </div>  
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Of Pop Up window for each Vin Number-->
+
+<!-- Pop Up window for Container Details -->
+<div class="modal fade" id="ContainerModal" tabindex="-1" aria-labelledby="ContainerModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="ContainerModalLabel">{{'ContainersComponent.ContainerDetails' | translate}}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="mdi mdi-close"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="auto-table-btns">
+          <button *ngIf="hasPermission" type="button" class="btn btn-inverse-archive btn-icon" title="{{'ContainersComponent.DownloadAll' | translate}}" (click)="DownlaodAll()">
+            <i class="mdi mdi-pin"></i>
+          </button>
+          <!-- <button type="button" class="btn btn-inverse-danger btn-icon js-remove-slide" title="Remove Image">
+            <i class="mdi mdi-delete"></i>
+          </button> -->
+          <!-- <button type="button" data-toggle="modal" data-target="#deleteImagesModal" class="btn btn-inverse-cut btn-icon" title="Remove All Image">
+            <i class="mdi mdi-content-cut"></i>
+          </button> -->
+        </div>
+              <div class="main">
+                <div class="slider slider-info">
+                  <p-galleria #galleriaCont [value]="images" [(activeIndex)]="activeIndex"
+                  [responsiveOptions]="responsiveOptions" [containerStyle]="{'max-width': '640px','margin': '0 auto'}" [numVisible]="5"
+                  [circular]="true" [showItemNavigators]="true" [showItemNavigatorsOnHover]="true"
+                  [transitionInterval]="3000" [showThumbnails]="showThumbnails" [containerClass]="galleriaClass()">
+                  <ng-template pTemplate="item" let-item>
+                    <img [src]="item.previewImageSrc"
+                      [ngStyle]="{'width': !fullscreen ? '100%' : '', 'display': !fullscreen ? 'block' : ''}" />
+                  </ng-template>
+                  <ng-template pTemplate="thumbnail" let-item>
+                    <div class="p-grid p-nogutter p-justify-center">
+                      <img [src]="item.thumbnailImageSrc" />
+                    </div>
+                  </ng-template>
+                  <ng-template pTemplate="footer" let-item>
+                    <div class="custom-galleria-footer">
+                      <button type="button" pButton icon="pi pi-list" (click)="onThumbnailButtonClick()"></button>
+                      <span *ngIf="images" class="title-container">
+                        <span>{{activeIndex + 1}}/{{images.length}}</span>
+                      </span>
+                      <button type="button" pButton [icon]="fullScreenIcon()" (click)="toggleContainerFullScreen()"
+                        class="fullscreen-button"></button>
+                      <button *ngIf="hasPermission" type="button" pButton icon="pi pi-trash" (click)="deleteImage(images[activeIndex],selectContainer.id)"
+                        class=""></button>
+                    </div>
+                  </ng-template>
+                </p-galleria>
+                </div>
+              </div>
+           <br>
+           
+            <div class="row">
+              <div class="col-md-6">
+           
+                <ul class="auto-list-group">
+                  <li class="list-group-item">{{'ContainersComponent.BookNo' | translate}} <span class="badge-span">{{selectContainer.bookNo}}</span></li>
+                  <li class="list-group-item">{{'ContainersComponent.ContainerNo' | translate}}  <span class="badge-span">{{selectContainer.serialNumber}}</span></li>
+                  <li class="list-group-item">{{'ContainersComponent.DepartureDate' | translate}} <span class="badge-span">{{selectContainer.departureDateStr}}</span></li>
+                  <li class="list-group-item">{{'ContainersComponent.ArrivalDate' | translate}}<span class="badge-span">{{selectContainer.arrivalDateStr}}</span></li>
+                  <li class="list-group-item">{{'ContainersComponent.Status' | translate}} <span class="badge-span">{{selectContainer.containerStatusStr}}</span></li>
+                  <li class="list-group-item">{{'ContainersComponent.Destination' | translate}} <span class="badge-span">{{selectContainer.destinationName}}</span></li>
+                  <li class="list-group-item">{{'ContainersComponent.DeparturePort' | translate}} <span class="badge-span">{{selectContainer.departurePortName}}</span></li>
+                  <li class="list-group-item">{{'ContainersComponent.ShippingCompany' | translate}} <span class="badge-span">{{selectContainer.shippingCompanyName}}</span></li>
+                  <li class="list-group-item">{{'ContainersComponent.CarVins' | translate}}
+                    <div class="vins-block">
+                    <span class="badge-span" *ngFor="let vinNo of selectContainer.autoVinNos">{{vinNo.text}}</span>
+                  </div>
+                </li>
+                </ul>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>           
+<!-- End Of Pop Up window for Container Details -->           
+
+
+
+
+<section class="autos-table">
+    <div class="container-fluid">
+      <div class="content-wrapper">
+        <div class="row">
+          <div class="col-lg-2 grid-margin">
+           
+            <div class="card" *ngFor="let item of sideMenuList">
+              <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header"  [id]="'heading'+item.labeltext">
+                    <button class="accordion-button" type="button" data-toggle="collapse" [attr.data-target]="'#' + item.labeltext" aria-expanded="true" [attr.aria-controls]="'#' + item.label">
+                      {{item.label}}
+                    </button>
+                  </h2>
+                  <div  [id]="item.labeltext" class="accordion-collapse collapse show" [attr.aria-labelledby]="'heading'+item.labeltext" data-parent="#accordionExample">
+                    <div class="accordion-body">
+                      <a (click)="onSideItemClick(item, 1)" >{{'ContainersComponent.Awaitingload' | translate}}  <span class="float-right alert total">{{item.awaitingload}}</span></a>
+                      <a (click)="onSideItemClick(item, 2)" >{{'ContainersComponent.Departured' | translate}} <span class="float-right alert new">{{item.departured}}</span></a>
+                      <a (click)="onSideItemClick(item, 3)" >{{'ContainersComponent.Arrived' | translate}} <span class="float-right alert dispatched">{{item.arrived}}</span></a>      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-9 grid-margin stretch-card">
+            <div class="card">
+              <h4 class="card-title cell">{{'ContainersComponent.ManageContainers' | translate}}</h4>
+              <div class="autos-row">
+                <div class="total-autos">
+                  <p>{{'ContainersComponent.Total' | translate}}: <span>{{containers.length}}</span></p>
+                </div>
+                <div class="auto-table-btns">
+                  <button type="button" data-toggle="modal" data-target="#archiveAllModal" class="btn btn-inverse-archive btn-icon" title="{{'ContainersComponent.Archive' | translate}}" (click)="openArchiveAllDialog()" *ngIf="hasPermission && checkedAutos > 1">
+                    <i class="mdi mdi-pin"></i>
+                  </button>
+                  <!-- <a href="src/images/abbasmotor-invoice.pdf" target="_blank" type="button" class="btn btn-inverse-print btn-icon" title="Print">
+                    <i class="mdi mdi-printer"></i>
+                  </a>
+                  <button type="button" class="btn btn-inverse-cut btn-icon" title="Delete images">
+                    <i class="mdi mdi-content-cut"></i>
+                  </button> -->
+                  <button *ngIf="hasPermission" type="button" data-toggle="modal" data-target="#addAutoModal" class="btn btn-inverse-add btn-icon" title="{{'ContainersComponent.AddNew' | translate}}" (click)="openDialog()">
+                    <i class="mdi mdi-plus"></i>
+                  </button>
+
+                  <!-- Add Container Modal was here  -->
+                  
+
+                  <button type="button" data-toggle="modal" data-target="#deleteAllModal" class="btn btn-inverse-danger btn-icon" title="{{'ContainersComponent.Delete' | translate}}" (click)="openDeleteAllDialog()" *ngIf="checkedAutos > 1">
+                    <i class="mdi mdi-delete"></i>
+                  </button>
+
+                  <!-- delete all container modale fade was here -->
+                </div>
+              </div>
+
+              <!-- <div class="modal fade" id="deleteImagesModal" tabindex="-1" role="dialog" aria-labelledby="deleteImagesModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="deleteImagesModalLabel"></h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="mdi mdi-close"></i></span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <p>Are you sure you want to Delete All Images ?</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                      <button type="button" class="btn btn-primary" (click)="deleteImages(selectContainer.id)">Yes</button>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+
+          
+
+              <!-- Auto Modal was here-->
+              <div class="table-responsive">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th *ngIf="hasPermission"></th>
+                      <th>{{'ContainersComponent.Img' | translate}}</th>
+                      <th style="width:200px">{{'ContainersComponent.BookingContainer' | translate}} </th>
+                      <th>{{'ContainersComponent.FromTo' | translate}}</th>
+                      <th style="width:140px">{{'ContainersComponent.Info' | translate}}</th>
+                      <th style="width:110px">{{'ContainersComponent.AutosCars' | translate}} </th>
+                      <th style="width:130px">{{'ContainersComponent.Dates' | translate}}</th>
+                      <th *ngIf="hasPermission">{{'ContainersComponent.Actions' | translate}}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let item of containers | paginate: { itemsPerPage: 25, currentPage: page, id:'first' }; let i=index;" [ngStyle]="{'background': item.rowColor}">
+                      <td *ngIf="hasPermission">
+                        <input type="checkbox" value="{{item.id}}" [(ngModel)]="containers[i].checked" (change)="onCheckboxChange($event)">
+                      </td>
+                      <td>
+                        <a type="button" data-bs-toggle="modal" data-bs-target="#ContainerModal" (click)="openImagePopup(item.id)">
+                          <img src="{{item.image !='' ? '../assets/uploaded/' + item.image :'assets/images/no-img.png'}}" alt="Car Thumbnail" class="auto-info">
+                        </a>
+                        <!-- Container modal fade was here-->
+                      </td>
+                      <td>
+                        <ul>
+                          <li><strong>{{'ContainersComponent.BookingNo' | translate}}: </strong>{{item.bookNo}}</li>
+                          <li><strong>{{'ContainersComponent.Container' | translate}}: </strong>{{item.serialNumber}}</li>
+                        </ul>
+                      </td>
+                      <td>
+                        <ul>
+                          <li><strong>{{'ContainersComponent.From' | translate}}: </strong>{{item.departurePortName}}</li>
+                          <li><strong>{{'ContainersComponent.To' | translate}}: </strong>{{item.destinationName}}</li>
+                        </ul>
+                      </td>
+                      <td>
+                        <ul>
+                          <li><strong>{{'ContainersComponent.Line' | translate}}: </strong>{{item.shippingCompanyName}} </li>
+                          <li><strong>{{'ContainersComponent.Status' | translate}}: </strong> {{item.containerStatusStr}} </li>
+                        </ul>
+                      </td>
+                      
+                      <td>
+                        <ul>
+                          <li *ngFor="let auto of item.autoVinNos"><a href="#" data-bs-toggle="modal" data-bs-target="#autoModal" (click)="openAutoPopup(auto.value)">{{auto.text}}</a></li>
+                        </ul>
+                      </td>
+                      <td>
+                        <ul>
+                          <li><strong>{{'ContainersComponent.LoadedOn' | translate}}: </strong>{{item.departureDateStr}}</li>
+                          <li><strong>{{'ContainersComponent.EstimatedArrival' | translate}}: </strong>{{item.arrivalDateStr}}</li>
+                        </ul>        
+                      </td>
+
+                      <td *ngIf="hasPermission">
+                        <ul>
+                          <li> 
+                            <div class="dropdown">
+                              <button class="dropbtn">{{'ContainersComponent.Actions' | translate}}</button>
+                              <div class="dropdown-content" style="min-width: 130px;">
+                                <a data-bs-toggle="modal" type="button" data-bs-target="#addAutoModal" (click)="editContainer(item)">{{'ContainersComponent.Update' | translate}}</a>
+                                <a href="#" type="button" data-toggle="modal" data-target="#deleteModal" (click)="openDeleteDialog(item)">{{'ContainersComponent.Delete' | translate}}</a>
+                                <a href="#" data-toggle="modal" data-target="#archiveModal" (click)="openArchiveDialog(item)">{{'ContainersComponent.Archive' | translate}}</a>
+                                <a href="#"type="button" data-toggle="modal" data-target="#deleteImgModal" (click)="openDeleteImagesDialog(item)">{{'ContainersComponent.DeleteImg' | translate}}</a>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </td> 
+
+                      <!-- delete modal was here -->
+
+                      <!-- Archive Modal was here-->
+
+
+                      <!-- Delete image modal fade was here-->
+                    </tr>
+                  </tbody> 
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> 
+    </div>
+  </section>

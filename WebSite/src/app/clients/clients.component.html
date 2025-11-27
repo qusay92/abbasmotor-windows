@@ -1,0 +1,158 @@
+<section class="clients-page">
+  <div class="container-fluid">
+      <div class="card">
+          <div class="card-body">
+              <h4 class="card-title">{{'ClientsComponent.Clients' | translate }}</h4>
+              <hr>
+              <div class="clinet-btns">
+                <div class="left-btns">
+                  <a class="btn btn-primary btn-icon-text" href="#" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="openDialog()">{{'ClientsComponent.AddClient' | translate }} <i class="mdi mdi-plus-box"></i></a>
+
+                  <div class="modal fade" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true" *ngIf="showDialog">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">{{'ClientsComponent.ClientData' | translate }}</h5>
+                          <button type="button" class="btn-close btn btn-icon" data-bs-dismiss="modal" aria-label="Close"><i class="mdi mdi-close"></i></button>
+                        </div>
+                        <div class="modal-body">
+                          <form class="forms-sample client-data-form" [formGroup]="ngForm" (keyup.enter)="saveClient()">
+                            <input type="hidden" id="id" name="id" [(ngModel)] ='model.id' formControlName="id">
+
+                            <div class="form-group">
+                              <label for="name">{{'ClientsComponent.Name' | translate }}<span>*</span></label>
+                              <input type="text" id="name" class="form-control" placeholder="{{'ClientsComponent.Name' | translate }}" formControlName="name" [(ngModel)] ='model.name'>
+                              <span style="color: red" [hidden]="ngForm.controls['name'].valid || !isSubmitted">{{'ClientsComponent.NameIsRequired' | translate }}</span>
+                            </div>
+
+                            <div class="form-group">
+                              <label for="username">{{'ClientsComponent.UserName' | translate }}<span>*</span></label>
+                              <input type="text"  id="username" class="form-control" placeholder="{{'ClientsComponent.UserName' | translate }}" formControlName="userName" [(ngModel)] ='model.userName'>
+                              <span style="color: red" [hidden]="ngForm.controls['userName'].valid || !isSubmitted">{{'ClientsComponent.UserNameIsRequired' | translate }} </span>
+                            </div>
+                            
+                            <div class="form-group password-form">
+                              <label for="password">{{'ClientsComponent.Password' | translate }}<span>*</span></label>
+                              <input [type]=" showPassword ? 'text' : 'password' "  id="clientpassword" class="form-control" placeholder="Password" formControlName="password" [(ngModel)] ='model.actualPass'>
+                              <i class="mdi mdi-eye" id="toggleclientPassword" (click)='showHidePassword()'></i>
+                              <span style="color: red" [hidden]="ngForm.controls['password'].valid || !isSubmitted">{{'ClientsComponent.PasswordIsRequired' | translate }}</span>
+                            </div>
+
+                            <div class="form-group">
+                              <label for="phone">{{'ClientsComponent.Phone' | translate }}</label>
+                              <input type="tel"  id="phone" class="form-control" placeholder="{{'ClientsComponent.Phone' | translate }}" formControlName="mobile" [(ngModel)] ='model.mobile'>
+                            </div>
+
+                            <div class="form-group">
+                              <label for="company">{{'ClientsComponent.Company' | translate }}</label>
+                              <input type="text"  id="company" class="form-control" placeholder="{{'ClientsComponent.Company' | translate }}" formControlName="company" [(ngModel)] ='model.company'>
+                            </div>
+
+                            <div class="form-group">
+                              <label for="address">{{'ClientsComponent.Address' | translate }}</label>
+                              <input type="text"  id="address" class="form-control" placeholder="{{'ClientsComponent.Address' | translate }}" formControlName="address" [(ngModel)] ='model.address'>
+                            </div>
+                            
+                          </form>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="hideDialog()">{{'ClientsComponent.Cancel' | translate }}</button>
+                          <button type="button" class="btn btn-primary" (click)="saveClient()">{{'ClientsComponent.SaveChanges' | translate }}</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <button type="button" data-toggle="modal" data-target="#deleteModal" class="btn btn-inverse-danger btn-icon" title="{{'ClientsComponent.Delete' | translate }}" *ngIf="checkedClients > 1" (click)="openDeleteAllDialog()">
+                    <i class="mdi mdi-delete"></i>
+                  </button>
+                  <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true" *ngIf="showDeleteAllDialog">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="deleteModalLabel"></h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true"><i class="mdi mdi-close"></i></span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <p>{{'PobupButton.AreYouSureToDelete' | translate}}</p>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">{{'PobupButton.No' | translate}}</button>
+                          <button type="button" class="btn btn-primary" (click)="deleteClient()">{{'PobupButton.Yes' | translate}}</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                </div>
+                <div class="input-group clients-search">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="search">
+                      <i class="mdi mdi-magnify"></i>
+                    </span>
+                  </div>
+                  <input type="text" class="form-control" placeholder="{{'ClientsComponent.Search' | translate }}" aria-label="search" aria-describedby="search" [(ngModel)]="search" (input)="filterGlobal($event)">
+                </div>
+              </div>
+
+              <div class="clients-table">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th>{{'ClientsComponent.Name' | translate }}</th>
+                      <th>{{'ClientsComponent.UserName' | translate }}</th>
+                      <th>{{'ClientsComponent.Address' | translate }}</th>
+                      <th>{{'ClientsComponent.Company' | translate }}</th>
+                      <th>{{'ClientsComponent.Phone' | translate }}</th>
+                      <th>{{'ClientsComponent.Action' | translate }}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let item of clients | paginate: { itemsPerPage: 25, currentPage: page }; index as i;">
+                      <td>
+                        <input type="checkbox" value="{{item.id}}" [(ngModel)]="clients[i].checked" (change)="onCheckboxChange($event)">
+                      </td>
+                      <td>
+                        <a>{{item.name}}</a>
+                      </td>
+                      <td>
+                          {{item.userName}}
+                      </td>
+                      <td>
+                          {{item.address}}
+                      </td>
+                      <td>
+                          {{item.company}}
+                      </td>
+                      <td>
+                        <a href="tel:{{item.mobile}}"> {{item.mobile}}</a>
+                      </td>
+                      <td>
+                        <ul>
+                          <li> 
+                            <div class="dropdown">
+                              <button class="dropbtn">{{'ClientsComponent.Actions' | translate }}</button>
+                              <div class="dropdown-content" style="min-width: 130px;">
+                                <a data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="editRow(item)">{{'ClientsComponent.Edit' | translate }} </a>
+                                <a type="button" class="btn" data-toggle="modal" data-target="#deleteModal" (click)="openDeleteDialog(item)">
+                                  {{'ClientsComponent.Delete' | translate }}
+                                </a>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </td> 
+                    </tr>
+                  </tbody>
+                  </table>
+              </div>
+              <hr>
+              <div class="pagination text-center">
+                <pagination-controls (pageChange)="page = $event"></pagination-controls>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>

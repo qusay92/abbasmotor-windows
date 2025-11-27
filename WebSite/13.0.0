@@ -1,0 +1,8 @@
++ @angular/core@12.1.5
+updated 1 package and audited 1464 packages in 25.352s
+
+99 packages are looking for funding
+  run `npm fund` for details
+
+found 171 vulnerabilities (13 low, 65 moderate, 82 high, 11 critical)
+  run `npm audit fix` to fix them, or `npm audit` for details

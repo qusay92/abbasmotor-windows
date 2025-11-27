@@ -1,0 +1,671 @@
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.csproj.AssemblyReference.cache
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.Resources.Controllers.LoginController.ar.resources
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.Resources.Controllers.LoginController.en.resources
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.Resources.Services.SharedResource.ar.resources
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.Resources.Services.SharedResource.en.resources
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.csproj.GenerateResource.cache
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.GeneratedMSBuildEditorConfig.editorconfig
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.AssemblyInfoInputs.cache
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.AssemblyInfo.cs
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.csproj.CoreCompileInputs.cache
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.MvcApplicationPartsAssemblyInfo.cs
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.MvcApplicationPartsAssemblyInfo.cache
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\appsettings.Development.json
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\appsettings.json
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\WebAPI.exe
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\WebAPI.deps.json
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\WebAPI.runtimeconfig.json
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\WebAPI.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\WebAPI.pdb
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\ar\WebAPI.resources.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\en\WebAPI.resources.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\AutoMapper.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Humanizer.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.OpenApi.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Serilog.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Serilog.AspNetCore.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Serilog.Extensions.Hosting.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Serilog.Extensions.Logging.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Serilog.Formatting.Compact.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Serilog.Settings.Configuration.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Serilog.Sinks.Console.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Serilog.Sinks.Debug.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Serilog.Sinks.File.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\System.Drawing.Common.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\System.Runtime.Caching.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\System.Security.Permissions.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\System.Windows.Extensions.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Entities.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Utilities.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Entities.pdb
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Utilities.pdb
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\ar\WebAPI.resources.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\en\WebAPI.resources.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\staticwebassets.build.json
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\staticwebassets.development.json
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\scopedcss\bundle\WebAPI.styles.css
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.csproj.CopyComplete
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\refint\WebAPI.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.pdb
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.genruntimeconfig.cache
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\ref\WebAPI.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Castle.Core.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Proxies.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\appsettings.Development.json
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\appsettings.json
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\WebAPI.exe
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\WebAPI.deps.json
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\WebAPI.runtimeconfig.json
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\WebAPI.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\WebAPI.pdb
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\ar\WebAPI.resources.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\en\WebAPI.resources.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\AutoMapper.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Castle.Core.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Humanizer.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Proxies.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.OpenApi.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Serilog.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Serilog.AspNetCore.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Serilog.Extensions.Hosting.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Serilog.Extensions.Logging.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Serilog.Formatting.Compact.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Serilog.Settings.Configuration.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Serilog.Sinks.Console.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Serilog.Sinks.Debug.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Serilog.Sinks.File.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\System.Drawing.Common.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\System.Runtime.Caching.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\System.Security.Permissions.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\System.Windows.Extensions.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Entities.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Utilities.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Entities.pdb
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Utilities.pdb
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.csproj.AssemblyReference.cache
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.Resources.Controllers.LoginController.ar.resources
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.Resources.Controllers.LoginController.en.resources
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.Resources.Services.SharedResource.ar.resources
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.Resources.Services.SharedResource.en.resources
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.csproj.GenerateResource.cache
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.GeneratedMSBuildEditorConfig.editorconfig
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.AssemblyInfoInputs.cache
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.AssemblyInfo.cs
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.csproj.CoreCompileInputs.cache
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.MvcApplicationPartsAssemblyInfo.cs
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.MvcApplicationPartsAssemblyInfo.cache
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\ar\WebAPI.resources.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\en\WebAPI.resources.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\staticwebassets.build.json
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\staticwebassets.development.json
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\scopedcss\bundle\WebAPI.styles.css
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.csproj.CopyComplete
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\refint\WebAPI.dll
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.pdb
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.genruntimeconfig.cache
+D:\Qusay Project\New Project\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\ref\WebAPI.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\appsettings.Development.json
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\appsettings.json
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\WebAPI.exe
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\WebAPI.deps.json
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\WebAPI.runtimeconfig.json
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\WebAPI.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\WebAPI.pdb
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\ar\WebAPI.resources.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\en\WebAPI.resources.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\AutoMapper.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Castle.Core.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Humanizer.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Proxies.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Serilog.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Serilog.AspNetCore.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Serilog.Extensions.Hosting.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Serilog.Extensions.Logging.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Serilog.Formatting.Compact.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Serilog.Settings.Configuration.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Serilog.Sinks.Console.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Serilog.Sinks.Debug.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Serilog.Sinks.File.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\System.Runtime.Caching.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\System.Windows.Extensions.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Entities.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Utilities.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Entities.pdb
+C:\Wael\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Utilities.pdb
+C:\Wael\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.csproj.AssemblyReference.cache
+C:\Wael\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.Resources.Controllers.LoginController.ar.resources
+C:\Wael\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.Resources.Controllers.LoginController.en.resources
+C:\Wael\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.Resources.Services.SharedResource.ar.resources
+C:\Wael\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.Resources.Services.SharedResource.en.resources
+C:\Wael\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.csproj.GenerateResource.cache
+C:\Wael\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Wael\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.AssemblyInfoInputs.cache
+C:\Wael\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.AssemblyInfo.cs
+C:\Wael\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.csproj.CoreCompileInputs.cache
+C:\Wael\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Wael\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\Wael\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\ar\WebAPI.resources.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\en\WebAPI.resources.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\staticwebassets.build.json
+C:\Wael\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\staticwebassets.development.json
+C:\Wael\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\scopedcss\bundle\WebAPI.styles.css
+C:\Wael\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.csproj.CopyComplete
+C:\Wael\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\refint\WebAPI.dll
+C:\Wael\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.pdb
+C:\Wael\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.genruntimeconfig.cache
+C:\Wael\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\ref\WebAPI.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\appsettings.Development.json
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\appsettings.json
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\WebAPI.exe
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\WebAPI.deps.json
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\WebAPI.runtimeconfig.json
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\WebAPI.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\WebAPI.pdb
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\ar\WebAPI.resources.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\en\WebAPI.resources.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\AutoMapper.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Castle.Core.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Humanizer.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Proxies.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.OpenApi.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Serilog.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Serilog.AspNetCore.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Serilog.Extensions.Hosting.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Serilog.Extensions.Logging.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Serilog.Formatting.Compact.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Serilog.Settings.Configuration.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Serilog.Sinks.Console.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Serilog.Sinks.Debug.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Serilog.Sinks.File.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\System.Drawing.Common.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\System.Runtime.Caching.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\System.Security.Permissions.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\System.Windows.Extensions.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Entities.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Utilities.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Entities.pdb
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\bin\Debug\net6.0\Utilities.pdb
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.csproj.AssemblyReference.cache
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.Resources.Controllers.LoginController.ar.resources
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.Resources.Controllers.LoginController.en.resources
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.Resources.Services.SharedResource.ar.resources
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.Resources.Services.SharedResource.en.resources
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.csproj.GenerateResource.cache
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.GeneratedMSBuildEditorConfig.editorconfig
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.AssemblyInfoInputs.cache
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.AssemblyInfo.cs
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.csproj.CoreCompileInputs.cache
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.MvcApplicationPartsAssemblyInfo.cs
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.MvcApplicationPartsAssemblyInfo.cache
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\ar\WebAPI.resources.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\en\WebAPI.resources.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\staticwebassets.build.json
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\staticwebassets.development.json
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\staticwebassets\msbuild.WebAPI.Microsoft.AspNetCore.StaticWebAssets.props
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\staticwebassets\msbuild.build.WebAPI.props
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.WebAPI.props
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.WebAPI.props
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\staticwebassets.pack.json
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\scopedcss\bundle\WebAPI.styles.css
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.csproj.CopyComplete
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\refint\WebAPI.dll
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.pdb
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.genruntimeconfig.cache
+D:\AbbasMotor\WebAPI\WebAPI\WebAPI\obj\Debug\net6.0\ref\WebAPI.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\appsettings.Development.json
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\appsettings.json
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\WebAPI.exe
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\WebAPI.deps.json
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\WebAPI.runtimeconfig.json
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\WebAPI.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\WebAPI.pdb
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\ar\WebAPI.resources.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\en\WebAPI.resources.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\AutoMapper.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\Castle.Core.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\Humanizer.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Proxies.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.OpenApi.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\Serilog.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\Serilog.AspNetCore.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\Serilog.Extensions.Hosting.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\Serilog.Extensions.Logging.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\Serilog.Formatting.Compact.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\Serilog.Settings.Configuration.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\Serilog.Sinks.Console.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\Serilog.Sinks.Debug.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\Serilog.Sinks.File.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\System.Drawing.Common.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\System.Runtime.Caching.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\System.Security.Permissions.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\System.Windows.Extensions.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\Entities.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\Utilities.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\Entities.pdb
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\bin\Debug\net6.0\Utilities.pdb
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.csproj.AssemblyReference.cache
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.Resources.Controllers.LoginController.ar.resources
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.Resources.Controllers.LoginController.en.resources
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.Resources.Services.SharedResource.ar.resources
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.Resources.Services.SharedResource.en.resources
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.csproj.GenerateResource.cache
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.GeneratedMSBuildEditorConfig.editorconfig
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.AssemblyInfoInputs.cache
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.AssemblyInfo.cs
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.csproj.CoreCompileInputs.cache
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.MvcApplicationPartsAssemblyInfo.cs
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.MvcApplicationPartsAssemblyInfo.cache
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\obj\Debug\net6.0\ar\WebAPI.resources.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\obj\Debug\net6.0\en\WebAPI.resources.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\obj\Debug\net6.0\staticwebassets.build.json
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\obj\Debug\net6.0\staticwebassets.development.json
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\obj\Debug\net6.0\staticwebassets\msbuild.WebAPI.Microsoft.AspNetCore.StaticWebAssets.props
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\obj\Debug\net6.0\staticwebassets\msbuild.build.WebAPI.props
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.WebAPI.props
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.WebAPI.props
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\obj\Debug\net6.0\staticwebassets.pack.json
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\obj\Debug\net6.0\scopedcss\bundle\WebAPI.styles.css
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.csproj.CopyComplete
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\obj\Debug\net6.0\refint\WebAPI.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.pdb
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.genruntimeconfig.cache
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\Al Naqil New\WebAPI\WebAPI\obj\Debug\net6.0\ref\WebAPI.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\appsettings.Development.json
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\appsettings.json
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\WebAPI.exe
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\WebAPI.deps.json
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\WebAPI.runtimeconfig.json
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\WebAPI.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\WebAPI.pdb
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\ar\WebAPI.resources.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\en\WebAPI.resources.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\AutoMapper.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\Castle.Core.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\Humanizer.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Proxies.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.OpenApi.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\Serilog.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\Serilog.AspNetCore.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\Serilog.Extensions.Hosting.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\Serilog.Extensions.Logging.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\Serilog.Formatting.Compact.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\Serilog.Settings.Configuration.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\Serilog.Sinks.Console.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\Serilog.Sinks.Debug.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\Serilog.Sinks.File.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\System.Drawing.Common.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\System.Runtime.Caching.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\System.Security.Permissions.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\System.Windows.Extensions.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\Entities.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\Utilities.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\Entities.pdb
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\bin\Debug\net6.0\Utilities.pdb
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.csproj.AssemblyReference.cache
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.Resources.Controllers.LoginController.ar.resources
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.Resources.Controllers.LoginController.en.resources
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.Resources.Services.SharedResource.ar.resources
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.Resources.Services.SharedResource.en.resources
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.csproj.GenerateResource.cache
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.GeneratedMSBuildEditorConfig.editorconfig
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.AssemblyInfoInputs.cache
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.AssemblyInfo.cs
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.csproj.CoreCompileInputs.cache
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.MvcApplicationPartsAssemblyInfo.cs
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.MvcApplicationPartsAssemblyInfo.cache
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\obj\Debug\net6.0\ar\WebAPI.resources.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\obj\Debug\net6.0\en\WebAPI.resources.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\obj\Debug\net6.0\staticwebassets.build.json
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\obj\Debug\net6.0\staticwebassets.development.json
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\obj\Debug\net6.0\staticwebassets\msbuild.WebAPI.Microsoft.AspNetCore.StaticWebAssets.props
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\obj\Debug\net6.0\staticwebassets\msbuild.build.WebAPI.props
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.WebAPI.props
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.WebAPI.props
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\obj\Debug\net6.0\staticwebassets.pack.json
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\obj\Debug\net6.0\scopedcss\bundle\WebAPI.styles.css
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.csproj.CopyComplete
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\obj\Debug\net6.0\refint\WebAPI.dll
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.pdb
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.genruntimeconfig.cache
+D:\My Live Projects\AL NAQIL AL FIDHI\New Layout\AlnaqilNewLatest\WebAPI\WebAPI\obj\Debug\net6.0\ref\WebAPI.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\appsettings.Development.json
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\appsettings.json
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\WebAPI.exe
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\WebAPI.deps.json
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\WebAPI.runtimeconfig.json
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\WebAPI.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\WebAPI.pdb
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\ar\WebAPI.resources.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\en\WebAPI.resources.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\AutoMapper.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\Castle.Core.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\Humanizer.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Proxies.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.OpenApi.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\Serilog.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\Serilog.AspNetCore.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\Serilog.Extensions.Hosting.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\Serilog.Extensions.Logging.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\Serilog.Formatting.Compact.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\Serilog.Settings.Configuration.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\Serilog.Sinks.Console.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\Serilog.Sinks.Debug.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\Serilog.Sinks.File.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\System.Drawing.Common.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\System.Runtime.Caching.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\System.Security.Permissions.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\System.Windows.Extensions.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\Entities.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\Utilities.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\Entities.pdb
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\bin\Debug\net6.0\Utilities.pdb
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.csproj.AssemblyReference.cache
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.Resources.Controllers.LoginController.ar.resources
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.Resources.Controllers.LoginController.en.resources
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.Resources.Services.SharedResource.ar.resources
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.Resources.Services.SharedResource.en.resources
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.csproj.GenerateResource.cache
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.GeneratedMSBuildEditorConfig.editorconfig
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.AssemblyInfoInputs.cache
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.AssemblyInfo.cs
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.csproj.CoreCompileInputs.cache
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.MvcApplicationPartsAssemblyInfo.cs
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.MvcApplicationPartsAssemblyInfo.cache
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\obj\Debug\net6.0\ar\WebAPI.resources.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\obj\Debug\net6.0\en\WebAPI.resources.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\obj\Debug\net6.0\staticwebassets.build.json
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\obj\Debug\net6.0\staticwebassets.development.json
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\obj\Debug\net6.0\staticwebassets\msbuild.WebAPI.Microsoft.AspNetCore.StaticWebAssets.props
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\obj\Debug\net6.0\staticwebassets\msbuild.build.WebAPI.props
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.WebAPI.props
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.WebAPI.props
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\obj\Debug\net6.0\staticwebassets.pack.json
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\obj\Debug\net6.0\scopedcss\bundle\WebAPI.styles.css
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.csproj.CopyComplete
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\obj\Debug\net6.0\refint\WebAPI.dll
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.pdb
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\obj\Debug\net6.0\WebAPI.genruntimeconfig.cache
+D:\My Live Projects\AbbasMotor\New Layout\WebAPI\WebAPI\obj\Debug\net6.0\ref\WebAPI.dll

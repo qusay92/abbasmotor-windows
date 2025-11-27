@@ -1,0 +1,432 @@
+2024-02-09 23:53:41.995 +03:00 [ERR] Controller : Login - ActionName : Login - Parameter : {"UserName":"admin","Password":"admin"} - Error :  ## Exception.Message = Incorrect Password
+2024-02-09 23:53:41.995 +03:00 [ERR] Controller : Login - ActionName : Login - Parameter : {"UserName":"admin","Password":"admin"} - Error :  ## Exception.Message = Incorrect Password
+2024-02-09 23:53:45.148 +03:00 [ERR] Controller : Login - ActionName : Login - Parameter : {"UserName":"admin","Password":"admin123"} - Error :  ## Exception.Message = Incorrect Password
+2024-02-09 23:53:45.266 +03:00 [ERR] Controller : Login - ActionName : Login - Parameter : {"UserName":"admin","Password":"admin123"} - Error :  ## Exception.Message = Incorrect Password
+2024-02-09 23:56:21.692 +03:00 [ERR] Failed executing DbCommand (907ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[Culture], [r].[Key], [r].[TextAr], [r].[TextEn], [r].[Url]
+FROM [Resources] AS [r]
+2024-02-09 23:56:21.942 +03:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Entities.AmdDBContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'TextAr'.
+Invalid column name 'TextEn'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:ab9865e0-7295-4a23-a111-47ed39cfcbb4
+Error Number:207,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'TextAr'.
+Invalid column name 'TextEn'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:ab9865e0-7295-4a23-a111-47ed39cfcbb4
+Error Number:207,State:1,Class:16
+2024-02-09 23:56:22.190 +03:00 [ERR] Controller : Resources - ActionName : GetHomePageResources - Parameter : null - Error :  ## Exception.Message = Invalid column name 'TextAr'.
+Invalid column name 'TextEn'.
+2024-02-09 23:56:24.972 +03:00 [ERR] Failed executing DbCommand (103ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[Culture], [r].[Key], [r].[TextAr], [r].[TextEn], [r].[Url]
+FROM [Resources] AS [r]
+2024-02-09 23:56:24.975 +03:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Entities.AmdDBContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'TextAr'.
+Invalid column name 'TextEn'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:ab9865e0-7295-4a23-a111-47ed39cfcbb4
+Error Number:207,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'TextAr'.
+Invalid column name 'TextEn'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:ab9865e0-7295-4a23-a111-47ed39cfcbb4
+Error Number:207,State:1,Class:16
+2024-02-09 23:56:25.066 +03:00 [ERR] Controller : Resources - ActionName : GetHomePageResources - Parameter : null - Error :  ## Exception.Message = Invalid column name 'TextAr'.
+Invalid column name 'TextEn'.
+2024-02-09 23:56:33.306 +03:00 [ERR] Failed executing DbCommand (128ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[ActualPass], [u].[Address], [u].[Company], [u].[CreationDate], [u].[CreationUserId], [u].[Mobile], [u].[ModificationDate], [u].[ModificationUserId], [u].[Name], [u].[Password], [u].[Type], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[Type] = 3
+2024-02-09 23:56:33.310 +03:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Entities.AmdDBContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ActualPass'.
+Invalid column name 'Company'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:ab9865e0-7295-4a23-a111-47ed39cfcbb4
+Error Number:207,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ActualPass'.
+Invalid column name 'Company'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:ab9865e0-7295-4a23-a111-47ed39cfcbb4
+Error Number:207,State:1,Class:16
+2024-02-09 23:56:33.758 +03:00 [ERR] Failed executing DbCommand (479ms) [Parameters=[@__id_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[ArrivalDate], [c].[BookNo], [c].[CreationDate], [c].[CreationUserId], [c].[DepartureDate], [c].[DeparturePortId], [c].[DestinationId], [c].[IsArchive], [c].[ModificationDate], [c].[ModificationUserId], [c].[Name], [c].[SerialNumber], [c].[ShippingCompanyId], [c].[Status], [l].[Id], [l0].[Id], [l1].[Id], [a0].[Id], [a0].[ArrivalDate], [a0].[AuctionId], [a0].[BrandId], [a0].[BuyDate], [a0].[BuyerId], [a0].[BuyingAccountId], [a0].[CarName], [a0].[CarStatus], [a0].[CarType], [a0].[CityId], [a0].[ColorId], [a0].[ContainerId], [a0].[CreationDate], [a0].[CreationUserId], [a0].[Description], [a0].[DestinationId], [a0].[DisplayStatus], [a0].[Engine], [a0].[IsArchive], [a0].[LoadPortId], [a0].[Lot], [a0].[Model], [a0].[ModificationDate], [a0].[ModificationUserId], [a0].[Name], [a0].[PaperStatus], [a0].[RemainingPayment], [a0].[Type], [a0].[VinNo], [l].[Code], [l].[LookupId], [l].[Name], [l0].[Code], [l0].[LookupId], [l0].[Name], [l1].[Code], [l1].[LookupId], [l1].[Name], [c0].[Id], [c0].[Alt], [c0].[ContainerId], [c0].[CreationDate], [c0].[CreationUserId], [c0].[Extintion], [c0].[ModificationDate], [c0].[ModificationUserId], [c0].[Path], [c0].[PreviewImageSrc], [c0].[ThumbnailImageSrc], [c0].[Title]
+FROM [Containers] AS [c]
+LEFT JOIN [LookupValues] AS [l] ON [c].[DestinationId] = [l].[Id]
+LEFT JOIN [LookupValues] AS [l0] ON [c].[ShippingCompanyId] = [l0].[Id]
+LEFT JOIN [LookupValues] AS [l1] ON [c].[DeparturePortId] = [l1].[Id]
+LEFT JOIN [Autos] AS [a0] ON [c].[Id] = [a0].[ContainerId]
+LEFT JOIN [ContainerImages] AS [c0] ON [c].[Id] = [c0].[ContainerId]
+WHERE (([c].[CreationUserId] = @__id_0) OR EXISTS (
+    SELECT 1
+    FROM [Autos] AS [a]
+    WHERE ([c].[Id] = [a].[ContainerId]) AND ([a].[BuyerId] = @__id_0))) AND ([c].[IsArchive] = CAST(0 AS tinyint))
+ORDER BY [c].[Id], [l].[Id], [l0].[Id], [l1].[Id], [a0].[Id]
+2024-02-09 23:56:33.758 +03:00 [ERR] Failed executing DbCommand (480ms) [Parameters=[@__UserId_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ArrivalDate], [a].[AuctionId], [a].[BrandId], [a].[BuyDate], [a].[BuyerId], [a].[BuyingAccountId], [a].[CarName], [a].[CarStatus], [a].[CarType], [a].[CityId], [a].[ColorId], [a].[ContainerId], [a].[CreationDate], [a].[CreationUserId], [a].[Description], [a].[DestinationId], [a].[DisplayStatus], [a].[Engine], [a].[IsArchive], [a].[LoadPortId], [a].[Lot], [a].[Model], [a].[ModificationDate], [a].[ModificationUserId], [a].[Name], [a].[PaperStatus], [a].[RemainingPayment], [a].[Type], [a].[VinNo], [u].[Id], [u].[ActualPass], [u].[Address], [u].[Company], [u].[CreationDate], [u].[CreationUserId], [u].[Mobile], [u].[ModificationDate], [u].[ModificationUserId], [u].[Name], [u].[Password], [u].[Type], [u].[UserName], [t].[Id], [t].[AutoId], [t].[CreationDate], [t].[CreationUserId], [t].[ModificationDate], [t].[ModificationUserId], [t].[PaymentType], [t].[TotalAmount], [t].[Id0], [t].[Amount], [t].[BuyType], [t].[CashType], [t].[Notes], [t].[PayDate], [t].[PaymentId]
+FROM [Autos] AS [a]
+LEFT JOIN [Users] AS [u] ON [a].[BuyerId] = [u].[Id]
+LEFT JOIN (
+    SELECT [p].[Id], [p].[AutoId], [p].[CreationDate], [p].[CreationUserId], [p].[ModificationDate], [p].[ModificationUserId], [p].[PaymentType], [p].[TotalAmount], [p0].[Id] AS [Id0], [p0].[Amount], [p0].[BuyType], [p0].[CashType], [p0].[Notes], [p0].[PayDate], [p0].[PaymentId]
+    FROM [Payments] AS [p]
+    LEFT JOIN [PaymentDetails] AS [p0] ON [p].[Id] = [p0].[PaymentId]
+) AS [t] ON [a].[Id] = [t].[AutoId]
+WHERE ([a].[CreationUserId] = @__UserId_0) OR ([a].[BuyerId] = @__UserId_0)
+ORDER BY [a].[BuyDate] DESC, [a].[Id], [u].[Id], [t].[Id]
+2024-02-09 23:56:33.763 +03:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Entities.AmdDBContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ColorId'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:ab9865e0-7295-4a23-a111-47ed39cfcbb4
+Error Number:207,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ColorId'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:ab9865e0-7295-4a23-a111-47ed39cfcbb4
+Error Number:207,State:1,Class:16
+2024-02-09 23:56:33.766 +03:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Entities.AmdDBContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ColorId'.
+Invalid column name 'ActualPass'.
+Invalid column name 'Company'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:d252aa5d-9ab8-4d03-96f8-b43e089af6c1
+Error Number:207,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ColorId'.
+Invalid column name 'ActualPass'.
+Invalid column name 'Company'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:d252aa5d-9ab8-4d03-96f8-b43e089af6c1
+Error Number:207,State:1,Class:16
+2024-02-09 23:56:33.998 +03:00 [ERR] Controller : Containers - ActionName : GetAllByUser - Parameter : {"IsSearch":false,"StatusId":0,"ContainerNo":"","BookingNo":"","LoadingFromDate":null,"LoadingToDate":null,"LoadPortId":0,"DestinationId":0,"ShippingLineId":0,"ClientId":0,"ArrivalFromDate":null,"ArrivalToDate":null} - Error :  ## Exception.Message = Invalid column name 'ColorId'.
+2024-02-09 23:56:34.091 +03:00 [ERR] Failed executing DbCommand (819ms) [Parameters=[@__8__locals1_id_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ArrivalDate], [a].[AuctionId], [a].[BrandId], [a].[BuyDate], [a].[BuyerId], [a].[BuyingAccountId], [a].[CarName], [a].[CarStatus], [a].[CarType], [a].[CityId], [a].[ColorId], [a].[ContainerId], [a].[CreationDate], [a].[CreationUserId], [a].[Description], [a].[DestinationId], [a].[DisplayStatus], [a].[Engine], [a].[IsArchive], [a].[LoadPortId], [a].[Lot], [a].[Model], [a].[ModificationDate], [a].[ModificationUserId], [a].[Name], [a].[PaperStatus], [a].[RemainingPayment], [a].[Type], [a].[VinNo], [c].[Id], [c].[ArrivalDate], [c].[BookNo], [c].[CreationDate], [c].[CreationUserId], [c].[DepartureDate], [c].[DeparturePortId], [c].[DestinationId], [c].[IsArchive], [c].[ModificationDate], [c].[ModificationUserId], [c].[Name], [c].[SerialNumber], [c].[ShippingCompanyId], [c].[Status], [u].[Id], [u].[ActualPass], [u].[Address], [u].[Company], [u].[CreationDate], [u].[CreationUserId], [u].[Mobile], [u].[ModificationDate], [u].[ModificationUserId], [u].[Name], [u].[Password], [u].[Type], [u].[UserName], [l].[Id], [l].[Code], [l].[LookupId], [l].[Name], [l0].[Id], [l1].[Id], [l2].[Id], [l3].[Id], [l4].[Id], [a0].[Id], [a0].[Alt], [a0].[AutoId], [a0].[CreationDate], [a0].[CreationUserId], [a0].[Extintion], [a0].[ModificationDate], [a0].[ModificationUserId], [a0].[Path], [a0].[PreviewImageSrc], [a0].[ThumbnailImageSrc], [a0].[Title], [l0].[Code], [l0].[LookupId], [l0].[Name], [l1].[Code], [l1].[LookupId], [l1].[Name], [l2].[Code], [l2].[LookupId], [l2].[Name], [l3].[Code], [l3].[LookupId], [l3].[Name], [l4].[Code], [l4].[LookupId], [l4].[Name]
+FROM [Autos] AS [a]
+LEFT JOIN [Containers] AS [c] ON [a].[ContainerId] = [c].[Id]
+LEFT JOIN [Users] AS [u] ON [a].[BuyerId] = [u].[Id]
+INNER JOIN [LookupValues] AS [l] ON [a].[BrandId] = [l].[Id]
+INNER JOIN [LookupValues] AS [l0] ON [a].[AuctionId] = [l0].[Id]
+INNER JOIN [LookupValues] AS [l1] ON [a].[CityId] = [l1].[Id]
+INNER JOIN [LookupValues] AS [l2] ON [a].[DestinationId] = [l2].[Id]
+INNER JOIN [LookupValues] AS [l3] ON [a].[LoadPortId] = [l3].[Id]
+LEFT JOIN [LookupValues] AS [l4] ON [a].[BuyingAccountId] = [l4].[Id]
+LEFT JOIN [AutoImages] AS [a0] ON [a].[Id] = [a0].[AutoId]
+WHERE (([a].[CreationUserId] = @__8__locals1_id_0) OR ([a].[BuyerId] = @__8__locals1_id_0)) AND ([a].[IsArchive] = CAST(0 AS tinyint))
+ORDER BY [a].[Id], [c].[Id], [u].[Id], [l].[Id], [l0].[Id], [l1].[Id], [l2].[Id], [l3].[Id], [l4].[Id]
+2024-02-09 23:56:34.095 +03:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Entities.AmdDBContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ColorId'.
+Invalid column name 'ActualPass'.
+Invalid column name 'Company'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:d4b418fc-cfe1-4986-b6db-cee33b029b44
+Error Number:207,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ColorId'.
+Invalid column name 'ActualPass'.
+Invalid column name 'Company'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:d4b418fc-cfe1-4986-b6db-cee33b029b44
+Error Number:207,State:1,Class:16
+2024-02-09 23:56:34.223 +03:00 [ERR] Controller : Autos - ActionName : GetAllByUser - Parameter : {"isSearch":false,"vinNumber":"","lotNumber":"","client":0,"auction":0,"buyAccount":0,"container":"","loadPort":0,"destination":0,"city":0,"carId":0,"deliveryFromDate":null,"deliveryToDate":null,"Status":0,"purchaseFromDate":null,"purchaseToDate":null} - Error :  ## Exception.Message = Invalid column name 'ColorId'.
+Invalid column name 'ActualPass'.
+Invalid column name 'Company'.
+2024-02-09 23:56:39.310 +03:00 [ERR] Failed executing DbCommand (115ms) [Parameters=[@__ToLower_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[ActualPass], [u].[Address], [u].[Company], [u].[CreationDate], [u].[CreationUserId], [u].[Mobile], [u].[ModificationDate], [u].[ModificationUserId], [u].[Name], [u].[Password], [u].[Type], [u].[UserName]
+FROM [Users] AS [u]
+WHERE LOWER([u].[UserName]) = @__ToLower_0
+2024-02-09 23:56:39.313 +03:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Entities.AmdDBContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ActualPass'.
+Invalid column name 'Company'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:d4b418fc-cfe1-4986-b6db-cee33b029b44
+Error Number:207,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ActualPass'.
+Invalid column name 'Company'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:d4b418fc-cfe1-4986-b6db-cee33b029b44
+Error Number:207,State:1,Class:16
+2024-02-09 23:56:39.381 +03:00 [ERR] Failed executing DbCommand (102ms) [Parameters=[@__ToLower_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[ActualPass], [u].[Address], [u].[Company], [u].[CreationDate], [u].[CreationUserId], [u].[Mobile], [u].[ModificationDate], [u].[ModificationUserId], [u].[Name], [u].[Password], [u].[Type], [u].[UserName]
+FROM [Users] AS [u]
+WHERE LOWER([u].[UserName]) = @__ToLower_0
+2024-02-09 23:56:39.383 +03:00 [ERR] Controller : Login - ActionName : Login - Parameter : {"UserName":"admin","Password":"admin"} - Error :  ## Exception.Message = An error occurred in the system, please try again later
+2024-02-09 23:56:39.386 +03:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Entities.AmdDBContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ActualPass'.
+Invalid column name 'Company'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:d252aa5d-9ab8-4d03-96f8-b43e089af6c1
+Error Number:207,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ActualPass'.
+Invalid column name 'Company'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:d252aa5d-9ab8-4d03-96f8-b43e089af6c1
+Error Number:207,State:1,Class:16
+2024-02-09 23:56:39.435 +03:00 [ERR] Controller : Login - ActionName : Login - Parameter : {"UserName":"admin","Password":"admin"} - Error :  ## Exception.Message = An error occurred in the system, please try again later
+2024-02-09 23:56:44.427 +03:00 [ERR] Failed executing DbCommand (93ms) [Parameters=[@__ToLower_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[ActualPass], [u].[Address], [u].[Company], [u].[CreationDate], [u].[CreationUserId], [u].[Mobile], [u].[ModificationDate], [u].[ModificationUserId], [u].[Name], [u].[Password], [u].[Type], [u].[UserName]
+FROM [Users] AS [u]
+WHERE LOWER([u].[UserName]) = @__ToLower_0
+2024-02-09 23:56:44.431 +03:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Entities.AmdDBContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ActualPass'.
+Invalid column name 'Company'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:d252aa5d-9ab8-4d03-96f8-b43e089af6c1
+Error Number:207,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ActualPass'.
+Invalid column name 'Company'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:d252aa5d-9ab8-4d03-96f8-b43e089af6c1
+Error Number:207,State:1,Class:16
+2024-02-09 23:56:44.481 +03:00 [ERR] Controller : Login - ActionName : Login - Parameter : {"UserName":"admin","Password":"admin-12345"} - Error :  ## Exception.Message = An error occurred in the system, please try again later
+2024-02-09 23:56:44.572 +03:00 [ERR] Failed executing DbCommand (89ms) [Parameters=[@__ToLower_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[ActualPass], [u].[Address], [u].[Company], [u].[CreationDate], [u].[CreationUserId], [u].[Mobile], [u].[ModificationDate], [u].[ModificationUserId], [u].[Name], [u].[Password], [u].[Type], [u].[UserName]
+FROM [Users] AS [u]
+WHERE LOWER([u].[UserName]) = @__ToLower_0
+2024-02-09 23:56:44.576 +03:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Entities.AmdDBContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ActualPass'.
+Invalid column name 'Company'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:d252aa5d-9ab8-4d03-96f8-b43e089af6c1
+Error Number:207,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ActualPass'.
+Invalid column name 'Company'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:d252aa5d-9ab8-4d03-96f8-b43e089af6c1
+Error Number:207,State:1,Class:16
+2024-02-09 23:56:44.614 +03:00 [ERR] Controller : Login - ActionName : Login - Parameter : {"UserName":"admin","Password":"admin-12345"} - Error :  ## Exception.Message = An error occurred in the system, please try again later
